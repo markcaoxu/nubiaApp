@@ -26,7 +26,7 @@ export default [
       isShowFooter: true
     }
   },
-  { 
+  {
     // 发现 find
     path: '/find',
     component: Find
@@ -49,7 +49,7 @@ export default [
   },
   {
     // profile-ticket01
-    path:'/ticket01',
+    path: '/ticket01',
     component: Ticket01
   },
   {
