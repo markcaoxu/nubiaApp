@@ -1,0 +1,40 @@
+{
+  "hotSale":[
+    {
+      "title":"红魔3s 银色风暴",
+      "img_url":"../../../static/shopcar/hotSale/1.png",
+      "pir":2999
+      
+    },
+    {
+      "title":"x系列 深空灰",
+      "img_url":"/static/shopcar/hotSale/2.png",
+      "pir":2199
+      
+    },
+    {
+      "title":"z20 锦鲤红",
+      "img_url":"/static/shopcar/hotSale/3.png",
+      "pir":3399
+      
+    },
+    {
+      "title":"M3 钻石黑",
+      "img_url":"/static/shopcar/hotSale/4.png",
+      "pir":2099
+      
+    },
+    {
+      "title":"红魔3s 银色风暴",
+      "img_url":"/static/shopcar/hotSale/1.png",
+      "pir":2999
+      
+    },
+    {
+      "title":"x系列 深空灰",
+      "img_url":"/static/shopcar/hotSale/2.png",
+      "pir":2199
+      
+    }
+  ]
+}
