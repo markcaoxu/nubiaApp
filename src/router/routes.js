@@ -1,0 +1,50 @@
+import Msite from '../pages/Msite/Msite.vue'
+import Classify from '../pages/Classify/Classify.vue'
+import Find from '../pages/Find/Find.vue'
+import Shopcar from '../pages/Shopcar/Shopcar.vue'
+import Profile from '../pages/Profile/Profile.vue'
+
+
+
+export default [
+  // 路由
+  {
+    // 首页 msite
+    path: '/msite',
+    component: Msite,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  {
+    // 分类 classify
+    path: '/classify',
+    component: Classify,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  { 
+    // 发现 find
+    path: '/find',
+    component: Find
+  },
+  {
+    // 购物车 shopcar
+    path: '/shopcar',
+    component: Shopcar,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  {
+    // 个人中心 profile
+    path: '/profile',
+    component: Profile
+  },
+  // 重定向
+  {
+    path: '/',
+    redirect: '/msite'
+  }
+]
