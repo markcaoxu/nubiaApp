@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1222261",
+      "name": "回退",
+      "font_class": "huitui",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "6031971",
+      "name": "icon_gouwuche",
+      "font_class": "icon_gouwuche",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "7550218",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "8081371",
+      "name": "个人中心",
+      "font_class": "iconfront-",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}
