@@ -1,6 +1,12 @@
 <template>
-  <div>
-    购物车
+  <div class="shopcar">
+    <!-- 购物车顶部 -->
+      <div class="shopHeader">
+        <img src="" alt="">
+      </div>
+      <div class="shopContent">
+
+      </div>
   </div>
 
 </template>
