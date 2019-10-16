@@ -1,7 +1,7 @@
 // 引入vue
 import Vue from 'vue'
 // 引入App
-import App from './App'
+import App from './App.vue'
 // 引入路由
 import router from './router/index.js'
 
