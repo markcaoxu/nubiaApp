@@ -168,7 +168,7 @@ export default {};
         font-size 16px
         margin-top 47px
         p
-          text-align center
+          padding-left 5px
           color white
         // 用户等级
         .user_vip

@@ -11,7 +11,6 @@ VeeValidate.Validator.localize('zh_CN', {
   // 属性的提示信息
   attributes: {
     phone: '手机号码',
-    code:'验证码',
     pwd:'密码'
   }
 })
