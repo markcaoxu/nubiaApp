@@ -69,5 +69,49 @@
         "price":"49"
       }
     ]
+  },
+  "phones":{
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ],
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ],
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ],
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ],
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ],
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ],
+    "phone":[
+      {
+        "phoneImage":"./images/productdetails/4.png",
+        "phoneCharactor":"红魔3s 银色风暴 8GB+128GB"
+      }
+    ]
   }
 }

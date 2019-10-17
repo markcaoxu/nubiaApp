@@ -10,7 +10,7 @@
           <span class="iconfont icon-iconfront-" @click="$router.replace('/profile')"></span>
         </span>
         <span class="icon-shpocar" href="javascript:;" >
-          <span class="iconfont  icon-icon_gouwuche" @click="$router.replace('/shopcar')"></span>
+          <span class="iconfont  icon-icon_gouwuche" ></span>
         </span>
       </div>
     </div>
@@ -42,7 +42,6 @@
 export default {
   props: {
     hotList: Array // 热销商品
-    
   },
    methods:{
     // 添加商品
@@ -149,7 +148,8 @@ export default {
           
         .hot-img
           margin-top 10px
-          width 80%
+          width 135px
+          height 135px
         .hot-title
           font-size 12px
           margin 20px
