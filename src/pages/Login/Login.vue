@@ -8,14 +8,14 @@
       <!-- 用户框 -->
       <ValidationProvider name="用户名" rules="required|phone2" v-slot="{ errors }">
         <div class="field login_user">
-          <input  class="login_input" v-model="username" type="text" placeholder="用户名" />
+          <input value="18553876187" class="login_input" v-model="username" type="text" placeholder="用户名" />
           <span class="login_alert">{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
       <!-- 密码框 -->
       <ValidationProvider name="密码" rules="required|min:6" v-slot="{ errors }">
         <div class="field login_pwd">
-          <input class="login_input" v-model="password" type="password" placeholder="密码"/>
+          <input value="123456" class="login_input" v-model="password" type="password" placeholder="密码"/>
           <span class="login_alert">{{ errors[0] }}</span>
           <em class="pwd_hide" @click="isPwdShow=!isPwdShow" :class="{pwd_show:isPwdShow}"></em>
         </div>
@@ -69,21 +69,23 @@ export default {
     }
   },
   methods:{
-    login(){
+    async login(){
       // 获取用户名和密码
       const { username,password } = this
       // console.log(this)
       // 发送请求，携带账号和密码
-      // const result = reqPwdLogin(username,password)
+        console.log('发送请求')
+      const result =await reqPwdLogin({username,password})
+    
       // console.log(result)
-      if(username==='18553876187'&&password==='123456'){
-        console.log('success')
-        // console.log(this)
-        Toast("登录成功")
-        setTimeout(()=>{
-          this.$router.replace('/profile')
-        },1000)
-      }
+      // if(username==='18553876187'&&password==='123456'){
+      //   console.log('success')
+      //   // console.log(this)
+      //   Toast("登录成功")
+      //   setTimeout(()=>{
+      //     this.$router.replace('/profile')
+      //   },1000)
+      // }
     }
   }
 };

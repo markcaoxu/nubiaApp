@@ -17,9 +17,5 @@ const BASE = '/api'
 // 请求用户名和密码登录
 export const reqPwdLogin = ({username,password})=>ajax({
   method:'POST',
-  url: BASE + `/login_pwd`,
-  data: {
-    username,
-    password
-  }
+  url: BASE + `/login_pwd?username=${username}&password=${password}`
 })
