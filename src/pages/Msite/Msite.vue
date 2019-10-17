@@ -1,16 +1,19 @@
-<template> 
-  <div class="msiteContainer">
+<template>
+  <div class="msiteContainer"  @click="scrollHeader">
     <!-- upload -->
-    <div class="upload">
-      <img src="../../../static/msite/images/upload.jpg" alt="图片加载失败" />
-    </div>
+    <!-- <div class="upload" v-if="isShow">
+      <img src="../../../static/msite/images/upload.jpg" alt="图片加载失败" class="delleft"/>
+      <div class="delright" @click="isShow=!isShow">
+        <img src="./images/del.png" alt="">
+      </div>
+    </div> -->
     <!-- header -->
-    <div class="header">
-      <div class="header-search">
+    <div class="header"  ref="rePosition">
+      <div class="header-search" >
         <div class="searchLogo">
           <img src="./images/logo.png" alt />
         </div>
-        <input type="text" class="searchBox" />
+        <input type="text" class="searchBox" placeholder="红魔3s"/>
         <a href="javasctip:;" class="message">
           <img src="../../../static/msite/images/message.png" alt />
         </a>
@@ -129,7 +132,7 @@
         </ul>
       </div>
       <div class="more">
-        <a href="javascript:;">
+        <a href="javascript:;" @click="$router.push('/phone')">
           <span>查看更多手机 ></span>
         </a>
       </div>
@@ -229,9 +232,17 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import BScroll from 'better-scroll'
 export default {
   name: "carrousel",
+  data () {
+    return {
+      isShow:true,
+    }
+  },
   mounted() {
+    console.log(this)
+    // 轮播图
     this.$nextTick(() => {
       /* eslint-disable */
       var mySwiper = new Swiper(".swiper-container", {
@@ -239,22 +250,35 @@ export default {
         pagination: {
           el: ".swiper-pagination"
         }
-      });
-    });
+      })
+    })
   }
-};
+}
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 .msiteContainer
   width 100%
-  height 100%
   background-color #eee
   .upload
+    position relative
     width 100%
-    height 52.5px
-    img
+    height 52px
+    .delleft
       width 100%
       height 100%
+    .delright
+      display inline-block
+      width 20px
+      height 20px
+      position absolute
+      right 0
+      top 0
+      border-radius 50px
+      img
+        display inline-block
+        width 100%
+        height 100%
+        border-radius 50px
   .header
     position relative
     width 100%
@@ -274,6 +298,7 @@ export default {
       background-color black
       // opacity 1
       position fixed
+      // top 0
       z-index 100
       border-sizing border-box
       padding 10px 0
@@ -300,6 +325,9 @@ export default {
         background-size 20px
         background-repeat no-repeat
         background-position 10px 7px
+      input::-webkit-input-placeholder
+        position relative
+        left 40px
       .message
         width 5%
         // position absolute

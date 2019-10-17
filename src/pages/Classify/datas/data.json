@@ -76,11 +76,11 @@
   }, {
     "name": "保护套",
     "kind": [{
-        "name": "红魔电竞向量保护套（3和3s通用）黑色",
+        "name": "红魔电竞向量保护套(3和3s通用)黑色",
         "image": "/static/classify/1.png"
       },
       {
-        "name": "红魔3双滑轨保护套（手柄专用）黑色",
+        "name": "红魔3双滑轨保护套(手柄专用)黑色",
         "image": "/static/classify/2.png"
       },
       {
@@ -103,15 +103,15 @@
   }, {
     "name": "耳机",
     "kind": [{
-        "name": "万魔联名（时尚真无线耳机）黑色",
+        "name": "万魔联名(时尚真无线耳机)黑色",
         "image": "/static/classify/erji/1.png"
       },
       {
-        "name": "万魔联名（时尚真无线耳机）金色",
+        "name": "万魔联名(时尚真无线耳机)金色",
         "image": "/static/classify/erji/2.png"
       },
       {
-        "name": "律音耳机（新版）红色",
+        "name": "律音耳机(新版)红色",
         "image": "/static/classify/erji/3.png"
       },
       {
@@ -126,7 +126,7 @@
   }, {
     "name": "数据线",
     "kind": [{
-        "name": "红魔加长电竞数据线（2M）黑色",
+        "name": "红魔加长电竞数据线(2M)黑色",
         "image": "/static/classify/erji/1.png"
       },
       {
@@ -138,11 +138,11 @@
         "image": "/static/classify/erji/3.png"
       },
       {
-        "name": "PD快速电源适配器（原装）黑色",
+        "name": "PD快速电源适配器(原装)黑色",
         "image": "/static/classify/erji/4.png"
       },
       {
-        "name": "电源适配器（快充3.0）白色",
+        "name": "电源适配器(快充3.0)白色",
         "image": "/static/classify/erji/5.png"
       }
     ]
