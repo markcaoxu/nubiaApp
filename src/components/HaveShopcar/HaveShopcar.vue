@@ -1,87 +1,116 @@
 <template>
-<div class="haveShopcar">
+  <div class="haveShopcar">
     <div class="haveShopcar-header">
       <!-- 需要图标字体 < -->
       <span class="back icon iconfont icon-huitui" @click="$router.back()"></span>
       <p class="shopcar-title">购物车</p>
       <!-- 需要图标字体 双杠 -->
-      <span class="menu icon iconfont " :class="isMenuShuo?'icon-iccloes':'icon-caidan'" @click="isMenuShuo=!isMenuShuo"></span>
-      
+      <span
+        class="menu icon iconfont"
+        :class="isMenuShuo?'icon-iccloes':'icon-caidan'"
+        @click="isMenuShuo=!isMenuShuo"
+      ></span>
     </div>
     <ul class="menu-List" :class="{menunoshow:!isMenuShuo}">
-        <li class="menu-Item" @click="$router.push('/msite')">
-          <span class="iconfont icon-shouye" ></span>
-          <p>首页</p>
-        </li>
-          <li class="menu-Item" @click="$router.push('/profile')">
-          <span class="iconfont icon-iconfront-" ></span>
-          <p>个人中心</p>
-        </li >
-          <li class="menu-Item" @click="$router.replace('/shopcar')">
-          <span class="iconfont icon-icon_gouwuche" ></span>
-          <p>购物车</p>
-        </li>
-      </ul>
+      <li class="menu-Item" @click="$router.push('/msite')">
+        <span class="iconfont icon-shouye"></span>
+        <p>首页</p>
+      </li>
+      <li class="menu-Item" @click="$router.push('/profile')">
+        <span class="iconfont icon-iconfront-"></span>
+        <p>个人中心</p>
+      </li>
+      <li class="menu-Item" @click="$router.replace('/shopcar')">
+        <span class="iconfont icon-icon_gouwuche"></span>
+        <p>购物车</p>
+      </li>
+    </ul>
     <!--  -->
     <ul class="haveShopcarList">
       <li class="haveShopcarItem" v-for="(checkedItem,index) in checked_pone" :key="index">
-          <div class="have-left">
-            <img class="have-left-img" src="https://oss.static.nubia.cn/active/5cc509862275d5.png" alt="">
+        <div class="have-left">
+          <img class="have-left-img" :src="checkedItem.img_url" alt />
+        </div>
+        <div class="have-right">
+          <div class="have-right-top">
+            <p class="have-name">{{checkedItem.title}}</p>
+
+            <img
+              class="delete-have"
+              src="https://static.nubia.cn/mobile/images/close_btn.png"
+              alt
+              @click="RmShopNum(checkedItem)"
+            />
           </div>
-          <div class="have-right">
-              <div class="have-right-top">
-                <p class="have-name">{{checkedItem.title}}</p>
-                
-                <img class="delete-have" src="https://static.nubia.cn/mobile/images/close_btn.png" alt="">
-              </div>
-              <p class="have-pir">售价￥{{checkedItem.price}}元</p>
-              <div class="have-right-btm">
-                <div class="have-right-btm-btn">
-                  <button>-</button>
-                  <input type="text" v-model="checkedItem.quantity">
-                  <button>+</button>
-                </div>
-                <span class="subtotal">小计：￥{{checkedItem.quantity*checkedItem.price}}元</span>
-              </div>
+          <p class="have-pir">售价￥{{checkedItem.pir}}元</p>
+          <div class="have-right-btm">
+            <div class="have-right-btm-btn">
+              <span @click="dlShopNum(checkedItem)">-</span>
+              <input type="text" v-model="checkedItem.num" />
+              <span @click="addShopNum(checkedItem)">+</span>
+            </div>
+            <span class="subtotal">小计：￥{{checkedItem.num*checkedItem.pir}}元</span>
           </div>
+        </div>
       </li>
-      
     </ul>
     <div class="allpir">
       <span class="allpir-title">合计金额</span>
-      <span class="allpir-pir">￥1899元</span>
+      <span class="allpir-pir">￥{{checked_All_pir}}元</span>
     </div>
     <div class="recommend">
       <p class="recommend-text">为您推荐</p>
-      
     </div>
-    <ul class="recommend-List" >
-        <li class="recommend-Item" v-for="(rec,index) in have_rec" :key="index">
-          <img class="recommend-img" :src="rec.img_url">
-          <p class="recommend-text">{{rec.rec_name}}</p>
-          <p class="recommend-pir">￥{{rec.rec_pir}}元</p>
-          <span class="recommend-icon iconfont icon-icon_gouwuche" ></span>
-        </li>
-      </ul>
-      <div class="settlement">
-        <button class="settlement-btn">去结算</button>
-      </div>
-</div>	
+    <ul class="recommend-List">
+      <li class="recommend-Item" v-for="(rec,index) in have_rec" :key="index">
+        <img class="recommend-img" :src="rec.img_url" />
+        <p class="recommend-text">{{rec.title}}</p>
+        <p class="recommend-pir">￥{{rec.pir}}元</p>
+        <span class="recommend-icon iconfont icon-icon_gouwuche" @click="addShopNum(rec)"></span>
+      </li>
+    </ul>
+    <div class="settlement">
+      <button class="settlement-btn">去结算</button>
+    </div>
+  </div>
 </template>
 <script>
-
+import { mapState } from "vuex";
 export default {
-props:{
-  have_rec:Array, // 推荐商品
-  checked_pone:Array, //选中的商品
-  
-},
-data(){
-  return{
-    isMenuShuo : false // menu 是否显示
+  data() {
+    return {
+      isMenuShuo: false // menu 是否显示
+    };
+  },
+  props: {
+    have_rec: Array, // 推荐商品
+    checked_pone: Array //选中的商品
+  },
+  computed: {
+    // 计算总加
+    checked_All_pir() {
+      let all_pir = 0;
+      this.$store.state.checked_pone.forEach(item => {
+        all_pir = all_pir + item.num * item.pir;
+      });
+      return all_pir;
+    }
+  },
+  methods: {
+    // 加
+    addShopNum(pone) {
+      this.$store.dispatch("addCheckedShop", pone);
+    },
+    // 减
+    dlShopNum(pone) {
+      this.$store.dispatch("dlCheckedShop", pone);
+    },
+    // 删除
+    RmShopNum(pone) {
+      this.$store.dispatch("removeCheckedShop", pone);
+    }
   }
-}
-}
+};
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>
 .haveShopcar
@@ -123,15 +152,14 @@ data(){
     .menu-Item
       text-align center
       padding-top 8px
-      >span 
+      >span
         font-size 20px
       >p
         font-size 12px
         margin-top 5px
-        
   .haveShopcarList
-    .haveShopcarItem   
-      height 112px 
+    .haveShopcarItem
+      height 112px
       width 100%
       display flex
       justify-content space-around
@@ -142,12 +170,12 @@ data(){
         .have-left-img
           width 100%
       .have-right
-        width 270px   
+        width 270px
         padding-right 8px
         .have-right-top
           display flex
           justify-content space-between
-          margin-top 8px 
+          margin-top 8px
           font-size 16px
           .delete-have
             width 28px
@@ -168,12 +196,15 @@ data(){
         .have-right-btm-btn
           border 1px solid #e0d7e3
           height 30px
-          button 
+          >span
+            display inline-block
             width 30px
-            height 29px
+            height 28px
+            line-height 28px
             background-color #ffffff
-            border none
-          input 
+            vertical-align middle
+            text-align center
+          input
             width 45px
             height 30px
             text-align center
@@ -187,13 +218,13 @@ data(){
     display flex
     line-height 47px
     background-color #fff
-    border-bottom 1px solid  #cccccc
+    border-bottom 1px solid #cccccc
     .allpir-title
       width 225px
-      text-align right 
+      text-align right
     .allpir-pir
       width 150px
-      text-align right 
+      text-align right
       padding-right 20px
       box-sizing border-box
       color red
@@ -204,7 +235,7 @@ data(){
     height 50px
     line-height 50px
     background-color #fff
-    border-bottom 1px solid #cccccc 
+    border-bottom 1px solid #cccccc
     .recommend-text
       padding-left 20px
   .recommend-List
@@ -219,17 +250,17 @@ data(){
       text-align center
       padding 4px
       position relative
-      &:nth-child(2n+1)  
-        border-right 1px solid #cccccc    
+      &:nth-child(2n+1)
+        border-right 1px solid #cccccc
       .recommend-img
         width 142px
         height 142px
-      .recommend-text  
-        text-align left 
+      .recommend-text
+        text-align left
         padding 4px
         font-size 12px
       .recommend-pir
-        text-align left 
+        text-align left
         padding 4px
         margin-top 10px
         color red
@@ -239,22 +270,21 @@ data(){
         right 10px
         bottom 20px
         font-size 30px
-        //https://oss.static.nubia.cn/active/5cc509862275d5.png
+        // https://oss.static.nubia.cn/active/5cc509862275d5.png
   .settlement
     position fixed
     bottom 0
     width 100%
     height 75px
-    background-image linear-gradient(#f8f8f8,#eaeaec)
+    background-image linear-gradient(#f8f8f8, #eaeaec)
     text-align center
     line-height 75px
     .settlement-btn
       height 44px
       width 330px
       border-radius 20px
-      background: rgb(255, 77, 77)
+      background rgb(255, 77, 77)
       font-size 20px
       font-weight 700
       color #ffffff
-      
 </style>
