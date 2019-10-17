@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App.vue'
 // 引入路由
 import router from './router/index.js'
+// 引入Lazyload
+import { Lazyload } from 'mint-ui'
 //引入reset.css文件，重置样式
 import '../public/css/reset.css'
 
@@ -32,6 +34,8 @@ Vue.component(TabContainerItem.name, TabContainerItem);
 // vee-validate的引入
 import './vee-validate.js'
 
+// 使用懒加载
+Vue.use(Lazyload)
 // 设置vue配置信息
 Vue.config.productionTip = false
 // new不报错
