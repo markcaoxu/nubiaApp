@@ -2,8 +2,8 @@
 <div>
 	<section class='section'>
 		<img class='cover' src="https://oss.static.nubia.cn/videogallery/155644320798.jpg" alt="红魔3电竞手机ID视频">
-		<i class='begin-button icon-circle_arrow-right3'></i>
-		<video class='video-player' src="https://oss.static.nubia.cn/active/5cc56c708b12a26.mp4"></video>
+		<i class='begin-button' :class="{hide:isPlay}" @click="play"></i>
+		<video controls='controls' class='video-player' src="https://oss.static.nubia.cn/active/5cc56c708b12a26.mp4"></video>
 		<p class='text'>
 			<img class='seen' src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2485806749,855028622&fm=26&gp=0.jpg" alt="">
 			<span class='count'>20635</span>
@@ -15,6 +15,16 @@
 </template>
 <script>
 export default {
+	data(){
+		return {
+			isPlay
+		}
+	},
+	methods:{
+		play(){
+			isPlay = !this.$router.isPlay
+		}
+	}
 
 }
 </script>
@@ -41,6 +51,8 @@ export default {
 		transform translate(-47px,-77px)
 		z-index 2
 		background-color red
+		&.hide
+			opacity 0
 	.video-player
 		width 100%
 		position absolute
