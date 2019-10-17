@@ -53,10 +53,7 @@ export default [
 			},
 			{
 				path:'/find/video',
-				component: Video,
-				meta:{
-					isPlay:false
-				}
+				component: Video
 			},
 			{
 				path:'/find/productEvaluation',
