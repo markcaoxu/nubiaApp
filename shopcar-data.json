@@ -212,28 +212,28 @@
   "have_rec":[
     {
       "img_url":"http://oss.static.nubia.cn/active/5c3bf1701cf0b30.png",
-      "rec_name":"红魔战神手柄",
-      "rec_pir":179
+      "title":"红魔战神手柄",
+      "pir":179
     },
     {
       "img_url":"http://oss.static.nubia.cn/active/5c75047a791cd51.png",
-      "rec_name":"律音耳机 (新版)",
-      "rec_pir":99
+      "title":"律音耳机 (新版)",
+      "pir":99
     },
     {
       "img_url":"http://oss.static.nubia.cn/active/5c3bf16fd64d439.png",
-      "rec_name":"红魔Mars向量保护套",
-      "rec_pir":79
+      "title":"红魔Mars向量保护套",
+      "pir":79
     },
     {
       "img_url":"http://oss.static.nubia.cn/active/5cb80c158587031.png",
-      "rec_name":"创意贴纸",
-      "rec_pir":29
+      "title":"创意贴纸",
+      "pir":29
     },
     {
       "img_url":"http://oss.static.nubia.cn/active/5ce4ea77d235924.png",
-      "rec_name":"蓝牙耳机",
-      "rec_pir":79
+      "title":"蓝牙耳机",
+      "pir":79
     }
   
   ],
