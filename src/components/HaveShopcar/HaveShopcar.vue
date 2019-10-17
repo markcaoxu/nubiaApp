@@ -2,16 +2,31 @@
 <div class="haveShopcar">
     <div class="haveShopcar-header">
       <!-- 需要图标字体 < -->
-      <span class="back icon iconfont icon-huitui"></span>
+      <span class="back icon iconfont icon-huitui" @click="$router.back()"></span>
       <p class="shopcar-title">购物车</p>
       <!-- 需要图标字体 双杠 -->
-      <span class="menu icon iconfont icon-caidan"></span>
+      <span class="menu icon iconfont " :class="isMenuShuo?'icon-iccloes':'icon-caidan'" @click="isMenuShuo=!isMenuShuo"></span>
+      
     </div>
+    <ul class="menu-List" :class="{menunoshow:!isMenuShuo}">
+        <li class="menu-Item" @click="$router.push('/msite')">
+          <span class="iconfont icon-shouye" ></span>
+          <p>首页</p>
+        </li>
+          <li class="menu-Item" @click="$router.push('/profile')">
+          <span class="iconfont icon-iconfront-" ></span>
+          <p>个人中心</p>
+        </li >
+          <li class="menu-Item" @click="$router.replace('/shopcar')">
+          <span class="iconfont icon-icon_gouwuche" ></span>
+          <p>购物车</p>
+        </li>
+      </ul>
     <!--  -->
     <ul class="haveShopcarList">
       <li class="haveShopcarItem" v-for="(checkedItem,index) in checked_pone" :key="index">
           <div class="have-left">
-            <img class="have-left-img" src="./images/1.png" alt="">
+            <img class="have-left-img" src="https://oss.static.nubia.cn/active/5cc509862275d5.png" alt="">
           </div>
           <div class="have-right">
               <div class="have-right-top">
@@ -45,8 +60,12 @@
           <img class="recommend-img" :src="rec.img_url">
           <p class="recommend-text">{{rec.rec_name}}</p>
           <p class="recommend-pir">￥{{rec.rec_pir}}元</p>
+          <span class="recommend-icon iconfont icon-icon_gouwuche" ></span>
         </li>
       </ul>
+      <div class="settlement">
+        <button class="settlement-btn">去结算</button>
+      </div>
 </div>	
 </template>
 <script>
@@ -54,7 +73,13 @@
 export default {
 props:{
   have_rec:Array, // 推荐商品
-  checked_pone:Array //选中的商品
+  checked_pone:Array, //选中的商品
+  
+},
+data(){
+  return{
+    isMenuShuo : false // menu 是否显示
+  }
 }
 }
 </script>
@@ -63,6 +88,7 @@ props:{
   color #333333
   background-color #ffffff
   width 100%
+  position relative
   .haveShopcar-header
     width 100%
     height 60px
@@ -83,8 +109,27 @@ props:{
       font-size 19px
       color #464646
       font-weight 300
+  .menu-List
+    display flex
+    justify-content space-around
+    width 100%
+    height 50px
+    position absolute
+    background-color #fff
+    border-bottom 2px solid #cccccc
+    // overflow hidden
+    &.menunoshow
+      display none
+    .menu-Item
+      text-align center
+      padding-top 8px
+      >span 
+        font-size 20px
+      >p
+        font-size 12px
+        margin-top 5px
+        
   .haveShopcarList
-    
     .haveShopcarItem   
       height 112px 
       width 100%
@@ -173,6 +218,7 @@ props:{
       border-bottom 1px solid #cccccc
       text-align center
       padding 4px
+      position relative
       &:nth-child(2n+1)  
         border-right 1px solid #cccccc    
       .recommend-img
@@ -188,4 +234,27 @@ props:{
         margin-top 10px
         color red
         font-weight 700
+      .recommend-icon
+        position absolute
+        right 10px
+        bottom 20px
+        font-size 30px
+        //https://oss.static.nubia.cn/active/5cc509862275d5.png
+  .settlement
+    position fixed
+    bottom 0
+    width 100%
+    height 75px
+    background-image linear-gradient(#f8f8f8,#eaeaec)
+    text-align center
+    line-height 75px
+    .settlement-btn
+      height 44px
+      width 330px
+      border-radius 20px
+      background: rgb(255, 77, 77)
+      font-size 20px
+      font-weight 700
+      color #ffffff
+      
 </style>
