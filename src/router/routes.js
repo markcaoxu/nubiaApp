@@ -20,6 +20,12 @@ import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 // 登录页
 import Login from '../pages/Login/Login.vue'
+<<<<<<< HEAD
+import Search from '../pages/Search/Search.vue'
+
+=======
+import Phone from '../pages/Phone/Phone.vue'
+>>>>>>> e61de3311243835f942eebedd3d2a844214f5d9b
 
 export default [
   // 路由nh66
@@ -73,10 +79,7 @@ export default [
   {
     // 购物车 shopcar
     path: '/shopcar',
-    component: Shopcar,
-    meta: {
-      isShowFooter: true
-    }
+    component: Shopcar
   },
   {
     // 个人中心 profile
@@ -95,6 +98,18 @@ export default [
     // 登录路由
     path: '/login',
     component: Login
+  },
+<<<<<<< HEAD
+  // search
+  {
+    path: '/search',
+    component: Search
+=======
+  // phone 手机列表
+  {
+    path: '/phone',
+    component: Phone
+>>>>>>> e61de3311243835f942eebedd3d2a844214f5d9b
   },
   {
     // 手机验证码登录组件

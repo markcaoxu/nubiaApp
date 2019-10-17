@@ -1,0 +1,132 @@
+ {
+  "detail": {
+    "name": "热销机型",
+    "supports": [{
+        "phone-name": "Z20 锦鲤红",
+        "unique": "4800万超清双屏自拍",
+        "price": "3399",
+        "price-cancel": "￥3699"
+      },
+      {
+        "phone-name": "阿尔法 曜石黑",
+        "unique": "可以穿戴的手机",
+        "price": "2999",
+        "price-cancel": "￥3499"
+      },
+      {
+        "phone-name": "红魔3 赤焰红",
+        "unique": "骁龙855",
+        "price": "2699",
+        "price-cancel": "￥3499"
+      },
+      {
+        "phone-name": "红魔3 玄铁黑",
+        "unique": "5000mAH大电池",
+        "price": "2499",
+        "price-cancel": "￥3199"
+      },
+      {
+        "phone-name": "X蓝金版",
+        "unique": "双屏黑科技",
+        "price": "2699",
+        "price-cancel": "￥4299"
+      },
+      {
+        "phone-name": "红魔Mars 曜石黑",
+        "unique": "电竞RGB炫彩灯带",
+        "price": "1899",
+        "price-cancel": "￥2699"
+      }
+    ]
+  },
+  "ceil": {
+    "name": "精选配件",
+    "supports": [{
+        "phone-name": "PD快速电源适配器",
+        "price": "89"
+      },
+      {
+        "phone-name": "红魔弹夹移动电源",
+        "price": "149"
+      },
+      {
+        "phone-name": "红魔3电竞魔盒",
+        "price": "119"
+      },
+      {
+        "phone-name": "红魔电竞向量保护套",
+        "price": "79"
+      },
+      {
+        "phone-name": "nubia pods",
+        "price": "449"
+      },
+      {
+        "phone-name": "红魔3双滑轨保护套",
+        "price": "49"
+      }
+    ]
+  },
+  "phoneItems": [
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 银色风暴 8GB+128GB",
+      "phonePrice":"244422"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 曜石黑 8GB+128GB",
+      "phonePrice":"200002"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 玄铁黑 8GB+128GB",
+      "phonePrice":"22555"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 银色风暴 6GB+64GB",
+      "phonePrice":"2666"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 银色风暴 8GB+128GB",
+      "phonePrice":"244442"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 银色风暴 8GB+128GB",
+      "phonePrice":"244442"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 银色风暴 8GB+128GB",
+      "phonePrice":"244442"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 银色风暴 8GB+128GB",
+      "phonePrice":"244442"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 玄铁黑 8GB+128GB",
+      "phonePrice":"22555"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 玄铁黑 8GB+128GB",
+      "phonePrice":"22555"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 玄铁黑 8GB+128GB",
+      "phonePrice":"22555"
+    },
+    {
+      "phoneImage": "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+      "phoneCharactor": "红魔3s 玄铁黑 8GB+128GB",
+      "phonePrice":"22555"
+    }
+  ]
+}

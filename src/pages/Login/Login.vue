@@ -86,16 +86,13 @@ export default {
       const { username, password } = this;
       // console.log(this)
       // 发送请求，携带账号和密码
-      console.log("发送请求");
       const result = await reqPwdLogin({ username, password });
       if (result.code === "0") {
+        console.log(result)
         Toast({
           message: result.message,
           position: "bottom"
         });
-        let user = {name:'sss'}
-        // console.log(this)
-        
         this.$router.replace('/profile')
       }else{
         Toast({
