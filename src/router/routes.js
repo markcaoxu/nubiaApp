@@ -6,6 +6,7 @@ import Profile from '../pages/Profile/Profile.vue'
 
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import Login from '../pages/Login/Login.vue'
+import Phone from '../pages/Phone/Phone.vue'
 
 
 export default [
@@ -55,6 +56,11 @@ export default [
   {
     path: '/login',
     component: Login
+  },
+  // phone 手机列表
+  {
+    path: '/phone',
+    component: Phone
   },
   // 重定向
   {
