@@ -8,20 +8,32 @@
       <!-- 用户框 -->
       <ValidationProvider name="用户名" rules="required|phone2" v-slot="{ errors }">
         <div class="field login_user">
-          <input value="18553876187" class="login_input" v-model="username" type="text" placeholder="用户名" />
+          <input
+            
+            class="login_input"
+            v-model="username"
+            type="text"
+            placeholder="用户名"
+          />
           <span class="login_alert">{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
       <!-- 密码框 -->
       <ValidationProvider name="密码" rules="required|min:6" v-slot="{ errors }">
         <div class="field login_pwd">
-          <input value="123456" class="login_input" v-model="password" type="password" placeholder="密码"/>
+          <input
+            value="123456"
+            class="login_input"
+            v-model="password"
+            :type="isPwdShow?'text':'password'"
+            placeholder="密码"
+          />
           <span class="login_alert">{{ errors[0] }}</span>
           <em class="pwd_hide" @click="isPwdShow=!isPwdShow" :class="{pwd_show:isPwdShow}"></em>
         </div>
       </ValidationProvider>
       <a class="phone_link" href="javascript:;" @click="$router.push('/loginWithCode')">手机验证登录</a>
-      
+
       <button class="login_btn" @click.prevent="login">立即登录</button>
     </div>
     <!-- 其它方式登录 -->
@@ -39,16 +51,16 @@
     </div>
     <router-view></router-view>
   </div>
-  
 </template>
 
 <script>
 // 引入vee-validate的组件
 import { ValidationObserver, ValidationProvider } from "vee-validate";
 // 引入登录接口
-import { reqPwdLogin } from "../../api/index.js"
+import { reqPwdLogin } from "../../api/index.js";
 // 引入mint-ui
 import { Toast, MessageBox } from "mint-ui";
+import { log } from "util";
 export default {
   components: {
     ValidationObserver,
@@ -68,24 +80,29 @@ export default {
       return /[1]\d{10}/.test(this.username);
     }
   },
-  methods:{
-    async login(){
+  methods: {
+    async login() {
       // 获取用户名和密码
-      const { username,password } = this
+      const { username, password } = this;
       // console.log(this)
       // 发送请求，携带账号和密码
-        console.log('发送请求')
-      const result =await reqPwdLogin({username,password})
-    
-      // console.log(result)
-      // if(username==='18553876187'&&password==='123456'){
-      //   console.log('success')
-      //   // console.log(this)
-      //   Toast("登录成功")
-      //   setTimeout(()=>{
-      //     this.$router.replace('/profile')
-      //   },1000)
-      // }
+      console.log("发送请求");
+      const result = await reqPwdLogin({ username, password });
+      if (result.code === "0") {
+        Toast({
+          message: result.message,
+          position: "bottom"
+        });
+        let user = {name:'sss'}
+        // console.log(this)
+        
+        this.$router.replace('/profile')
+      }else{
+        Toast({
+          message: "用户名或密码不正确",
+          position: "bottom"
+        });
+      }
     }
   }
 };
@@ -144,7 +161,7 @@ export default {
       border 0 // 去除未选中状态边框
       outline none // 去除选中状态边框
     // .mint-cell
-    //   background-color white
+    // background-color white
     .phone_link
       display block
       margin-right 15%
