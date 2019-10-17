@@ -3,7 +3,6 @@ import Classify from '../pages/Classify/Classify.vue'
 import Find from '../pages/Find/Find.vue'
 import Shopcar from '../pages/Shopcar/Shopcar.vue'
 import Profile from '../pages/Profile/Profile.vue'
-<<<<<<< HEAD
 //引入详情页组件
 import Detail from '../pages/Find/Detail.vue'
 //引入体验店组件
@@ -14,11 +13,9 @@ import Video from '../components/Find/Video.vue'
 import ProductEvaluation from '../components/Find/ProductEvaluation'
 //引入新闻中心组件
 import NewsCenter from '../components/Find/NewsCenter.vue'
-=======
 
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import Login from '../pages/Login/Login.vue'
->>>>>>> 874e1caaabcfb586e453aa19a7822045f914474d
 
 
 export default [
