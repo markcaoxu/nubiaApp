@@ -10,6 +10,8 @@ let koaRouter = new KoaRouter()
 // 引入datas数据
 let datas = require('./datas/login.json')
 
+// 引入shopcar数据 热销数据跟 推荐数据
+let shopHotData =require('./datas/shopcar-data.json')
 
 koaRouter.post('/login_pwd',(ctx)=>{
   // console.log(ctx.query.username,ctx.query.password)
@@ -20,8 +22,19 @@ koaRouter.post('/login_pwd',(ctx)=>{
         message:'登录成功',
         code:"0"
       }
-    }
-  })
+    
+  }
+})
+// 响应shop hot 数据
+koaRouter.get('/shopcar',(ctx)=>{
+  console.log(ctx.query);
+  
+    let {hotSale}=shopHotData
+      ctx.body={
+        message:hotSale,
+        code:"0"
+      }
+  
 })
 
 // 声明使用所有的路由及路由的相关的所有的方法
