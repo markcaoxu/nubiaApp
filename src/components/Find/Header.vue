@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class='header'>
-      <span class='lt'>&lt;</span>
+      <span class='lt' @click="goTo('/msite')" >&lt;</span>
       <span class='txt'>发现</span>
     </header>
     <ul class="ul">

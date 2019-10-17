@@ -9,7 +9,7 @@ import Detail from '../pages/Find/children/Detail.vue'
 import ExperienceShop from '../pages/Find/children/ExperienceShop.vue'
 //引入视频长廊组件
 import Video from '../components/Find/Video.vue'
-//一如产品评价组件
+//引入产品评价组件
 import ProductEvaluation from '../components/Find/ProductEvaluation'
 //引入新闻中心组件
 import NewsCenter from '../components/Find/NewsCenter.vue'
@@ -41,6 +41,7 @@ export default [
     // 发现 find
     path: '/find',
 		component: Find,
+		redirect: '/find/productEvaluation',
 		children:[
 			{
 				path:'/find/detail',
