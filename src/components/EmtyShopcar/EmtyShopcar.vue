@@ -2,16 +2,16 @@
   <div class="shopcar-emty">
     <!-- 购物车顶部 -->
     <div class="shopHeader">
-      <a class="logo" href="javascript:;">
-        <img class="headerLogo" src="./images/m_logo.png" alt />
-      </a>
+      <span class="logo" href="javascript:;" >
+        <img class="headerLogo" @click="$router.push('/msite')" src="./images/m_logo.png" alt />
+      </span>
       <div class="icon-all">
-        <a class="icon-per" href="javascript:;">
-          <span class="iconfont icon-iconfront-"></span>
-        </a>
-        <a class="icon-shpocar" href="javascript:;">
-          <span class="iconfont icon-icon_gouwuche"></span>
-        </a>
+        <span class="icon-per" href="javascript:;">
+          <span class="iconfont icon-iconfront-" @click="$router.replace('/profile')"></span>
+        </span>
+        <span class="icon-shpocar" href="javascript:;" >
+          <span class="iconfont  icon-icon_gouwuche" @click="$router.replace('/shopcar')"></span>
+        </span>
       </div>
     </div>
     <!-- 购物车为空时 -->
@@ -20,15 +20,16 @@
         <div class="empty-bgimg"></div>
       </div>
       <h3>购物车还是空的</h3>
-      <p class="empty-text">现在就去选购吧</p>
-      <button class="emty-btn">去逛逛</button>
+      <p class="empty-text" >现在就去选购吧</p>
+      <button class="emty-btn" @click="$router.push('/msite')">去逛逛</button>
     </div>
     <!-- 热销推荐 -->
     <div class="hotSale">
       <p class="hot-text">热销推荐</p>
       <ul class="hotList">
         <li class="hotItem" v-for="(pone,index) in hotList" :key="index">
-          <img class="hot-img" src="./images/hotSale/1.png" />
+          <span class="hot-addshop iconfont icon-icon_gouwuche"></span>
+          <img class="hot-img" :src="pone.img_url" />
           <p class="hot-title">{{pone.title}}</p>
           <p class="hot-pir">￥{{pone.pir}}</p>
         </li>
@@ -123,6 +124,20 @@ export default {
         background-color #ffffff
         margin-bottom 8px
         border-radius 10px
+        padding 3px
+        position relative
+        .hot-addshop
+          position absolute
+          top 10px
+          right 10px
+          width 25px
+          height 25px
+          font-size 20px
+          border-radius 50%
+          background-color #f9f9f9
+          text-align center
+          line-height 25px
+          
         .hot-img
           margin-top 10px
           width 80%

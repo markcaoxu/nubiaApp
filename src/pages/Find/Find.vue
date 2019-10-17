@@ -15,7 +15,7 @@ export default {
     goto(path) {
       // 判断跳转的路径和当前的路径是否一致
       if (this.$route.path !== path) {
-        this.$router.replace(path);
+				this.$route.replace(path)
       }
     }
   }

@@ -1,14 +1,14 @@
 <template>
   <div>
     <header class='header'>
-      <span class='lt'>&lt;</span>
+      <span class='lt' @click="goTo('/msite')" >&lt;</span>
       <span class='txt'>发现</span>
     </header>
     <ul class="ul">
       <li @click="goTo('/find/productEvaluation')" class='li' :class="{on:$route.path==='/find/productEvaluation'}">产品热评</li>
       <li @click="goTo('/find/experienceShop')" class='li' :class="{on:$route.path==='/find/experienceShop'}">体验店</li>
-      <li @click="goTo('/find/video')" class='li' :class="{on:$route.path==='/find/video'}">视频长廊</li>
-			<li @click="goTo('/find/newsCenter')" class='li' :class="{on:$route.path==='/find/newsCenter'}">新闻中心</li>
+      <li @click="goTo('/find/newsCenter')" class='li' :class="{on:$route.path==='/find/newsCenter'}">新闻中心</li>
+			<li @click="goTo('/find/video')" class='li' :class="{on:$route.path==='/find/video'}">视频长廊</li>
     </ul>
   </div>
 </template>
@@ -19,8 +19,7 @@ export default {
 			//判断要跳转的页面与当前页面路由是否相同
 			if(this.$router.path!==path){
 				this.$router.push(path)
-			}
-			
+			}	
 		}
 	}
 }
