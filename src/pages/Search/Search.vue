@@ -40,10 +40,10 @@ export default {
   },
   methods:{
     searchitem(){
-      const alink = this.$refs.alink
-      target
-      this.searchArr.push(alink)
-      console.log(this.searchArr)
+      // const alink = this.$refs.alink
+      // target
+      // this.searchArr.push(alink)
+      // console.log(this.searchArr)
     }
   }
   
