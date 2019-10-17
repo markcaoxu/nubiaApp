@@ -14,13 +14,15 @@ import ProductEvaluation from '../components/Find/ProductEvaluation'
 //引入新闻中心组件
 import NewsCenter from '../components/Find/NewsCenter.vue'
 
+// 引入优惠券组件
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
+// 手机验证码登录
+import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
+// 登录页
 import Login from '../pages/Login/Login.vue'
 
-
-
 export default [
-  // 路由
+  // 路由nh66
   {
     // 首页 msite
     path: '/msite',
@@ -40,30 +42,29 @@ export default [
   {
     // 发现 find
     path: '/find',
-		component: Find,
-		children:[
-			{
-				path:'/find/detail',
-				component: Detail
-			},
-			{
-				path:'/find/experienceShop',
-				component: ExperienceShop
-			},
-			{
-				path:'/find/video',
-				component: Video
-			},
-			{
-				path:'/find/productEvaluation',
-				component:ProductEvaluation
-			},
-			{
-				path:'/find/newsCenter',
-				component:NewsCenter
-			}
-		]
-	},
+    component: Find,
+    children: [{
+        path: '/find/detail',
+        component: Detail
+      },
+      {
+        path: '/find/experienceShop',
+        component: ExperienceShop
+      },
+      {
+        path: '/find/video',
+        component: Video
+      },
+      {
+        path: '/find/productEvaluation',
+        component: ProductEvaluation
+      },
+      {
+        path: '/find/newsCenter',
+        component: NewsCenter
+      }
+    ]
+  },
   {
     // 购物车 shopcar
     path: '/shopcar',
@@ -81,13 +82,19 @@ export default [
     }
   },
   {
-    // profile-ticket01
+    // profile-ticket01 优惠券路由
     path: '/ticket01',
     component: Ticket01
   },
   {
+    // 登录路由
     path: '/login',
     component: Login
+  },
+  {
+    // 手机验证码登录组件
+    path:'/loginWithCode',
+    component: LoginWithCode
   },
   // 重定向
   {
