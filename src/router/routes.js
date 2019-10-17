@@ -4,9 +4,9 @@ import Find from '../pages/Find/Find.vue'
 import Shopcar from '../pages/Shopcar/Shopcar.vue'
 import Profile from '../pages/Profile/Profile.vue'
 //引入详情页组件
-import Detail from '../pages/Find/Detail.vue'
+import Detail from '../pages/Find/children/Detail.vue'
 //引入体验店组件
-import ExperienceShop from '../pages/Find/ExperienceShop.vue'
+import ExperienceShop from '../pages/Find/children/ExperienceShop.vue'
 //引入视频长廊组件
 import Video from '../components/Find/Video.vue'
 //一如产品评价组件
