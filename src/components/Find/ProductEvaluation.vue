@@ -1,19 +1,21 @@
 <template>
   <div>
-		<Block />
-		<Block />
-		<Block />
-		<Block />
-		<Block />
-		<Block />
-		<Block />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		<BlockIntroduce />
+		
   </div>
 </template>
 <script>
-import Block from '../../components/Find/Block'
+import BlockIntroduce from '../../components/Find/BlockIntroduce'
 export default {
 	components:{
-		Block
+		BlockIntroduce
 	},
 }
 </script>
