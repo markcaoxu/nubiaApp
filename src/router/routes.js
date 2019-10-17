@@ -16,10 +16,7 @@ import NewsCenter from '../components/Find/NewsCenter.vue'
 
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import Login from '../pages/Login/Login.vue'
-//引入重置样式文件
-import '../../public/css/reset.css'
-//引入图标字体文件
-import '../../public/css/font-icon.css'
+
 
 
 export default [
