@@ -2,9 +2,17 @@
   <div class="shopcar-emty">
     <!-- 购物车顶部 -->
     <div class="shopHeader">
-      <a href="javascript:;">
-        <img class="headerLogo" src="../../../static/shopcar/m_logo.png" alt />
+      <a class="logo" href="javascript:;">
+        <img class="headerLogo" src="./images/m_logo.png" alt />
       </a>
+      <div class="icon-all">
+        <a class="icon-per" href="javascript:;">
+          <span class="iconfont icon-iconfront-"></span>
+        </a>
+        <a class="icon-shpocar" href="javascript:;">
+          <span class="iconfont icon-icon_gouwuche"></span>
+        </a>
+      </div>
     </div>
     <!-- 购物车为空时 -->
     <div class="shopContent">
@@ -20,7 +28,7 @@
       <p class="hot-text">热销推荐</p>
       <ul class="hotList">
         <li class="hotItem" v-for="(pone,index) in hotList" :key="index">
-          <img class="hot-img" src="../../../static/shopcar/hotSale/1.png" />
+          <img class="hot-img" src="./images/hotSale/1.png" />
           <p class="hot-title">{{pone.title}}</p>
           <p class="hot-pir">￥{{pone.pir}}</p>
         </li>
@@ -30,10 +38,10 @@
 </template>
 <script>
 export default {
-  props:{
-    hotList:Array
+  props: {
+    hotList: Array
   }
-}
+};
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>
 .shopcar-emty
@@ -45,18 +53,33 @@ export default {
     background-color #ffffff
     width 100%
     height 60px
-    line-height 60px
+    line-height 50px
     position absolute
     top 0
     left 0
-    a
+    .logo
       width 176px
-      height 100%
+      height 50px
       display inline-block
       text-align center
       .headerLogo
         width 140px
         vertical-align middle
+    .icon-all
+      float right
+      width 80px
+      height 50px
+      line-height 50px
+      padding-right 12px
+      // display flex
+      text-align center
+      .iconfont
+        width 50%
+        font-size 32px
+        padding 3px
+        // &.icon-per
+        // &.icon-shpocar
+        // width 50%
   .shopContent
     padding-top 60px
     text-align center
@@ -64,7 +87,7 @@ export default {
       width 100%
       height 150px
       .empty-bgimg
-        background url('../../../static/shopcar/emptycart.png') no-repeat center
+        background url('./images/emptycart.png') no-repeat center
         background-size 60%
         width 100%
         height 100%

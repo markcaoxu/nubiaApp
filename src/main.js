@@ -1,12 +1,39 @@
 // 引入vue
 import Vue from 'vue'
 // 引入App
-import App from './App'
+import App from './App.vue'
 // 引入路由
 import router from './router/index.js'
+<<<<<<< HEAD
 //引入reset.css文件，重置样式
 import '../public/css/reset.css'
 
+=======
+// 引入store
+import store from './store/index.js'
+// 引入mint-ui
+import MintUI from 'mint-ui'
+// mint-ui样式   本地包里   也可以配置babel
+import 'mint-ui/lib/style.css'
+// 声明使用
+Vue.use(MintUI)
+
+// mint-ui的主要组件
+import { Field } from 'mint-ui';
+Vue.component(Field.name, Field);
+
+import { Navbar, TabItem } from 'mint-ui';
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
+
+import { TabContainer, TabContainerItem } from 'mint-ui';
+
+Vue.component(TabContainer.name, TabContainer);
+Vue.component(TabContainerItem.name, TabContainerItem);
+
+// vee-validate的引入
+import './vee-validate.js'
+>>>>>>> 874e1caaabcfb586e453aa19a7822045f914474d
 
 // 设置vue配置信息
 Vue.config.productionTip = false
@@ -18,5 +45,6 @@ new Vue({
     App
   },
   template: '<App/>',
-  router // 配置路由器
+  router, // 配置路由器
+  store
 })
