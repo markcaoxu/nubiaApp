@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App.vue'
 // 引入路由
 import router from './router/index.js'
+//引入reset.css文件，重置样式
+import '../public/css/reset.css'
+
 // 引入store
 import store from './store/index.js'
 // 引入mint-ui

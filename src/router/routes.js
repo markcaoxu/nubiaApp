@@ -4,9 +4,9 @@ import Classify from '../pages/Classify/Classify.vue'
 import Shopcar from '../pages/Shopcar/Shopcar.vue'
 import Profile from '../pages/Profile/Profile.vue'
 //引入详情页组件
-import Detail from '../pages/Find/Detail.vue'
+import Detail from '../pages/Find/children/Detail.vue'
 //引入体验店组件
-import ExperienceShop from '../pages/Find/ExperienceShop.vue'
+import ExperienceShop from '../pages/Find/children/ExperienceShop.vue'
 //引入视频长廊组件
 import Video from '../components/Find/Video.vue'
 //一如产品评价组件
@@ -16,6 +16,7 @@ import NewsCenter from '../components/Find/NewsCenter.vue'
 
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import Login from '../pages/Login/Login.vue'
+
 
 
 export default [
