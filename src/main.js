@@ -27,10 +27,7 @@ Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 
 import { TabContainer, TabContainerItem } from 'mint-ui';
-//引入懒加载
-import { Lazyload } from 'mint-ui';
-//声明使用
-Vue.use(Lazyload );
+
 
 
 Vue.component(TabContainer.name, TabContainer);

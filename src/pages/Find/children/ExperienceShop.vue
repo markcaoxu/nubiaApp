@@ -3,9 +3,11 @@
     <section>
       <h1 class="title">所有体验店及牛厂</h1>
       <h6 class="notes">“体验店”：是努比亚官方授权的零售体验店；“牛厂”：是努比亚官方授权的新零售体验区</h6>
-      <FormSlect />>
+			<!-- 引入下拉菜单组件 -->
+      <FormSlect />
       <img class="view" src="" alt="">
     </section>
+		<!-- 引入工厂介绍组件 -->
     <BlockShop />
     <BlockShop />
     <BlockShop />
@@ -20,7 +22,7 @@
 <script>
 //引入BlockShop组件
 import BlockShop from '../../../components/Find/BlockShop'
-//引入
+//引入下拉菜单组件
 import FormSlect from '../../../components/Find/FormSlect'
 
 export default {
@@ -41,12 +43,5 @@ export default {
   padding 20px
   text-align center
   line-height 15px
-.select
-	from-style none 
-	width 100%
-	height 100px
-	.province
-		width 80%
-		height 42px
-		margin 10px auto 
+ 
 </style>
