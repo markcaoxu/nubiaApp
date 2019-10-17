@@ -148,7 +148,8 @@ export default {
           
         .hot-img
           margin-top 10px
-          width 80%
+          width 135px
+          height 135px
         .hot-title
           font-size 12px
           margin 20px

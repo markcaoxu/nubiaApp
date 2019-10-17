@@ -40,12 +40,12 @@ koaRouter.get('/shopcar',((ctx)=>{
 // 首页 信息
 koaRouter.get('/msite',((ctx)=>{
   let {msite} = shopHotData
-  let {msite_swiper,hotPone} =msite
+  let {msite_swiper,hotPone,sift} =msite
   console.log(ctx.query)
   if(ctx.query.q=='lbt'&&ctx.query.b=='hot'){
     ctx.body={
-      // 轮播图和 热销机型 /msite?q=lbt&b=hot'
-      message:{msite_swiper,hotPone},
+      // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
+      message:{msite_swiper,hotPone,sift},
       code:"0"
     }
   }

@@ -585,6 +585,182 @@
         }
       
         
+      ],
+      "sift":[
+        {  "xq_swiper_img_url":[
+        
+          "https://oss.static.nubia.cn/active/5cfe261389f1071.png"
+        ],
+            "title":"PD快速电源适配器(原装）",
+            "title_config":"黑色",
+            "details":"",  
+            "img_url":"https://oss.static.nubia.cn/active/5cfe261389f1071.png",
+            "pir":89,
+            "sift":false,
+            "sp_id":10,
+            "promotion":[
+               {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+             ]
+         },
+         {  
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5d4259f246d3f74.png",
+            "https://oss.static.nubia.cn/active/5d4259f24209f44.png",
+            "https://oss.static.nubia.cn/active/5d4259f22849264.png"
+            
+          ],
+          "title":"红魔弹夹移动电源 ",
+          "title_config":"黑色 ",
+          "details":"",  
+          "img_url":"https://oss.static.nubia.cn/active/5d4259f246d3f74.png",
+          "pir":149,
+          "sp_id":11,
+          "promotion":[
+            {
+              "pro_key":"赠送",
+              "pro_val":"送Z20水晶触控保护壳"
+            },
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       }, 
+       {  
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cc51199c46b890.png",
+         
+          "https://oss.static.nubia.cn/active/5cc51199aa19171.png"
+        ],
+        "title":"红魔3电竞魔盒 ",
+        "title_config":"黑色  ",
+        "details":"集线管理，线材不再碍手碍脚，100Mbps有线以太网更稳定，助您肆意驰骋于王者峡谷，带妹吃鸡如虎添翼",  
+        "img_url":"https://oss.static.nubia.cn/active/5cc51199c46b890.png",
+        "pir":199,
+        "sp_id":12,
+        "promotion":[
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+         ]
+     },
+     {  
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5cc50c85d3fe217.png",
+        
+        "https://oss.static.nubia.cn/active/5cc50c85c4dae22.png"
+      ],
+      "title":"红魔电竞向量保护套（3和3S通用） ",
+      "title_config":"黑色  ",
+      "details":"",  
+      "img_url":"https://oss.static.nubia.cn/active/5cc50c85d3fe217.png",
+      "pir":79,
+      "sp_id":13,
+      "promotion":[
+         {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+       ]
+      },
+      {
+        "swiper_img_url":"https://oss.static.nubia.cn/upload/153984776469.jpg",
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cb7e7341da195.png",
+          "https://oss.static.nubia.cn/active/5d525083ca57130.jpg",
+          "https://oss.static.nubia.cn/active/5d525083cd19126.jpg",
+          "https://oss.static.nubia.cn/active/5d525083cd89164.jpg"
+        ],
+        "title":"万魔联名 （时尚真无线耳机）  ",
+        "title_config":"黑色 ",
+        "details":"",
+        "img_url":"https://oss.static.nubia.cn/active/5cb7e7341da195.png",
+        "pir":499,
+        "sp_id":4,
+        "promotion":[
+          {
+            "pro_key":"赠送",
+            "pro_val":"送万魔联名 （时尚真无线耳机）"
+          },
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+        ]
+      },
+      {  
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cc50cb6c55dc44.png",
+         
+          "https://oss.static.nubia.cn/active/5cc50cb6c2f4698.png"
+        ],
+        "title":"红魔3双滑轨保护套（手柄专用）  ",
+        "title_config":"黑色",
+        "details":"",  
+        "img_url":"https://oss.static.nubia.cn/active/5cc50cb6c55dc44.png",
+        "pir":49,
+        "sp_id":15,
+        "promotion":[
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+         ]
+        }
+      
+        
       ]
      
 

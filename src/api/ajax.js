@@ -35,6 +35,8 @@ axios.interceptors.request.use(
 // 响应拦截器
 axios.interceptors.response.use(
   response => {
+    // console.log(response.data);
+    
     // 响应成功的回调，返回响应的数据
     return response.data
   },
