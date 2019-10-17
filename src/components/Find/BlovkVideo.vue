@@ -54,6 +54,7 @@ export default {
 	// transition all 1
 	.cover
 		width 100%
+		height 230px
 		position relative
 		z-index 1
 		transition all 1

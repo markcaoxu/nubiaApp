@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import BlockIntroduce from '../../components/Find/BlockIntroduce'
+import BlockIntroduce from '../../../components/Find/BlockIntroduce'
 export default {
 	components:{
 		BlockIntroduce
