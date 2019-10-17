@@ -22,7 +22,7 @@ export default {
   data(){
     return{
       checked_pone:[], // 选购的商品
-      hotList:[], // 空购物车中的 热销推荐
+      hotList:[], // 空购物车中的 热销推荐   需要vuex
       have_rec:[], // 非空购物车 组件中的推荐商品
       isEmty:true  //购物车是否为空
     }

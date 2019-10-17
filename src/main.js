@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 // 引入路由
 import router from './router/index.js'
-
+// 引入store
+import store from './store/index.js'
 // 设置vue配置信息
 Vue.config.productionTip = false
 // new不报错
@@ -15,5 +16,6 @@ new Vue({
     App
   },
   template: '<App/>',
-  router // 配置路由器
+  router, // 配置路由器
+  store
 })
