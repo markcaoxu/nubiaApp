@@ -11,14 +11,14 @@
       <button class="login_btn">立即登录</button>
     </div>-->
     <div class="login_main">
-      <ValidationProvider name="name" rules="required" v-slot="{ errors }">
+      <ValidationProvider name="用户名" rules="required|phone2" v-slot="{ errors }">
         <div class="field login_user">
           <input  class="login_input" v-model="username" type="text" />
           <span class="login_alert">{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
 
-      <ValidationProvider name="password" rules="required|min:6" v-slot="{ errors }">
+      <ValidationProvider name="密码" rules="required|min:6" v-slot="{ errors }">
         <div class="field login_pwd">
           <input class="login_input" v-model="password" type="password" />
           <span class="login_alert">{{ errors[0] }}</span>
