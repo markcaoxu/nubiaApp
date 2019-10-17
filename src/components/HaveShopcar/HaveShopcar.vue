@@ -20,7 +20,7 @@
         <span class="iconfont icon-iconfront-"></span>
         <p>个人中心</p>
       </li>
-      <li class="menu-Item" @click="$router.replace('/shopcar')">
+      <li class="menu-Item" >
         <span class="iconfont icon-icon_gouwuche"></span>
         <p>购物车</p>
       </li>
@@ -85,6 +85,9 @@ export default {
   props: {
     have_rec: Array, // 推荐商品
     checked_pone: Array //选中的商品
+  },
+  mounted(){
+    this.$route.meta.isShowFooter=false
   },
   computed: {
     // 计算总加

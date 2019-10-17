@@ -73,10 +73,7 @@ export default [
   {
     // 购物车 shopcar
     path: '/shopcar',
-    component: Shopcar,
-    meta: {
-      isShowFooter: true
-    }
+    component: Shopcar
   },
   {
     // 个人中心 profile
