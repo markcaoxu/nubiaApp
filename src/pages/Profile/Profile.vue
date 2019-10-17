@@ -133,7 +133,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted(){
+    
+  }
+};
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">

@@ -11,16 +11,24 @@ let koaRouter = new KoaRouter()
 let datas = require('./datas/login.json')
 
 
-koaRouter.post('/login_pwd',(ctx,next)=>{
-  console.log(ctx.query.username,ctx.query.password)
-
-  ctx.body='登录成功'
+koaRouter.post('/login_pwd',(ctx)=>{
+  // console.log(ctx.query.username,ctx.query.password)
+  // 匹配账号密码
+  datas.users.forEach((item)=>{
+    if(item.username===ctx.query.username&&item.password===ctx.query.password){
+      ctx.body={
+        message:'登录成功',
+        code:"0"
+      }
+    }
+  })
 })
 
 // 声明使用所有的路由及路由的相关的所有的方法
 koa
   .use(koaRouter.routes())
   .use(koaRouter.allowedMethods())
+  
 // 监听端口,启动服务器
 koa.listen('5000', () => {
   console.log('服务器启动了')
