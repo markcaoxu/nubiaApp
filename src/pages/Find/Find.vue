@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header v-if="$route.path!=='/find/experienceShop'" />
 		<router-view></router-view>
   </div>
 </template>

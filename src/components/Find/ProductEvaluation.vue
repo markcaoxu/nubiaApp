@@ -16,7 +16,7 @@ import BlockIntroduce from '../../components/Find/BlockIntroduce'
 export default {
 	components:{
 		BlockIntroduce
-	},
+	}
 }
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>

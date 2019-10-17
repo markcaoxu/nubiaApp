@@ -1,6 +1,10 @@
 <template>
 <div>
 	<BlockVideo />
+	<BlockVideo />
+	<BlockVideo />
+	<BlockVideo />
+	<BlockVideo />
 </div>
 </template>
 <script>

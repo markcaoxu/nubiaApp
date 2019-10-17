@@ -1,7 +1,7 @@
 <template>
 <div id='app'>
 	<section class="section">
-      <img class="img" src="https://oss.static.nubia.cn/NewsCenter/2019-09-03/455387ea0a0adbc9ca5911c1809fe031.jpg"
+      <img class="img" @click="goTo('/find/deatil')" src="https://oss.static.nubia.cn/NewsCenter/2019-09-03/455387ea0a0adbc9ca5911c1809fe031.jpg"
         alt="红色玫瑰">
       <div class="text">
         <h3>『玩转nubia UI』个性熄屏，自己掌控！</h3>
@@ -17,7 +17,16 @@
 </div>
 </template>
 <script>
+
 export default {
+	methods:{
+		goTo(path){
+			//判断要跳转的页面与当前页面路由是否相同
+			if(this.$router.path!==path){
+				this.$router.replace(path)
+			}	
+		}
+	}
 }
 </script>
 <style lang='stylus'>
