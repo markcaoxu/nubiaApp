@@ -21,7 +21,7 @@ export default {
     goTo (path) {
       //判断要跳转的页面与当前页面路由是否相同
       if (this.$router.path !== path) {
-        this.$router.replace(path)
+        this.$router.push(path)
       }
     }
   }
