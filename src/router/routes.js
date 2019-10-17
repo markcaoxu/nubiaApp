@@ -4,6 +4,8 @@ import Find from '../pages/Find/Find.vue'
 import Shopcar from '../pages/Shopcar/Shopcar.vue'
 import Profile from '../pages/Profile/Profile.vue'
 
+import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
+import Login from '../pages/Login/Login.vue'
 
 
 export default [
@@ -24,7 +26,7 @@ export default [
       isShowFooter: true
     }
   },
-  { 
+  {
     // 发现 find
     path: '/find',
     component: Find
@@ -40,7 +42,19 @@ export default [
   {
     // 个人中心 profile
     path: '/profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  {
+    // profile-ticket01
+    path: '/ticket01',
+    component: Ticket01
+  },
+  {
+    path: '/login',
+    component: Login
   },
   // 重定向
   {
