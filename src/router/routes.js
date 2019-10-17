@@ -3,15 +3,28 @@ import Classify from '../pages/Classify/Classify.vue'
 import Find from '../pages/Find/Find.vue'
 import Shopcar from '../pages/Shopcar/Shopcar.vue'
 import Profile from '../pages/Profile/Profile.vue'
+//引入详情页组件
+import Detail from '../pages/Find/children/Detail.vue'
+//引入体验店组件
+import ExperienceShop from '../pages/Find/children/ExperienceShop.vue'
+//引入视频长廊组件
+import Video from '../pages/Find/children/Video.vue'
+//引入产品评价组件
+import ProductEvaluation from '../pages/Find/children/ProductEvaluation.vue'
+//引入新闻中心组件
+import NewsCenter from '../pages/Find/children/NewsCenter.vue'
 
+// 引入优惠券组件
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
+// 手机验证码登录
+import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
+// 登录页
 import Login from '../pages/Login/Login.vue'
 import Search from '../pages/Search/Search.vue'
 
 
-
 export default [
-  // 路由
+  // 路由nh66
   {
     // 首页 msite
     path: '/msite',
@@ -31,15 +44,38 @@ export default [
   {
     // 发现 find
     path: '/find',
-    component: Find
-  },
+		component: Find,
+		redirect: '/find/productEvaluation',
+		children:[
+			{
+				path:'/find/detail',
+				component: Detail
+			},
+			{
+				path:'/find/experienceShop',
+				component: ExperienceShop
+			},
+			{
+				path:'/find/video',
+				component: Video,
+				meta:{
+					isPlay:false
+				}
+			},
+			{
+				path:'/find/productEvaluation',
+				component:ProductEvaluation
+			},
+			{
+				path:'/find/newsCenter',
+				component:NewsCenter
+			}
+		]
+	},
   {
     // 购物车 shopcar
     path: '/shopcar',
-    component: Shopcar,
-    meta: {
-      isShowFooter: true
-    }
+    component: Shopcar
   },
   {
     // 个人中心 profile
@@ -50,11 +86,12 @@ export default [
     }
   },
   {
-    // profile-ticket01
+    // profile-ticket01 优惠券路由
     path: '/ticket01',
     component: Ticket01
   },
   {
+    // 登录路由
     path: '/login',
     component: Login
   },
@@ -62,6 +99,11 @@ export default [
   {
     path: '/search',
     component: Search
+  },
+  {
+    // 手机验证码登录组件
+    path:'/loginWithCode',
+    component: LoginWithCode
   },
   // 重定向
   {

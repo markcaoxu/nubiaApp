@@ -1,0 +1,51 @@
+// 存储 mutations  直接操作状态数据的集合
+// 引入常量名
+import Vue from 'vue'
+import {
+  ADD_CHECKED_PONE,
+  DEL_CHECKED_PONE,
+  REMOVE_CHECKED_PONE,
+  UPDATE_USER,
+  REMOVE_USER
+} from './mutationsType'
+export default {
+  //  加入购物车的商品
+  [ADD_CHECKED_PONE](state, {
+    pone
+  }) {
+    // 如果state中没有该商品
+    if (state.checked_pone.length == 0 || state.checked_pone.indexOf(pone) == -1) {
+      Vue.set(pone, 'num', 1)
+      state.checked_pone.push(pone)
+    } else {
+      pone.num++
+    }
+
+  },
+  // 减删除购物车中的商品数量
+  [DEL_CHECKED_PONE](state, {
+    pone
+  }) {
+    if (pone.num > 1) {
+      pone.num--
+    } else {
+      state.checked_pone.splice(state.checked_pone.indexOf(pone), 1)
+    }
+
+  },
+  // 直接删除购物车中的商品
+  [REMOVE_CHECKED_PONE](state, {
+    pone
+  }) {
+    state.checked_pone.splice(state.checked_pone.indexOf(pone), 1)
+  },
+
+  // 更新用户数据
+  [UPDATE_USER](state,user){
+    state.user=user
+  },
+  // 清除用户数据
+  [REMOVE_USER](state){
+    state.user={}
+  }
+}

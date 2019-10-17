@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <template>
   
+=======
+<template> 
+>>>>>>> f2dd4c671b8dc88e14b31babbae9023a31cc8af4
   <div class="msiteContainer">
     <!-- upload -->
     <div class="upload">
@@ -231,10 +235,6 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
-}
-</script>
-<style lang="stylus" rel="stylesheet/stylus">
-</style>
   name: "carrousel",
   mounted() {
     this.$nextTick(() => {

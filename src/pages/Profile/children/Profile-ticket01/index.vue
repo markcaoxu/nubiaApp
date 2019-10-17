@@ -12,7 +12,7 @@
       </mt-navbar>
 
       <!-- tab-container -->
-      <mt-tab-container v-model="selected">
+      <!-- <mt-tab-container v-model="selected">
         <mt-tab-container-item id="1">
           <mt-cell v-for="n in 10" :title="'内容 ' + n" />
         </mt-tab-container-item>
@@ -22,7 +22,7 @@
         <mt-tab-container-item id="3">
           <mt-cell v-for="n in 6" :title="'选项 ' + n" />
         </mt-tab-container-item>
-      </mt-tab-container>
+      </mt-tab-container> -->
     </div>
   </div>
 </template>
