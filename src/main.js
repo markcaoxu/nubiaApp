@@ -4,11 +4,6 @@ import Vue from 'vue'
 import App from './App.vue'
 // 引入路由
 import router from './router/index.js'
-<<<<<<< HEAD
-//引入reset.css文件，重置样式
-import '../public/css/reset.css'
-
-=======
 // 引入store
 import store from './store/index.js'
 // 引入mint-ui
@@ -33,7 +28,6 @@ Vue.component(TabContainerItem.name, TabContainerItem);
 
 // vee-validate的引入
 import './vee-validate.js'
->>>>>>> 874e1caaabcfb586e453aa19a7822045f914474d
 
 // 设置vue配置信息
 Vue.config.productionTip = false
