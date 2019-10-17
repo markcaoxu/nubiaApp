@@ -10,6 +10,7 @@
 // FooterGuide
 import FooterGuide from "./components/FooterGuide/FooterGuide.vue";
 
+
 export default {
   name: 'app',
   components: {

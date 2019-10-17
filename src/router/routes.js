@@ -6,6 +6,8 @@ import Profile from '../pages/Profile/Profile.vue'
 
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import Login from '../pages/Login/Login.vue'
+import Search from '../pages/Search/Search.vue'
+
 
 
 export default [
@@ -55,6 +57,11 @@ export default [
   {
     path: '/login',
     component: Login
+  },
+  // search
+  {
+    path: '/search',
+    component: Search
   },
   // 重定向
   {

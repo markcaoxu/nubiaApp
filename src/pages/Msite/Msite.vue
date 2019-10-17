@@ -1,7 +1,5 @@
 <template>
-<<<<<<< HEAD
-  <div></div>
-=======
+  
   <div class="msiteContainer">
     <!-- upload -->
     <div class="upload">
@@ -226,7 +224,6 @@
       </p>
     </div>
   </div>
->>>>>>> 1c2ffefa785cabd815b8206c23075f3feba8a71f
 </template>
 <script>
 // 引入Swiper插件
@@ -234,12 +231,10 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
-<<<<<<< HEAD
 }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 </style>
-=======
   name: "carrousel",
   mounted() {
     this.$nextTick(() => {
@@ -566,4 +561,3 @@ export default {
     p
       font-size 24px
 </style>
->>>>>>> 1c2ffefa785cabd815b8206c23075f3feba8a71f
