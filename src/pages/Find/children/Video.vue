@@ -8,7 +8,7 @@
 </div>
 </template>
 <script>
-import BlockVideo from './BlovkVideo'
+import BlockVideo from '../../../components/Find/BlovkVideo'
 export default {
 	components:{
 		BlockVideo

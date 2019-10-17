@@ -8,11 +8,11 @@ import Detail from '../pages/Find/children/Detail.vue'
 //引入体验店组件
 import ExperienceShop from '../pages/Find/children/ExperienceShop.vue'
 //引入视频长廊组件
-import Video from '../components/Find/Video.vue'
+import Video from '../pages/Find/children/Video.vue'
 //引入产品评价组件
-import ProductEvaluation from '../components/Find/ProductEvaluation'
+import ProductEvaluation from '../pages/Find/children/ProductEvaluation.vue'
 //引入新闻中心组件
-import NewsCenter from '../components/Find/NewsCenter.vue'
+import NewsCenter from '../pages/Find/children/NewsCenter.vue'
 
 // 引入优惠券组件
 import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
