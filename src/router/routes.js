@@ -1,6 +1,6 @@
 import Msite from '../pages/Msite/Msite.vue'
 import Classify from '../pages/Classify/Classify.vue'
-// import Find from '../pages/Find/Find.vue'
+import Find from '../pages/Find/Find.vue'
 import Shopcar from '../pages/Shopcar/Shopcar.vue'
 import Profile from '../pages/Profile/Profile.vue'
 //引入详情页组件
