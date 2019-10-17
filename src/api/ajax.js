@@ -1,76 +1,48 @@
+/**
+ * ajax.js文件是为了包装axios请求，添加响应器和拦截器
+ * 
+ */
 // 引入axios
 import axios from 'axios'
-// 引入store
-import store from '../store'
-// 引入router 
-import router from '../router'
-// 引入Toast
-import {Toast} from 'mint-ui'
-// 引入qs---负责转json数据，转成urlEncode格式
-import qs from 'qs'
 
-// 添加请求拦截器
-axios.interceptors.request.use(config => {
-  const { method, data } = config
-  // 判断method是不是POST，data是不是一个对象
-  if (method.toUpperCase() === 'POST' && data instanceof Object) {
-    config.data = qs.stringify(data)
-  }
-  // 判断当前接口是否需要携带token
-  if (config.headers.needToken) {
-    // 取出token -----去token中
-    const token = store.state.token
-    if (!token) {
-      // 没有token报错
-      const error = new Error('无token，请重新登录')
-      // 错误给错误码
-      error.status = 401
-      // 抛出错误
-      throw error
-    } else {
-      // 有token，加入到请求头中
-      config.headers['Authorization']=token
+// 引入qs---负责转json的数据,把json的数据转urlEncoding的形式---- {name:'jack',age:10}---->name=jack&age=10
+ import qs from 'qs'
+
+// 引入store
+// import store from '../store'
+
+// 引入router
+// import router from '../router'
+
+// 请求拦截器
+axios.interceptors.request.use(
+  // 这里有一个回调函数(配置对象)
+  config => {
+    const {
+      method,
+      data
+    } = config
+    // 判断method是不是POST,data是不是一个对象
+    if (method.toUpperCase() === 'POST' && data instanceof Object) {
+      // 条件成立，将data通过qs的stringify方法，转成URL形式的数据
+      // 例如： qs.stringify({ a: ['b', 'c', 'd'] });  // 'a[0]=b&a[1]=c&a[2]=d'
+      config.data = qs.stringify(data)
     }
+    // 返回这个配置对象
+    return config
   }
-  return config
-})
-// 添加响应拦截器
-axios.interceptors.response.use(response => {
-  return response.data
-}, error => {
-  alert(error)
-  // 中断错误信息
-    // 请求的错误：没有token
-    if (!error.response) {
-      if (error.status === 401) {
-        // 判断当前路径是不是login，如果不是就跳转到login
-        if (router.currentRoute.path !== '/login') {
-          // 提示缺失token的信息
-          Toast(error.message)
-          // 跳转到login
-          router.replace('/login')
-        }   
-      } 
-    } else {
-      // 响应的时候token过期了，或者没有资源的时候就会报错
-      const status = error.response.status
-      if (status === 401) {
-        // 提示过期了
-        Toast(error.response.data.message)
-        // 重置用户信息
-        store.dispatch('resetUser')
-        // 重新登录-----跳转到login
-        router.replace('/login')
-      } else if (status === 404) {
-        // 没有资源
-        Toast('没有资源了')
-      } else {
-        // 请求失败
-        Toast('请求错误'+error.message)
-      }
-    }
-    // 中断错误消息
-  return new Promise(() => {})
-})
-// 向外暴露
+)
+// 响应拦截器
+axios.interceptors.response.use(
+  response => {
+    // 响应成功的回调，返回响应的数据
+    return response.data
+  },
+  error => {
+    return new Promise(() => {})
+  }
+)
+
+
+// 将包装好的axios暴露出去
 export default axios
