@@ -38,10 +38,6 @@ export default {
   }) {
     state.checked_pone.splice(state.checked_pone.indexOf(pone), 1)
   },
-<<<<<<< HEAD
-
-=======
->>>>>>> 9412cdab06e193ffc45bb38160bd4e43a925ade8
   // 添加详情页对象信息
   [ADD_DETAIL_OBJ](state,{obj}){
     state.detailObj=obj

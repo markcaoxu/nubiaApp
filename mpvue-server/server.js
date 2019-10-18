@@ -97,21 +97,6 @@ koaRouter.get('/classify',((ctx)=>{
   }
 })
 )
-<<<<<<< HEAD
-
-=======
-// 分类 热门搜索
-// koaRouter.get('/search',((ctx)=>{
-//   let { titles } = searchList
-//   if(ctx.query.q=='lil'){
-//     ctx.body={
-//       message:{titles},
-//       code:"0"
-//     }
-//   }
-// })
-// )
->>>>>>> 9412cdab06e193ffc45bb38160bd4e43a925ade8
 
 // 自动登录的接口
 koaRouter.get('/autologin',((ctx)=>{
