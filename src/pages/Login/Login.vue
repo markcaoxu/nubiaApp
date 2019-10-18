@@ -82,6 +82,8 @@ export default {
       // 发送请求，携带账号和密码
       const result = await reqPwdLogin({ username, password });
      
+      const result2 = await req()
+      console.log(result2)
       if (result.code === "0") {
        // console.log(result);
         // result中保存着code、datas数据、message
