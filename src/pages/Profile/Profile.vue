@@ -22,11 +22,11 @@
     <!-- 券 -->
     <div class="user_ticket">
       <ul class="ticket_list">
-        <li class="ticket_item" @click="$router.push('/ticket01')">
+        <li class="ticket_item" @click="toTicket">
           <span>0</span>
           <p>优惠券</p>
         </li>
-        <li class="ticket_item" @click="$router.replace('/shopDetail')">
+        <li class="ticket_item">
           <span>￥0</span>
           <p>回收代金券</p>
         </li>
@@ -137,7 +137,7 @@
 // 引入vuex
 import { mapState } from "vuex";
 // 引入MessageBxo插件
-import { MessageBox } from "mint-ui";
+import { MessageBox, Toast } from "mint-ui";
 export default {
   computed: {
     // 从state中取user
@@ -145,9 +145,9 @@ export default {
       user: state => state.login.user
     })
   },
-  methods:{
+  methods: {
     // 退出操作
-    loginout(){
+    loginout() {
       // 提示框是否确认退出
       MessageBox.confirm("确定退出吗?").then(
         action => {
@@ -156,10 +156,26 @@ export default {
         },
         action => {}
       );
+    },
+    // 优惠券跳转
+    toTicket() {
+      // console.log(this.$store.state.login.token)
+      if (!this.$store.state.login.token) {
+        // 提示
+        Toast({
+          message: "请先登录",
+          position: "bottom"
+        });
+        // 延时跳转
+        setTimeout(() => {
+          this.$router.replace("/login");
+        }, 1000);
+      } else {
+        this.$router.push("/ticket01");
+      }
     }
-  },
+  }
   // 配置路由守卫
-  
 };
 </script>
 
@@ -216,11 +232,11 @@ export default {
             left 6px
     // 消息
     // .user_message
-    //   width 25px
-    //   height 25px
-    //   position absolute
-    //   right 50px
-    //   top 15px
+    // width 25px
+    // height 25px
+    // position absolute
+    // right 50px
+    // top 15px
     // 退出按钮
     .loginout_btn
       display block

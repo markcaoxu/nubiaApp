@@ -22,7 +22,6 @@ let findData = require('./datas/Find.json')
 // 
 // 登录接口
 koaRouter.post('/login_pwd',(ctx)=>{
-  // console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
   datas.users.forEach((item)=>{
     if(item.username===ctx.query.username&&item.password===ctx.query.password){
@@ -91,7 +90,6 @@ koaRouter.get('/msite',((ctx)=>{
 koaRouter.get('/classify',((ctx)=>{
   let {classify} = shopHotData
   let {kinds} =classify
-  // console.log(ctx.query)
   if(ctx.query.q=='classify'){
     ctx.body={
       // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件

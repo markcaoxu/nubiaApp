@@ -5,7 +5,7 @@
 			<!-- 工厂名称 -->
 			<li class="factory-first">
 				<h3 class="factory-name">广东省深圳市福田区</h3>
-				<span class="map" @click="goTo('')">查看地图</span>
+				<span class="map">查看地图</span>
 			</li>
 			<!-- 工厂地址 -->
 			<li class="factory-second">
@@ -30,7 +30,6 @@
 				<img class="view-way" src="" alt="">
 				<p class="goWay">前往方法：<br>1、乘坐公交11路,12路,46路,58路,79路,104路,209路,213路,323路,365路,398路,M369路,M391路,M392路,M454路,M500路或旅游2线路至莲花一村站下车</p>
 			</li>
-			<BlockCard />
 		</ul>
 	</section>
 </div>

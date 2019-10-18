@@ -167,8 +167,10 @@
 // 引入Swiper插件
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
+/* eslint-disable */
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 // 引入better scroll
+/* eslint-disable */
 import BScroll from 'better-scroll'
 
 import PhoneHot from './PhoneHot/PhoneHot.vue'
@@ -186,7 +188,6 @@ export default {
     }
   },
   async mounted() {
-    // console.log(this)
     // 轮播图
     this.$nextTick(() => {
       /* eslint-disable */
@@ -198,9 +199,7 @@ export default {
       })
     })
     const result = await reqHotPone()
-    console.log(result)
     this.hotSwipers = result.message.msite_swiper
-    console.log(this.hotSwipers)
     
   }
 }
