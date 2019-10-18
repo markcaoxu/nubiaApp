@@ -9,52 +9,12 @@
     </div>
     <div class="hotItems">
       <ul class="hotItem">
-        <li class="hotlist">
+        <li class="hotlist" v-for="(hotPone,index) in hotPones" :key="index" @click="goDetail(hotPone)">
           <a href="javascript:;" class="mess">
-            <img src="./images/content/detail1.png" alt="error" />
-            <p class="phone-name">红魔3 赤焰红</p>
-            <p class="phone-character">骁龙855</p>
-            <p class="phone-price">￥2699 ￥3499</p>
-          </a>
-        </li>
-        <li class="hotlist">
-          <a href="javascript:;" class="mess">
-            <img src="./images/content/detail2.png" alt="error" />
-            <p class="phone-name">红魔3 赤焰红</p>
-            <p class="phone-character">骁龙855</p>
-            <p class="phone-price">￥2699 ￥3499</p>
-          </a>
-        </li>
-        <li class="hotlist">
-          <a href="javascript:;" class="mess">
-            <img src="./images/content/detail3.png" alt="error" />
-            <p class="phone-name">红魔3 赤焰红</p>
-            <p class="phone-character">骁龙855</p>
-            <p class="phone-price">￥2699 ￥3499</p>
-          </a>
-        </li>
-        <li class="hotlist">
-          <a href="javascript:;" class="mess">
-            <img src="./images/content/detail4.png" alt="error" />
-            <p class="phone-name">红魔3 赤焰红</p>
-            <p class="phone-character">骁龙855</p>
-            <p class="phone-price">￥2699 ￥3499</p>
-          </a>
-        </li>
-        <li class="hotlist">
-          <a href="javascript:;" class="mess">
-            <img src="./images/content/detail5.png" alt="error" />
-            <p class="phone-name">红魔3 赤焰红</p>
-            <p class="phone-character">骁龙855</p>
-            <p class="phone-price">￥2699 ￥3499</p>
-          </a>
-        </li>
-        <li class="hotlist">
-          <a href="javascript:;" class="mess">
-            <img src="./images/content/detail6.png" alt="error" />
-            <p class="phone-name">红魔3 赤焰红</p>
-            <p class="phone-character">骁龙855</p>
-            <p class="phone-price">￥2699 ￥3499</p>
+            <img :src="hotPone.img_url" alt="error" />
+            <p class="phone-name">{{hotPone.title}}</p>
+            <p class="phone-character">{{hotPone.details}}</p>
+            <p class="phone-price">{{hotPone.pir}}</p>
           </a>
         </li>
       </ul>
@@ -72,14 +32,17 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import BScroll from "better-scroll";
+
+import {reqHotPone} from '../../../api/index.js'
 export default {
   name: "carrousel",
   data() {
     return {
-      isShow: true
+      isShow: true,
+      hotPones:[]
     };
   },
-  mounted() {
+  async mounted() {
     // console.log(this);
     // 轮播图
     this.$nextTick(() => {
@@ -90,7 +53,17 @@ export default {
           el: ".swiper-pagination"
         }
       });
-    });
+    })
+    const result = await reqHotPone()
+    console.log(result)
+    this.hotPones = result.message.hotPone
+    console.log(this.hotPones)
+  },
+  methods:{
+    goDetail(pone){
+      this.$store.dispatch('upDataDetail',pone)
+      this.$router.push('/shopDetail')
+    }
   }
 };
 </script>

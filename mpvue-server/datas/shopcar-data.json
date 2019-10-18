@@ -385,12 +385,9 @@
     "msite_swiper":[
         {
           "swiper_img_url":"https://oss.static.nubia.cn/upload/153984776469.jpg",
-          "xq_swiper_img_url":[
-            "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
-            "https://oss.static.nubia.cn/active/5d6cd17ec807b5.png",
-            "https://oss.static.nubia.cn/active/5d6cd17e9383216.png",
-            "https://oss.static.nubia.cn/active/5d6cd17dcfc5884.png"
-          ],
+          "xq_swiper_img_url":
+            "https://oss.static.nubia.cn/blockimage/157020326452.jpg",
+        
           "title":"红魔3s",
           "title_config":"银色风暴 8GB+128GB",
           "details":"骁龙855Plus、风冷+液冷双散热",
@@ -415,12 +412,7 @@
         },
         {
           "swiper_img_url":"https://oss.static.nubia.cn/upload/153984776469.jpg",
-          "xq_swiper_img_url":[
-            "https://oss.static.nubia.cn/active/5d48dd24cab9e65.png",
-            "https://oss.static.nubia.cn/active/5d48de9db736c62.png",
-            "https://oss.static.nubia.cn/active/5d48dd24b4e4e91.png",
-            "https://oss.static.nubia.cn/active/5d48dd24d443a34.png"
-          ],
+          "xq_swiper_img_url":"https://oss.static.nubia.cn/blockimage/156678122682.jpg",
           "title":"Z20 星空蓝",
           "title_config":"星空蓝 8GB+128GB",
           "details":"赠水晶触控保护壳",
@@ -452,12 +444,7 @@
    
         {
           "swiper_img_url":"https://oss.static.nubia.cn/upload/153984776469.jpg",
-          "xq_swiper_img_url":[
-            "https://oss.static.nubia.cn/active/5cc5098616ecf44.png",
-            "https://oss.static.nubia.cn/active/5cc509864775329.png",
-            "https://oss.static.nubia.cn/active/5cc509862039036.png",
-            "https://oss.static.nubia.cn/active/5cc509861baf984.png"
-          ],
+          "xq_swiper_img_url": "https://oss.static.nubia.cn/blockimage/156747885341.jpg",
           "title":"红魔3 玄铁黑 8GB+128GB",
           "title_config":"玄铁黑 8GB+128GB",
           "details":"",
@@ -485,12 +472,7 @@
   
         {
           "swiper_img_url":"https://oss.static.nubia.cn/upload/153984776469.jpg",
-          "xq_swiper_img_url":[
-            "https://oss.static.nubia.cn/active/5d4bca53bab4261.png",
-            "https://oss.static.nubia.cn/active/5d4bca53b85a568.png",
-            "https://oss.static.nubia.cn/active/5d4bca5395edb64.png",
-            "https://oss.static.nubia.cn/active/5d4bca539132f6.png"
-          ],
+          "xq_swiper_img_url":"https://oss.static.nubia.cn/blockimage/156811135038.jpg",
           "title":"努比亚阿尔法 ",
           "title_config":"伯爵黑（移动版） 1G+8G",
           "details":"赠nubia pods、享六期免息",
