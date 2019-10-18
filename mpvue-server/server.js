@@ -16,6 +16,7 @@ let shopHotData =require('./datas/shopcar-data.json')
 let findData = require('./datas/Find.json')
 
 // 
+// 登录接口
 koaRouter.post('/login_pwd',(ctx)=>{
   // console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
@@ -29,6 +30,13 @@ koaRouter.post('/login_pwd',(ctx)=>{
       }
     }
   })
+})
+// 获取手机信息的接口
+koaRouter.post('/phone',(ctx)=>{
+  const hot = shopHotData.hotSale
+  ctx.body={
+    hot:hot
+  }
 })
 // 购物车 热品推荐信息
 koaRouter.get('/shopcar',((ctx)=>{
@@ -85,6 +93,13 @@ koaRouter.get('/classify',((ctx)=>{
   }
 })
 )
+
+// 自动登录的接口
+koaRouter.get('/autologin',((ctx)=>{
+  
+}))
+
+
 // 声明使用所有的路由及路由的相关的所有的方法
 koa
   .use(koaRouter.routes())

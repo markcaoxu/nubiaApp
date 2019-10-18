@@ -45,7 +45,7 @@ const actions = {
     commit(RECEIVE_TOKEN, token)
    
     // 保存在localStorage中
-     localStorage.setItem('token_key', token)
+    localStorage.setItem('token_key', token)
     
     // 调用
     commit(SAVE_USER,user)
@@ -60,6 +60,10 @@ const actions = {
     localStorage.removeItem('token_key')
   },
   // 自动登录
+  async autoLogin({commit,state}){
+    // 首先判断本地是否有storage    localStorage
+    // if
+  }
 }
 
 // getter方法

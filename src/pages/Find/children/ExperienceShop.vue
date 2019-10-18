@@ -31,11 +31,11 @@ export default {
   async mounted() {
     // 获取工厂服务信息 // 获取推荐商品
     let result = await reqFind();
-    this.Provinces = result.message.experience.introduce.Province,
-    console.log(this.Provinces)
+    this.Provinces = result.message.experience.introduce.Province
+    // console.log(this.Provinces)
   },
 }
-}
+
 </script>
 <style lang='stylus'>
 .title
