@@ -44,6 +44,7 @@ export default {
   },
   computed: {
     ...mapState(["checked_pone"])
+   
   },
   methods: {
     // 添加商品

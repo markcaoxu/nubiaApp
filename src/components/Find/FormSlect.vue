@@ -2,9 +2,9 @@
   <div id='app'>
     <form>
       <div class="select">
-        <p @click="upDown" class="promince">{{promince}}</p>
-        <ul v-show="isShow" class="promince-list">
-          <li @click="changeP('河北省')">河北省</li>
+        <p @click="upDown" class="promince">{{prominceIndex}}</p>
+        <ul v-show="isShow" class="promince-list" >
+          <li  @click="changeP('河北省')">河北省</li>
 					<li  @click="changeP('吉林省')">吉林省</li>
 					<li  @click="changeP('广东省')">广东省</li>
 					<li  @click="changeP('云南省')">云南省</li>
@@ -23,11 +23,12 @@
 </template>
 <script>
 export default {
+	// props:['Provinces'],
   data () {
     return {
 			isShow: false,
 			isClose:false,
-			promince:'北京',
+			prominceIndex:'北京',
 			city:'请选择'
     }
   },
@@ -46,8 +47,8 @@ export default {
 		leftRight(){
 			return this.isClose = !this.isClose
 		},
-		changeP(promince){
-				this.promince=promince,
+		changeP(prominceIndex){
+				this.prominceIndex=prominceIndex,
 				//第二框切换状态
 				this.isShow = !this.isShow
 		},

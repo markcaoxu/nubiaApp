@@ -25,10 +25,11 @@ export const reqSearchList = ()=>ajax({
   url: BASE + `/search?q=lil`
 })
 
-export const req=(()=>ajax({
-  method:'POST',
+// 请求 msite hot 商品
+export const reqHotPhone=()=>ajax({
+  method:'GET',
   url: BASE + '/phone'
-}))
+})
 
 // 请求 shopcar hot 商品
 export const reqShopcarHot = ()=>{
@@ -56,3 +57,8 @@ export const reqClassify = ()=>ajax({
   url:BASE + '/classify?q=classify'
 })
 
+// 自动登录的接口   调用之后返回一个user对象
+export const reqAutoLogin = () => ajax({
+  method: 'GET',
+  url: BASE + '/autologin'
+})

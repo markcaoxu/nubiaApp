@@ -2,14 +2,14 @@
 <div id='app'>
 	<li>
 		<img src="" alt="">
-		<span>{{Province.name}}</span>
+		<span></span>
 	</li>
 </div>
 </template>
 <script>
 
 export default {
-	props:["Provinces"],
+	// props:["Provinces"],
 	data(){
 		return {
 			
