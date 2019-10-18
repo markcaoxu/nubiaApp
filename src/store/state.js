@@ -2,5 +2,6 @@
 export default{
   checked_pone:[], // 选购的商品 
   user:{}, // 用户信息
-  token:""
+  token:"",
+  detailObj:{}  // 详情页对象
 }

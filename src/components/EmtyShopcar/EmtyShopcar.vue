@@ -27,9 +27,9 @@
     <div class="hotSale">
       <p class="hot-text">热销推荐</p>
       <ul class="hotList">
-        <li class="hotItem" v-for="(pone,index) in hotList" :key="index">
+        <li class="hotItem" v-for="(pone,index) in hotList" :key="index" @click="toDetail(pone)">
           <!-- " -->
-          <span class="hot-addshop iconfont icon-icon_gouwuche" @click="addPoneByShopcar(pone)"></span>
+          <span class="hot-addshop iconfont icon-icon_gouwuche" @click.stop="addPoneByShopcar(pone)"></span>
           <img class="hot-img" :src="pone.img_url" />
           <p class="hot-title">{{pone.title}}</p>
           <p class="hot-pir">￥{{pone.pir}}</p>
@@ -47,7 +47,12 @@ export default {
     // 添加商品
     addPoneByShopcar(pone){
       this.$store.dispatch('addCheckedShop',pone)
-    }
+    },
+     // 跳到详情页
+     toDetail(pone){
+        this.$store.dispatch('upDataDetail',pone)
+        this.$router.push('/shopDetail')
+     }
   }
   
 };
