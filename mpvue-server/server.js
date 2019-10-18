@@ -18,7 +18,7 @@ let findData = require('./datas/Find.json')
 // 
 // 登录接口
 koaRouter.post('/login_pwd',(ctx)=>{
-  console.log(ctx.query.username,ctx.query.password)
+  // console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
   datas.users.forEach((item)=>{
     if(item.username===ctx.query.username&&item.password===ctx.query.password){
