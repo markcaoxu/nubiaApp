@@ -20,13 +20,10 @@ import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 // 登录页
 import Login from '../pages/Login/Login.vue'
-<<<<<<< HEAD
-=======
 
 // 商品详情页
 import ShopDetail from '../pages/Detail/Detail.vue'
 
->>>>>>> 3d3c76e217c541bef037adc99f2a8f0571517e31
 import Search from '../pages/Search/Search.vue'
 
 import Phone from '../pages/Phone/Phone.vue'
