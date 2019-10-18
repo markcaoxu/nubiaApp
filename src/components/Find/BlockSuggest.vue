@@ -21,15 +21,25 @@ export default {
 }
 </script>
 <style lang='stylus'>
-.show
-  padding 15px
-  height 100px
-  .img
-    width 100%
-  .h3
-    display inline-block
-    line-height 30px
-    font-size 25px
-  .dtv
-    height 50px
+.footerr
+  width 100%
+	height 100%
+	.suggest
+		height 50px
+		font-size 25px
+	.list
+		margin 0 auto 
+		background-color pink 
+		.show
+			height 100px
+			background-color gray 
+			.img
+				height 100%
+				background-color purple 
+			.h3
+				display inline-block
+				line-height 30px
+				font-size 25px
+			.dtv
+				height 50px
 </style>

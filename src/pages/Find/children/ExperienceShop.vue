@@ -9,10 +9,6 @@
     </section>
 		<!-- 引入工厂介绍组件 -->
     <BlockShop />
-		<BlockShop />
-		<BlockShop />
-		<BlockShop />
-		<BlockShop />
   </div>
 </template>
 <script>

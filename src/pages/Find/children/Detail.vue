@@ -15,7 +15,6 @@
         <img src="https://static-bbs.nubia.cn/forum/201908/16/160504pmhhhtptfptifnv9.png.thumb.jpg" alt="">
       </div>
       <BlockSuggest />
-      <router-view></router-view>
     </section>
   </div>
 </template>
@@ -53,7 +52,7 @@ export default {
   font-size 25px
   line-height 30px
   font-weight 700
-	margin 10px auto
+	padding 20px
 .notess
   color #777
   font-size 14px

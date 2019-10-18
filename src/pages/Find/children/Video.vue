@@ -1,10 +1,7 @@
 <template>
 <div>
 	<BlockVideo />
-	<BlockVideo />
-	<BlockVideo />
-	<BlockVideo />
-	<BlockVideo />
+<router-view></router-view>
 </div>
 </template>
 <script>
