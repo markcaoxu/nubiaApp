@@ -62,11 +62,11 @@
       <p class="recommend-text">为您推荐</p>
     </div>
     <ul class="recommend-List">
-      <li class="recommend-Item" v-for="(rec,index) in have_rec" :key="index">
+      <li class="recommend-Item" v-for="(rec,index) in have_rec" :key="index" @click="addHaveShopcar(rec)">
         <img class="recommend-img" :src="rec.img_url" />
         <p class="recommend-text">{{rec.title}}</p>
         <p class="recommend-pir">￥{{rec.pir}}元</p>
-        <span class="recommend-icon iconfont icon-icon_gouwuche" @click="addShopNum(rec)"></span>
+        <span class="recommend-icon iconfont icon-icon_gouwuche" @click.stop="addShopNum(rec)"></span>
       </li>
     </ul>
     <div class="settlement">
@@ -112,6 +112,10 @@ export default {
     // 删除
     RmShopNum(pone) {
       this.$store.dispatch("removeCheckedShop", pone);
+    },
+    addHaveShopcar(pone){
+      this.$store.dispatch('upDataDetail',pone)
+        this.$router.push('/shopDetail')
     }
   }
 };

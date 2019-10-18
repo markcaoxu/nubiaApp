@@ -31,15 +31,16 @@ export default {
   data() {
     return {
       phoneLists: [], // 手机列表
+      phonePrice:[],
       startY:0,
       scrollbar:false
     }
   },
   mounted() {
-    // console.log(phoneLists)
+    console.log(this)
     // console.log(phoneLists.phoneItems)
     this.phoneLists = phoneLists.phoneItems;
-    console.log(this.phoneLists);
+    // console.log(this.phoneLists);
 
     // 滑动
     this._initScroll()
@@ -50,7 +51,6 @@ export default {
         click:true,
         probeType:3
       })
-       
       // 滑动
       // 下拉
       this.phonesScroll.on('pullingDown',()=>{
@@ -109,6 +109,7 @@ export default {
           height 112px
           vertical-align middle
           margin-left 10px
+          color red
           .top
             padding-top 20px
             margin-bottom 20px
