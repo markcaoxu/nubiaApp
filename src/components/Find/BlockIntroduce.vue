@@ -1,6 +1,7 @@
 <template>
   <div id='app'>
-    <img class="img" @click="goTo('/find/deatil')"
+    <section @click="goTo('/find/detail')">
+			<img class="img" 
       src="https://oss.static.nubia.cn/NewsCenter/2019-09-03/455387ea0a0adbc9ca5911c1809fe031.jpg" alt="红色玫瑰">
     <div class="text">
       <h3>『玩转nubia UI』个性熄屏，自己掌控！</h3>
@@ -12,6 +13,7 @@
         src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1977942012,4260772391&fm=15&gp=0.jpg" alt="眼">
       <span class="seen">254245</span>
     </footer>
+		</section>
   </div>
 </template>
 <script>

@@ -9,10 +9,6 @@
     </section>
 		<!-- 引入工厂介绍组件 -->
     <BlockShop />
-		<BlockShop />
-		<BlockShop />
-		<BlockShop />
-		<BlockShop />
   </div>
 </template>
 <script>
@@ -20,26 +16,12 @@
 import BlockShop from '../../../components/Find/BlockShop'
 //引入下拉菜单组件
 import FormSlect from '../../../components/Find/FormSlect'
-//引入reqFind方法
-import { reqFind } from "../../../api/index.js";
 export default {
   components: {
 		BlockShop,
 		FormSlect
-  },
-	data() {
-    return {
-      Provinces: [], // 空购物车中的 热销推荐   需要vuex
-    };
-  },
-  async mounted() {
-    // 获取工厂服务信息 // 获取推荐商品
-    let result = await reqFind();
-    this.Provinces = result.message.experience.introduce.Province
-    // console.log(this.Provinces)
-  },
+  }
 }
-
 </script>
 <style lang='stylus'>
 .title
@@ -54,5 +36,4 @@ export default {
   line-height 15px
 .view
 	width 100%
-	margin-top 10px
 </style>
