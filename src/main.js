@@ -29,6 +29,7 @@ Vue.component(TabItem.name, TabItem);
 
 // mint-ui表单校验相关
 import { TabContainer, TabContainerItem } from 'mint-ui';
+
 //引入懒加载
 // import { Lazyload } from 'mint-ui';
 //声明使用
@@ -54,5 +55,5 @@ new Vue({
   },
   template: '<App/>',
   router, // 配置路由器
-  store
+  store // 注册store
 })

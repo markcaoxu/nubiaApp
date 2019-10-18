@@ -103,8 +103,8 @@ export default [
   // search
   {
     path: '/search',
-    component: Search
-  },
+		component: Search
+	},
   // phone 手机列表
   {
     path: '/phone',

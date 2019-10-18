@@ -4,9 +4,7 @@ import Vue from 'vue'
 import {
   ADD_CHECKED_PONE,
   DEL_CHECKED_PONE,
-  REMOVE_CHECKED_PONE,
-  UPDATE_USER,
-  REMOVE_USER
+  REMOVE_CHECKED_PONE
 } from './mutationsType'
 export default {
   //  加入购物车的商品
@@ -38,14 +36,5 @@ export default {
     pone
   }) {
     state.checked_pone.splice(state.checked_pone.indexOf(pone), 1)
-  },
-
-  // 更新用户数据
-  [UPDATE_USER](state,user){
-    state.user=user
-  },
-  // 清除用户数据
-  [REMOVE_USER](state){
-    state.user={}
   }
 }
