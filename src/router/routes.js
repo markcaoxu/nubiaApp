@@ -22,7 +22,6 @@ import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 import Login from '../pages/Login/Login.vue'
 // 搜索
 import Search from '../pages/Search/Search.vue'
-import Product from '../pages/Search/children/Product.vue'
 // 更多手机产品页
 
 // 商品详情页
@@ -105,13 +104,7 @@ export default [
   {
     // search
     path: '/search',
-    component: Search,
-		children:[
-			{
-				path:'/search/product',
-				component: Product
-      }
-    ]
+    component: Search
   // phone 手机列表
   },
   {

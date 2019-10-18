@@ -5,14 +5,11 @@
       <input type="text" class="header_input" placeholder="搜索" />
       <p class="header_btn">搜索</p>
     </div>
-    <div class="content">
-      <p class="hotSearch">热门搜索</p>
-      <ul class="hots" @click="showSwitch=true">
-        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index,hot)">
-          <a href="javascript:;" class="btn1" ref="alink" >{{hot.title}}</a>
-        </li>
-      </ul>
-    </div>
+
+    <keep-alive>
+      <HotSearch />
+    </keep-alive>
+
     <div class="search_bottom">
       <p class="search_history">搜索历史</p>
       <ul class="history_list" v-show="showSwitch">
@@ -27,9 +24,12 @@
 </template>
 <script>
 // 引入数据
-import {reqSearchList} from '../../api/index.js'
-import hots from '../../../mpvue-server/datas/searchlist.json'
+
+import HotSearch from './hotSearch/hotSearch.vue'
 export default {
+  components:{
+    HotSearch
+  },
   data(){
     return{
       hots:[], //遍历的数据
@@ -39,26 +39,15 @@ export default {
 
     }
   },
-   async mounted(){
-    let resolt = await reqSearchList()
-    this.hots = resolt.message.titles
-    //console.log(resolt.message.titles)
-  },
+   
   methods:{
     searchitem(index,pone){
       const alink = this.hots[index]
       this.searchArrs.unshift(alink)
       //console.log(pone)
-      //this.$store.dispatch('upDataDetail',pone)
-      //this.$router.push('/shopDetail')
+      this.$store.dispatch('upDataDetail',pone)
+      this.$router.push('/shopDetail')
     },
-    // goDetails(pone){
-    //   const alink = this.hots[index]
-    //   this.searchArrs.unshift(alink)
-    //   this.$store.dispatch('upDataDetail',pone)
-    //   this.$router.push('/shopDetail')
-    // },
-  
     deleteList(index){
       //console.log(index)
       this.searchArrs.splice(index)
@@ -96,30 +85,6 @@ export default {
       display inline-block
       text-align center
       line-height 35px
-.content
-  width 100%
-  height 270px
-  padding-top 78px
-  .hotSearch
-    color #666666
-    padding 0 20px
-  .hots
-    display inline-block
-    width 70%
-    padding 12px 10px 0 20px
-    display flex
-    flex-wrap wrap
-    .hotitem
-      margin-top 10px
-      margin-right 7px
-      background-color #F4F4F4
-      border-radius 15px
-      padding 12px
-      .btn1
-        display inline-block
-        color rgb(30,30,30) 
-        text-align center
-        font-size 15px
 .search_bottom
   width 90%
   .search_history
