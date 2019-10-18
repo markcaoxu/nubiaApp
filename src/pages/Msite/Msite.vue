@@ -13,7 +13,7 @@
         <div class="searchLogo">
           <img src="./images/logo.png" alt />
         </div>
-        <input type="text" class="searchBox" placeholder="红魔3s"/>
+        <input type="text" class="searchBox" placeholder="红魔3s" @click="$router.push('/search')"/>
         <a href="javasctip:;" class="message">
           <img src="../../../static/msite/images/message.png" alt />
         </a>

@@ -14,8 +14,14 @@
           </div>
         </a>
       </li>
+      <div class="tips" v-if="phoneLists.length>0">
+				<p v-if="isLoad">正在加载...</p>
+				<p v-if="!isLoad">没有更多啦~</p>
+				<i v-if="isLoad"> <img src="../images/loadingImg.gif" alt="" style="max-width:100%"></i>
+		  </div>
     </ul>
   </div>
+  
 </template>
 <script>
 /**
@@ -35,7 +41,9 @@ export default {
       phoneLists: [], // 手机列表
       startY:0,
       phonePrice:[],
-      scrollbar:false
+      scrollbar:false,
+      isLoad:true,
+
     }
   },
   async mounted() {
@@ -130,4 +138,20 @@ export default {
             margin-bottom 20px
             font-size 16px
             color #000
+  .tips
+    margin-top 10px
+    height 20px
+    line-height 20px
+    background-color #eeeeee
+    display flex
+    justify-content center
+    align-items center
+    color #9c9c9c
+    text-align center
+    p
+      display block
+      margin-block-start 10px
+      margin-block-end 10px
+      margin-inline-start 0
+      margin-inline-end 0
 </style>

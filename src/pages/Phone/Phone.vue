@@ -4,24 +4,24 @@
     <!-- 头部 -->
     <div class="header" @click="$router.back('/msite')">
       <span class="icon" >&lt;</span>
-      <span class="title">手机</span>
+      <span class="title" >热销手机</span>
     </div>
     <!-- 商品菜单 -->
     <div class="productsTitle">
       <ul class="titleList">
-        <li class="text" >
-          <a href="javascript:;">
-            <span>综合</span>
+        <li class="text">
+          <a href="javascript:;"  @click="toggle(1)">
+            <span :class="{current:activeIndex===1}">综合</span>
           </a>
         </li>
         <li class="text" @click="priceSort()" ref="">
-          <a href="javascript:;">
-            <span>价格</span>
+          <a href="javascript:;" @click="toggle(2)">
+            <span :class="{current:activeIndex===2} ">价格</span>
           </a>
         </li>
         <li class="text">
-          <a href="javascript:;">
-            <span>筛选</span>
+          <a href="javascript:;" @click="toggle(3)">
+            <span :class="{current:activeIndex===3} ">筛选</span>
           </a>
         </li>
         <li class="image">
@@ -51,6 +51,11 @@
         </li>
       </ul>
     </div>  -->
+    <!-- <div class="tips" >
+			<p v-if="isLoad">正在加载...</p>
+			<p v-if="!isLoad">没有更多啦~</p>
+			<i v-if="isLoad"> <img src="./images/loadingImg.gif" alt="" style="max-width:100%"></i>
+		</div> -->
   </div>
 
 </template>
@@ -69,8 +74,10 @@ export default {
   },
   data(){
     return{
+      activeIndex:-1,
       phoneLists:[],  // 手机列表
-      phonePrice:[]
+      phonePrice:[],
+      isLoad:true
     }
   },
   async mounted(){
@@ -118,6 +125,12 @@ export default {
 				}
 			}
 			console.log(this.phonePrice)
+    },
+    toggle(index){
+      if(typeof index !== 'number'){
+        throw new TypeError('index err')
+      }
+      this.activeIndex=index
     }
   }
 }
@@ -164,6 +177,7 @@ export default {
           width 100%
           height 100%
           display inline-block
+          color black
           span
             display inline-block
             width 100%
@@ -172,7 +186,7 @@ export default {
             line-height 20px
             color #000
             font-size 20px
-            .active
+            &.current
               color red
       .image
         width 30px
@@ -188,4 +202,21 @@ export default {
             display inline-block
             width 30px
             height 30px
+  .tips
+    position absolute
+    bottom 0
+    height 20px
+    line-height 20px
+    background-color #eeeeee
+    display flex
+    justify-content center
+    align-items center
+    color #9c9c9c
+    text-align center
+    p
+      display block
+      margin-block-start 10px
+      margin-block-end 10px
+      margin-inline-start 0
+      margin-inline-end 0
 </style>

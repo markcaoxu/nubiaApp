@@ -1,7 +1,7 @@
 <template>
   <!-- phoneHot 热销机型-->
   <div class="phoneHot">
-    <span>热销机型</span>
+    <span :class="{on:$route.path==='/phone'}" @click="$router.push('/phone')">热销机型</span>
     <div class="hotImg">
       <a href="javascript">
         <img src="./images/content/hot.jpg" alt="error" />
@@ -80,6 +80,8 @@ export default {
     line-height 52px
     font-size 20px
     padding 0 24px
+    &.on
+      color red
   .hotImg
     width 100%
     height 195px
