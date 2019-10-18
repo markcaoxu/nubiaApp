@@ -59,7 +59,7 @@
  * 功能：
  * 懒加载
  */
-import phoneLists from './datas/data.json'
+// import phoneLists from './datas/data.json'
 import {reqHotPhone} from '../../api/index.js'
 import PhoneList from './PhoneList/PhoneList.vue'
 import BScroll from 'better-scroll'
@@ -117,7 +117,7 @@ export default {
 					}
 				}
 			}
-			console.log(this.phonePrice)
+			console.log('45555',this.phonePrice)
     }
   }
 }

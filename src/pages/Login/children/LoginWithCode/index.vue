@@ -1,6 +1,6 @@
 <template>
   <div class="loginWithCode">
-    手机验证码登录
+    暂不支持手机验证码登录
   </div>
 </template>
 
