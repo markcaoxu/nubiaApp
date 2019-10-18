@@ -2,20 +2,20 @@
   <div id='app'>
     <form>
       <div class="select">
-        <p @click="upDown" class="promince">北京</p>
-        <ul vi-if="isShow" class="promince-list">
-          <li>河北省</li>
-					<li>吉林省</li>
-					<li>广东省</li>
-					<li>云南省</li>
-					<li>新疆维吾尔自治区</li>
-					<li>北京</li>
+        <p @click="upDown" class="promince">{{promince}}</p>
+        <ul v-show="isShow" class="promince-list">
+          <li @click="changeP('河北省')">河北省</li>
+					<li  @click="changeP('吉林省')">吉林省</li>
+					<li  @click="changeP('广东省')">广东省</li>
+					<li  @click="changeP('云南省')">云南省</li>
+					<li  @click="changeP('新疆维吾尔自治区')">新疆维吾尔自治区</li>
+					<li  @click="changeP('北京')">北京</li>
         </ul>
       </div>
-      <div class="select">
-        <p @click="leftRight" class="promince">北京市</p>
-        <ul vi-if="isClose" class="promince-list">
-          <li>北京市</li>
+			<div class="select">
+        <p @click="leftRight" class="promince">{{city}}</p>
+        <ul v-show="isClose" class="promince-list">
+					<li @click="changeC('北京市')">北京市</li>
         </ul>
       </div>
     </form>
@@ -26,58 +26,72 @@ export default {
   data () {
     return {
 			isShow: false,
-			isClose:false
+			isClose:false,
+			promince:'北京',
+			city:'请选择'
     }
   },
   methods: {
+		//第一框的点击事件
     upDown () {
-			return this.isShow = !this.isShow,
-			console.log(this.isShow)
+			//第二框切换状态
+			this.isShow = !this.isShow
+			//判断第二框是否处于打开状态
+			if(this.isClose){
+				//第二框是开的，就把它关上
+				return this.isClose = !this.isClose
+			}	
 		},
+		//第二框的点击事件
 		leftRight(){
-			return this.isClose = !this.isClose,
-			console.log(this.isClose)
+			return this.isClose = !this.isClose
+		},
+		changeP(promince){
+				this.promince=promince,
+				//第二框切换状态
+				this.isShow = !this.isShow
+		},
+		changeC(city){
+				this.city=city,
+				//第二框切换状态
+				this.isClose = !this.isClose
 		}
-  },
+	}
 
 }
 </script>
 <style lang='stylus'>
 .select
-	width 80%
-	height 40px
+	width 337px
+	height 42px
 	border 1px solid gray 
 	text-align center
 	font-size 20px
 	line-height 40px
-	margin 0 auto 
+	margin 10px auto 
+	position relative
 	.promince
 		width 100%
 		height 100%
-		border 1px solid gray 
+		border .5px solid #dce1e4 
 		text-align center
 		font-size 20px
 		line-height 40px 
-		margin-bottom 5px
 	.promince-list
-		width 100%
+		width 337px
 		text-align center
 		font-size 20px
-		line-height 50px
-		border 1px solid gray
+		line-height 40px
+		border 2px solid #dce1e4
 		background-color white
-		opacity 1
+		margin-top 9px
 		position absolute
-		z-index 1
+		z-index 5
 		li
 			width 100%
-			height 40px 
+			height 42px 
 			text-align center
 			font-size 20px
 			line-height 50px
 			margin 0 auto 
-
-
-
-
 </style>
