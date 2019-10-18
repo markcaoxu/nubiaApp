@@ -28,24 +28,20 @@
           }
          ]
      },
-     {  
+     {
       "xq_swiper_img_url":[
-        "https://oss.static.nubia.cn/active/5d48dd242af353.png",
-        "https://oss.static.nubia.cn/active/5d48dd242bc5b95.png",
-        "https://oss.static.nubia.cn/active/5d48dd242569483.png",
-        "https://oss.static.nubia.cn/active/5d48dd24a5c4c77.png"
+        "https://oss.static.nubia.cn/active/5d48dd24cab9e65.png",
+        "https://oss.static.nubia.cn/active/5d48de9db736c62.png",
+        "https://oss.static.nubia.cn/active/5d48dd24b4e4e91.png",
+        "https://oss.static.nubia.cn/active/5d48dd24d443a34.png"
       ],
-      "title":"Z20",
-      "title_config":" 锦鲤红 8GB+128GB",
+      "title":"Z20 ",
+      "title_config":"星空蓝 8GB+128GB",
       "details":"赠水晶触控保护壳",  
-      "img_url":"https://oss.static.nubia.cn/active/5d48dd242bc5b95.png",
-      "pir":3299,
-      "sp_id":11,
+      "img_url":"https://oss.static.nubia.cn/active/5d48dd24cab9e65.png",
+      "pir":3399,
+      "sp_id":10,
       "promotion":[
-        {
-          "pro_key":"赠送",
-          "pro_val":"送Z20水晶触控保护壳"
-        },
          {
           "pro_key":"分期",
           "pro_val":"享受花呗3期,6期,12期分期"
@@ -59,10 +55,10 @@
           "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
         }
        ]
-   }, 
+   },  
    {  
     "xq_swiper_img_url":[
-      "https://oss.static.nubia.cn/active/5d48dd242af353.png",
+      "https://oss.static.nubia.cn/active/5cc5098616ecf44.png",
       "https://oss.static.nubia.cn/active/5cc509864775329.png",
       "https://oss.static.nubia.cn/active/5cc509862039036.png",
       "https://oss.static.nubia.cn/active/5cc509861baf984.png"
@@ -70,8 +66,8 @@
     "title":"红魔3",
     "title_config":" 玄铁黑 6GB+128GB",
     "details":"",  
-    "img_url":"https://oss.static.nubia.cn/active/5d48dd242af353.png",
-    "pir":3399,
+    "img_url":"https://oss.static.nubia.cn/active/5cc5098616ecf44.png",
+    "pir":2499,
     "sp_id":12,
     "promotion":[
        {
@@ -88,7 +84,8 @@
       }
      ]
  },
- {  
+ {
+       
   "xq_swiper_img_url":[
     "https://oss.static.nubia.cn/active/5cc509862275d5.png",
     "https://oss.static.nubia.cn/active/5cc5098660dcb73.png",
@@ -96,12 +93,16 @@
     "https://oss.static.nubia.cn/active/5cc509862888764.png"
   ],
   "title":"红魔3",
-  "title_config":"赤焰红 8GB+128GB",
-  "details":"",  
+  "title_config":" 赤焰红 8GB+128GB ",
+  "details":"",
   "img_url":"https://oss.static.nubia.cn/active/5cc509862275d5.png",
-  "pir":3399,
-  "sp_id":13,
+  "pir":2699,
+  "sp_id":4,
   "promotion":[
+    {
+      "pro_key":"赠送",
+      "pro_val":"送万魔联名 （时尚真无线耳机）"
+    },
      {
       "pro_key":"分期",
       "pro_val":"享受花呗3期,6期,12期分期"
@@ -114,8 +115,8 @@
       "pro_key":"包邮",
       "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
     }
-   ]
-  },
+  ]
+},
   {
     "swiper_img_url":"https://oss.static.nubia.cn/upload/153984776469.jpg",
     "xq_swiper_img_url":[
@@ -177,19 +178,19 @@
       }
      ]
     },
-    {  
+    {
       "xq_swiper_img_url":[
-        "https://oss.static.nubia.cn/active/5c37f65d4e1ae1.png",
-        "https://oss.static.nubia.cn/active/5c37f65d5856449.png",
-        "https://oss.static.nubia.cn/active/5c37f65d61d5524.png",
-        "https://oss.static.nubia.cn/active/5c37f65d2e5c189.png"
+        "https://oss.static.nubia.cn/active/5d48dd242af353.png",
+        "https://oss.static.nubia.cn/active/5d48dd242bc5b95.png",
+        "https://oss.static.nubia.cn/active/5d48dd242569483.png",
+        "https://oss.static.nubia.cn/active/5d48dd24a5c4c77.png"
       ],
-      "title":"X 蓝金版 ",
-      "title_config":"蓝金版8+256GB",
-      "details":"赠保护套（茶色/透明随机发货）",  
-      "img_url":"https://oss.static.nubia.cn/active/5c37f65d4e1ae1.png",
-      "pir":2699,
-      "sp_id":15,
+      "title":"Z20 ",
+      "title_config":"锦鲤红 8GB+128GB",
+      "details":"赠水晶触控保护壳",  
+      "img_url":"https://oss.static.nubia.cn/active/5d48dd242af353.png",
+      "pir":3399,
+      "sp_id":10,
       "promotion":[
          {
           "pro_key":"分期",
@@ -204,7 +205,7 @@
           "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
         }
        ]
-      },
+   },
       {  
         "xq_swiper_img_url":[
           "https://oss.static.nubia.cn/active/5c37f65d4e1ae1.png",
@@ -240,30 +241,144 @@
  
   "have_rec":[
     {
-      "img_url":"http://oss.static.nubia.cn/active/5c3bf1701cf0b30.png",
-      "title":"红魔战神手柄",
-      "pir":179
-    },
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5c75047a791cd51.png",
+  
+        "https://oss.static.nubia.cn/active/5c750267b2b4c86.png",
+        "https://oss.static.nubia.cn/active/5c7502678b2ff49.png"
+      ],
+      "title":"律音耳机（新版） ",
+      "title_config":"红色",
+      "details":"",  
+      "img_url":"https://oss.static.nubia.cn/active/5c75047a791cd51.png",
+      "pir":99,
+      "sp_id":10,
+      "promotion":[
+        {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+      ]
+          },
     {
-      "img_url":"http://oss.static.nubia.cn/active/5c75047a791cd51.png",
-      "title":"律音耳机 (新版)",
-      "pir":99
-    },
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5cc50c85d3fe217.png",
+  
+        "https://oss.static.nubia.cn/active/5cc50c85c4dae22.png"
+      ],
+      "title":"红魔电竞向量保护套（3和3S通用） ",
+      "title_config":"黑色    ",
+      "details":"",  
+      "img_url":"https://oss.static.nubia.cn/active/5cc50c85d3fe217.png",
+      "pir":79,
+      "sp_id":10,
+      "promotion":[
+         {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+       ]
+   },
+    
     {
-      "img_url":"http://oss.static.nubia.cn/active/5c3bf16fd64d439.png",
-      "title":"红魔Mars向量保护套",
-      "pir":79
-    },
-    {
-      "img_url":"http://oss.static.nubia.cn/active/5cb80c158587031.png",
-      "title":"创意贴纸",
-      "pir":29
-    },
-    {
-      "img_url":"http://oss.static.nubia.cn/active/5ce4ea77d235924.png",
-      "title":"蓝牙耳机",
-      "pir":79
-    }
+    "xq_swiper_img_url":[
+      "https://oss.static.nubia.cn/active/5cc50cb6c55dc44.png",
+
+      "https://oss.static.nubia.cn/active/5cc50cb6c2f4698.png"
+    ],
+    "title":"红魔3双滑轨保护套（手柄专用）",
+    "title_config":" 黑色  ",
+    "details":"",  
+    "img_url":"https://oss.static.nubia.cn/active/5cc50cb6c55dc44.png",
+    "pir":49,
+    "sp_id":10,
+    "promotion":[
+      {
+        "pro_key":"分期",
+        "pro_val":"享受花呗3期,6期,12期分期"
+      },
+        {
+        "pro_key":"积分",
+        "pro_val":"购买即赠积分，积分可抵现"
+      },
+      {
+        "pro_key":"包邮",
+        "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+      }
+    ]
+     },
+     {
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5cebbe12c6da437.png",
+  
+        "https://oss.static.nubia.cn/active/5d525083d041d1.jpg",
+        "https://oss.static.nubia.cn/active/5d5250fdae38834.jpg"
+      ],
+      "title":"万魔联名 （时尚真无线耳机）",
+      "title_config":"金色",
+      "details":"",  
+      "img_url":"https://oss.static.nubia.cn/active/5cebbe12c6da437.png",
+      "pir":499,
+      "sp_id":10,
+      "promotion":[
+        {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+      ]
+       },
+      
+       {
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5c3c32eec1c131.png",
+          "https://oss.static.nubia.cn/active/5c3c32eed63b885.png"
+
+        ],
+        "title":"律音Pro耳机",
+        "title_config":"黑色",
+        "details":"",  
+        "img_url":"https://oss.static.nubia.cn/active/5c3c32eec1c131.png",
+        "pir":149,
+        "sp_id":10,
+        "promotion":[
+          {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+        ]
+      }
   
   ],
   "msite":{
@@ -949,6 +1064,599 @@
         }
       
         
+      ]
+    },
+    {
+      "name":"X系列",
+      "kind":[
+          {
+            "xq_swiper_img_url":[
+              "https://oss.static.nubia.cn/active/5da66989eee2e91.png",
+              "https://oss.static.nubia.cn/active/5da6698a4133c96.png",
+              "https://oss.static.nubia.cn/active/5da66989bb25481.png",
+              "https://oss.static.nubia.cn/active/5da669899379a69.png"
+            ],
+            "title":"X",
+            "title_config":" 深空灰 6GB+64GB",
+            "details":"赠保护套（茶色/透明随机发货）",  
+            "img_url":"https://oss.static.nubia.cn/active/5da66989eee2e91.png",
+            "pir":2199,
+            "sp_id":10,
+            "promotion":[
+               {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+             ]
+         },
+         {  
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5c37ff7b69a8693.png",
+            "https://oss.static.nubia.cn/active/5d6cd133352b742.png",
+            "https://oss.static.nubia.cn/active/5d6cd1332903198.png",
+            "https://oss.static.nubia.cn/active/5d6cd132afb6f99.png"
+          ],
+          "title":"X ",
+          "title_config":"黑金 8GB+256GB",
+          "details":"赠保护套（茶色/透明随机发货）",  
+          "img_url":"https://oss.static.nubia.cn/active/5c37ff7b69a8693.png",
+          "pir":2699,
+          "sp_id":11,
+          "promotion":[
+            {
+              "pro_key":"赠送",
+              "pro_val":"送Z20水晶触控保护壳"
+            },
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       },
+
+       {
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5c3800478d63198.png",
+          "https://oss.static.nubia.cn/active/5c380047b0d6e46.png",
+          "https://oss.static.nubia.cn/active/5c380047d8aa277.png",
+          "https://oss.static.nubia.cn/active/5c380047e736e91.png"
+        ],
+        "title":"X",
+        "title_config":"星空典藏版（梵高版） 8GB+512GB",
+        "details":"赠保护套（茶色/透明随机发货）",  
+        "img_url":"https://oss.static.nubia.cn/active/5c3800478d63198.png",
+        "pir":4999,
+        "sp_id":10,
+        "promotion":[
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+         ]
+     },
+     {  
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5cb7e735692c647.png",
+        "https://oss.static.nubia.cn/upload/5c23155339c2075.jpg",
+        "https://oss.static.nubia.cn/upload/5c231553808ff8.jpg",
+        "https://oss.static.nubia.cn/upload/5c2315537dc9683.jpg"
+      ],
+      "title":"X ",
+      "title_config":"蓝金版 蓝金版8+256GB",
+      "details":"赠保护套（茶色/透明随机发货）",  
+      "img_url":"https://oss.static.nubia.cn/active/5cb7e735692c647.png",
+      "pir":2699,
+      "sp_id":11,
+      "promotion":[
+        {
+          "pro_key":"赠送",
+          "pro_val":"送Z20水晶触控保护壳"
+        },
+         {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+       ]
+   }  
+        
+      ]
+    },
+    {
+      "name":"Z系列",
+      "kind":[
+          {
+            "xq_swiper_img_url":[
+              "https://oss.static.nubia.cn/active/5d48dd242af353.png",
+              "https://oss.static.nubia.cn/active/5d48dd242bc5b95.png",
+              "https://oss.static.nubia.cn/active/5d48dd242569483.png",
+              "https://oss.static.nubia.cn/active/5d48dd24a5c4c77.png"
+            ],
+            "title":"Z20 ",
+            "title_config":"锦鲤红 8GB+128GB",
+            "details":"赠水晶触控保护壳",  
+            "img_url":"https://oss.static.nubia.cn/active/5d48dd242af353.png",
+            "pir":3399,
+            "sp_id":10,
+            "promotion":[
+               {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+             ]
+         },
+          {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5d48dd24cab9e65.png",
+            "https://oss.static.nubia.cn/active/5d48de9db736c62.png",
+            "https://oss.static.nubia.cn/active/5d48dd24b4e4e91.png",
+            "https://oss.static.nubia.cn/active/5d48dd24d443a34.png"
+          ],
+          "title":"Z20 ",
+          "title_config":"星空蓝 8GB+128GB",
+          "details":"赠水晶触控保护壳",  
+          "img_url":"https://oss.static.nubia.cn/active/5d48dd24cab9e65.png",
+          "pir":3399,
+          "sp_id":10,
+          "promotion":[
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       }, 
+       {
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5d48dd2463fc329.png",
+          "https://oss.static.nubia.cn/active/5d48dd246e1ca20.png",
+          "https://oss.static.nubia.cn/active/5d48dd24a90fc69.png",
+          "https://oss.static.nubia.cn/active/5d48dd244d12153.png"
+        ],
+        "title":"Z20 ",
+        "title_config":"钻石黑 8GB+128GB",
+        "details":"赠水晶触控保护壳",  
+        "img_url":"https://oss.static.nubia.cn/active/5d48dd2463fc329.png",
+        "pir":3199,
+        "sp_id":10,
+        "promotion":[
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+         ]
+     }
+       
+        
+      ]
+    },
+    {
+      "name":"N/V/M系列",
+      "kind":[
+          {
+            "xq_swiper_img_url":[
+              "https://oss.static.nubia.cn/active/5cb7e733cd33071.png",
+              "https://oss.static.nubia.cn/active/5d48dd242bc5b95.png",
+              "https://oss.static.nubia.cn/active/5d48dd242569483.png",
+              "https://oss.static.nubia.cn/active/5d48dd24a5c4c77.png"
+            ],
+            "title":"M3 ",
+            "title_config":"钻石黑 6GB+128GB ",
+            "details":"【M3包装清单】包含：M3手机、清水套、律音耳机",  
+            "img_url":"https://oss.static.nubia.cn/active/5cb7e733cd33071.png",
+            "pir":2099,
+            "sp_id":10,
+            "promotion":[
+               {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+             ]
+         },
+         {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5c35d016ee80f11.png",
+      
+            "https://oss.static.nubia.cn/active/5c33f86d6bdab52.png"
+          ],
+          "title":"M3 ",
+          "title_config":"极光蓝 6GB+128GB ",
+          "details":"【M3包装清单】包含：M3手机、清水套、律音耳机",  
+          "img_url":"https://oss.static.nubia.cn/active/5c35d016ee80f11.png",
+          "pir":2099,
+          "sp_id":10,
+          "promotion":[
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       }        
+      ]
+    },
+    {
+      "name":"保护套",
+      "kind":[
+        {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5cc50c85d3fe217.png",
+      
+            "https://oss.static.nubia.cn/active/5cc50c85c4dae22.png"
+          ],
+          "title":"红魔电竞向量保护套（3和3S通用） ",
+          "title_config":"黑色    ",
+          "details":"",  
+          "img_url":"https://oss.static.nubia.cn/active/5cc50c85d3fe217.png",
+          "pir":79,
+          "sp_id":10,
+          "promotion":[
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       },
+        
+        {
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cc50cb6c55dc44.png",
+    
+          "https://oss.static.nubia.cn/active/5cc50cb6c2f4698.png"
+        ],
+        "title":"红魔3双滑轨保护套（手柄专用）",
+        "title_config":" 黑色  ",
+        "details":"",  
+        "img_url":"https://oss.static.nubia.cn/active/5cc50cb6c55dc44.png",
+        "pir":49,
+        "sp_id":10,
+        "promotion":[
+          {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+        ]
+         },
+         {
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5cc8089b2755870.png",
+  
+        "https://oss.static.nubia.cn/active/5cc8089b297d380.png",
+        "https://oss.static.nubia.cn/active/5cc8089ad921d6.png"
+      ],
+      "title":"红魔Mars手柄专用保护套 ",
+      "title_config":" 黑色  ",
+      "details":"",  
+      "img_url":"https://oss.static.nubia.cn/active/5cc8089b2755870.png",
+      "pir":29,
+      "sp_id":10,
+      "promotion":[
+        {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+      ]
+          },
+         {
+            "xq_swiper_img_url":[
+              "https://oss.static.nubia.cn/active/5c3bf16fd64d439.png",
+
+              "https://oss.static.nubia.cn/active/5c3bf1704863132.png"
+            ],
+            "title":"红魔Mars向量保护套  ",
+            "title_config":"黑色 ",
+            "details":"",  
+            "img_url":"https://oss.static.nubia.cn/active/5c3bf16fd64d439.png",
+            "pir":79,
+            "sp_id":10,
+            "promotion":[
+              {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+            ]
+        },
+          {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/pic/152349723968.png"
+
+          ],
+          "title":"Z18mini清水套  ",
+          "title_config":"透明  ",
+          "details":"",  
+          "img_url":"https://oss.static.nubia.cn/pic/152349723968.png",
+          "pir":29,
+          "sp_id":10,
+          "promotion":[
+            {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+          ]
+        },
+         {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5c3bf16fdebd955.png",
+            "https://oss.static.nubia.cn/active/5c3bf16fea59887.png",
+            "https://oss.static.nubia.cn/active/5c3bf16fdfbfe5.png"
+
+          ],
+          "title":"X保护套",
+          "title_config":"茶色 ",
+          "details":"",  
+          "img_url":"https://oss.static.nubia.cn/active/5c3bf16fdebd955.png",
+          "pir":29,
+          "sp_id":10,
+          "promotion":[
+            {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"保护套",
+      "kind":[
+        {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5cb7e7341da195.png",
+      
+            "https://oss.static.nubia.cn/active/5d525083ca57130.jpg",
+            "https://oss.static.nubia.cn/active/5d525083cd19126.jpg"
+          ],
+          "title":"万魔联名 （时尚真无线耳机",
+          "title_config":"黑色    ",
+          "details":"",  
+          "img_url":"https://oss.static.nubia.cn/active/5cb7e7341da195.png",
+          "pir":499,
+          "sp_id":10,
+          "promotion":[
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       },
+        
+        {
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cebbe12c6da437.png",
+    
+          "https://oss.static.nubia.cn/active/5d525083d041d1.jpg",
+          "https://oss.static.nubia.cn/active/5d5250fdae38834.jpg"
+        ],
+        "title":"万魔联名 （时尚真无线耳机）",
+        "title_config":"金色",
+        "details":"",  
+        "img_url":"https://oss.static.nubia.cn/active/5cebbe12c6da437.png",
+        "pir":499,
+        "sp_id":10,
+        "promotion":[
+          {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+        ]
+         },
+         {
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5c75047a791cd51.png",
+  
+        "https://oss.static.nubia.cn/active/5c750267b2b4c86.png",
+        "https://oss.static.nubia.cn/active/5c7502678b2ff49.png"
+      ],
+      "title":"律音耳机（新版） ",
+      "title_config":"红色",
+      "details":"",  
+      "img_url":"https://oss.static.nubia.cn/active/5c75047a791cd51.png",
+      "pir":99,
+      "sp_id":10,
+      "promotion":[
+        {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+      ]
+          },
+         {
+            "xq_swiper_img_url":[
+              "https://oss.static.nubia.cn/active/5ce4ea77d235924.png",
+
+              "https://oss.static.nubia.cn/active/5ce4ea77d5c141.png",
+              "https://oss.static.nubia.cn/active/5ce4ea77ca35e61.png"
+            ],
+            "title":"蓝牙耳机",
+            "title_config":"黑色 ",
+            "details":"",  
+            "img_url":"https://oss.static.nubia.cn/active/5ce4ea77d235924.png",
+            "pir":79,
+            "sp_id":10,
+            "promotion":[
+              {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+            ]
+        },
+          {
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5c3c32eec1c131.png",
+            "https://oss.static.nubia.cn/active/5c3c32eed63b885.png"
+
+          ],
+          "title":"律音Pro耳机",
+          "title_config":"黑色",
+          "details":"",  
+          "img_url":"https://oss.static.nubia.cn/active/5c3c32eec1c131.png",
+          "pir":149,
+          "sp_id":10,
+          "promotion":[
+            {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+          ]
+        }
+         
       ]
     }
   ]

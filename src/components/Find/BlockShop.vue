@@ -18,7 +18,7 @@
 			<li class="factory-third">
 				<img class="" src="" alt="">
 				<p>电话：0755-86078425</p>
-				<span>发地址到手机</span>
+				<span class="map">发地址到手机</span>
 			</li>
 			<!-- 服务时间 -->
 			<li class="factory-four">
@@ -48,6 +48,29 @@ export default {
 .section
 	width 100%
 	height 405px
+	border 1px solid red
+	.factory-item
+		width 90%
+		background-color gray 
+		margin 20px auto 
+		.factory-first
+			width 100%
+			height 30px
+			.factory-name
+				font-size 20px
+				font-weight 700
+				display inline-block
+			.map
+				display inline-block
+				height 26px
+				line-height 26px
+				float right
+				background-color #e8340e
+				border-radius 13px
+				padding 0 5px
+		.factory-second
+			width 100%
+			height 30px
 	
 
 </style>
