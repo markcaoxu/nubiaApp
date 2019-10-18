@@ -22,8 +22,8 @@ import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 import Login from '../pages/Login/Login.vue'
 // 搜索
 import Search from '../pages/Search/Search.vue'
-
-// 更多手机产品页
+// 注册
+import Register from '../pages/Register/Register.vue'
 
 // 商品详情页
 import ShopDetail from '../pages/Detail/Detail.vue'
@@ -121,6 +121,11 @@ export default [
     // 商品详情
     path:'/shopDetail',
     component:ShopDetail
+  },
+  {
+    // 注册页
+    path:'/register',
+    component:Register
   },
   // 重定向
   {
