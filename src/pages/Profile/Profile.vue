@@ -5,13 +5,13 @@
     <div class="user_header">
       <div class="loginBtn" @click="$router.replace('/login')">
         <!-- 头像 -->
-        <img class="user_img" src="./images/userheader/false.jpg" alt />
+        <img class="user_img" :src="user._id?user.userImage:''" alt />
         <!-- 用户名-会员等级 -->
         <div class="user_name">
-          <p>登录/注册</p>
+          <p>{{user._id?user.username:'登录|注册'}}</p>
           <div class="user_vip">
             <img src="./images/userheader/star.png" alt />
-            <span>普通会员</span>
+            <span>{{user._id?user.class:'普通会员'}}</span>
           </div>
         </div>
       </div>
@@ -133,7 +133,15 @@
 </template>
 
 <script>
+// 引入vuex
+import { mapState } from "vuex";
 export default {
+  computed: {
+    // 从state中取user
+    ...mapState({
+      user: state => state.login.user
+    })
+  },
   mounted(){
     
   }
@@ -165,6 +173,8 @@ export default {
         height 60px
         border-radius 50%
         margin 35px 6px 25px 22px
+        background url('./images/userheader/false.jpg') no-repeat
+        background-size contain
       // 用户名
       .user_name
         height 60px
