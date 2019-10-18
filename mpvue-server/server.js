@@ -12,6 +12,9 @@ let datas = require('./datas/login.json')
 // 引入shopcar数据 热销数据跟 推荐数据
 let shopHotData =require('./datas/shopcar-data.json')
 
+//引入发现信息
+let findData = require('./datas/Find.json')
+
 // 
 koaRouter.post('/login_pwd',(ctx)=>{
   // console.log(ctx.query.username,ctx.query.password)
@@ -35,6 +38,20 @@ koaRouter.get('/shopcar',((ctx)=>{
     ctx.body={
       message:{hotSale,have_rec},
       code:"0"
+    }
+  }
+   
+})
+)
+// 发现 信息
+koaRouter.get('/find',((ctx)=>{
+  let { comment,experience,video,news } = findData
+  
+  if(ctx.query.q=='wy'&&ctx.query.b=='msg'){
+    ctx.body={
+      message:{comment,experience,video,news},
+			code:"0",
+			datas
     }
   }
    
