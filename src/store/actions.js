@@ -15,16 +15,7 @@ export default{
     commit(REMOVE_CHECKED_PONE,{pone})
   },
 
-  // 更新保存用户信息
-  saveUser({ commit },user){
-    // 将输入的user更新到vuex
-    commit(UPDATE_USER,user)
-  },
-  // 清除用户信息
-  removeUser({ commit }){
-    // 重置用户信息
-    commit(REMOVE_USER)
-  },
+  
   // 添加详情页对象
   upDataDetail({commit},obj){
     commit(ADD_DETAIL_OBJ,{obj})

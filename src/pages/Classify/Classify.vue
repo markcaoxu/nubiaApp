@@ -39,7 +39,7 @@
 
 <script>
 // 引入数据
-import reqClassify from "../../../mpvue-server/datas/shopcar-data.json";
+import {reqClassify} from "../../api/index.js";
 // 引入better-scroll
 import BScroll from "better-scroll";
 export default {
@@ -50,6 +50,7 @@ export default {
       tops: [] // 滑动的数组
     };
   },
+  
   // 计算属性
   computed: {
     // 计算的是索引
@@ -69,10 +70,12 @@ export default {
       return index;
     }
   },
+  
   async mounted() {
-    let result = await reqClassify
-    // console.log(result.classify)
-    this.kinds = result.classify.kinds
+    // console.log(this)
+    let result = await reqClassify()
+    // console.log(result)
+    this.kinds = result.message.kinds
 
     // 初始化Bscroll
     this._initBscroll()
@@ -84,6 +87,7 @@ export default {
     })
   },
   methods: {
+    
     // 初始化滑动对象
     _initBscroll() {
       this.rightScroll = new BScroll(".right_list", {

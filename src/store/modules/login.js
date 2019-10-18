@@ -34,7 +34,7 @@ const mutations = {
   },
   // 更新token
   [RECEIVE_TOKEN](state, token) {
-    console.log('RECEIVE_TOKEN', token)
+    // console.log('RECEIVE_TOKEN', token)
     window.localStorage.setItem('token', token)
     state.token = token
   },
@@ -80,12 +80,12 @@ const actions = {
     state
   }) {
     // 首先判断是否有token
-    console.log(123)
+    // console.log(123)
     if (state.token) {
       // 有    自动登录
       // 请求自动登录
       const result = await reqAutoLogin()
-      console.log(result)
+      // console.log(result)
       const user = result.datas.users[0]
       // 更新user
       commit(SAVE_USER, user)

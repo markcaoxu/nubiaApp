@@ -6,9 +6,15 @@
       <p class="header_btn">搜索</p>
     </div>
 
-    <keep-alive>
-      <HotSearch />
-    </keep-alive>
+    <div class="content">
+      <p class="hotSearch">热门搜索</p>
+      <ul class="hots" @click="showSwitch=true">
+        <!--  @click="searchitem(index,hot)" -->
+        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index,hot)">
+          <a href="javascript:;" class="btn1" ref="alink">{{hot.title}}</a>
+        </li>
+      </ul>
+    </div>
 
     <div class="search_bottom">
       <p class="search_history">搜索历史</p>
@@ -24,20 +30,23 @@
 </template>
 <script>
 // 引入数据
-
-import HotSearch from './hotSearch/hotSearch.vue'
+import {reqShopcarHot} from '../../api/index.js'
+// import HotSearch from './hotSearch/hotSearch.vue'
 export default {
   components:{
-    HotSearch
+    
   },
   data(){
     return{
       hots:[], //遍历的数据
       searchText:'',// 用来获取文本框输入的内容
       searchArrs:[], // 接收搜索内容 
-      showSwitch:true  
-
+      showSwitch:true
     }
+  },
+  async mounted(){
+    let resolt = await reqShopcarHot()
+    this.hots = resolt.message.have_rec
   },
    
   methods:{
@@ -48,6 +57,7 @@ export default {
       this.$store.dispatch('upDataDetail',pone)
       this.$router.push('/shopDetail')
     },
+    
     deleteList(index){
       //console.log(index)
       this.searchArrs.splice(index)
@@ -85,6 +95,30 @@ export default {
       display inline-block
       text-align center
       line-height 35px
+.content
+  width 100%
+  height 270px
+  padding-top 78px
+  .hotSearch
+    color #666666
+    padding 0 20px
+  .hots
+    display inline-block
+    width 70%
+    padding 12px 10px 0 20px
+    display flex
+    flex-wrap wrap
+    .hotitem
+      margin-top 10px
+      margin-right 7px
+      background-color #F4F4F4
+      border-radius 15px
+      padding 9px
+      .btn1
+        display inline-block
+        color rgb(30,30,30) 
+        text-align center
+        font-size 15px
 .search_bottom
   width 90%
   .search_history
