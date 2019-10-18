@@ -104,11 +104,7 @@ export default [
   {
     // search
     path: '/search',
-<<<<<<< HEAD
     component: Search
-=======
-    component: Search,
->>>>>>> 9412cdab06e193ffc45bb38160bd4e43a925ade8
   // phone 手机列表
   },
   {
