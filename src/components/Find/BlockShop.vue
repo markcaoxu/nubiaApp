@@ -36,12 +36,7 @@
 </div>
 </template>
 <script>
-//引入BlockCard组件
-import BlockCard from './BlockCard'
 export default {
-	components:{
-		BlockCard
-	},
 	methods:{
 		goTo (path) {
       //判断要跳转的页面与当前页面路由是否相同
