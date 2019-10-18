@@ -764,5 +764,193 @@
       ]
      
 
-}
+},
+  "classify":{
+    "kinds":[
+      {
+      "name":"红魔",
+      "kind":[
+          {
+            "xq_swiper_img_url":[
+              "https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+              "https://oss.static.nubia.cn/active/5d6cd17ec807b5.png",
+              "https://oss.static.nubia.cn/active/5d6cd17e9383216.png",
+              "https://oss.static.nubia.cn/active/5d6cd17dcfc5884.png"
+            ],
+            "title":"红魔3S",
+            "title_config":"银色风暴 8GB+128GB",
+            "details":"骁龙855Plus、风冷+液冷双散热",  
+            "img_url":"https://oss.static.nubia.cn/active/5d6cd17e9bfee11.png",
+            "pir":2999,
+            "sp_id":10,
+            "promotion":[
+               {
+                "pro_key":"分期",
+                "pro_val":"享受花呗3期,6期,12期分期"
+              },
+                {
+                "pro_key":"积分",
+                "pro_val":"购买即赠积分，积分可抵现"
+              },
+              {
+                "pro_key":"包邮",
+                "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+              }
+             ]
+         },
+         {  
+          "xq_swiper_img_url":[
+            "https://oss.static.nubia.cn/active/5d6cd1333eb054.png",
+            "https://oss.static.nubia.cn/active/5d6cd133352b742.png",
+            "https://oss.static.nubia.cn/active/5d6cd1332903198.png",
+            "https://oss.static.nubia.cn/active/5d6cd132afb6f99.png"
+          ],
+          "title":"红魔3S ",
+          "title_config":"玄铁黑 8GB+128GB",
+          "details":"骁龙855Plus、 ICE2.1双重多维散热系统",  
+          "img_url":"https://oss.static.nubia.cn/active/5d6cd1333eb054.png",
+          "pir":2999,
+          "sp_id":11,
+          "promotion":[
+            {
+              "pro_key":"赠送",
+              "pro_val":"送Z20水晶触控保护壳"
+            },
+             {
+              "pro_key":"分期",
+              "pro_val":"享受花呗3期,6期,12期分期"
+            },
+              {
+              "pro_key":"积分",
+              "pro_val":"购买即赠积分，积分可抵现"
+            },
+            {
+              "pro_key":"包邮",
+              "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+            }
+           ]
+       }, 
+       {  
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cc5098616ecf44.png",
+          "https://oss.static.nubia.cn/active/5cc509864775329.png",
+          "https://oss.static.nubia.cn/active/5cc509862039036.png",
+          "https://oss.static.nubia.cn/active/5cc509861baf984.png"
+        ],
+        "title":"红魔3",
+        "title_config":" 玄铁黑 6GB+128GB",
+        "details":"",  
+        "img_url":"https://oss.static.nubia.cn/active/5cc5098616ecf44.png",
+        "pir":2499,
+        "sp_id":12,
+        "promotion":[
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+         ]
+     },
+     {  
+      "xq_swiper_img_url":[
+        "https://oss.static.nubia.cn/active/5d6cd15b64db772.png",
+        "https://oss.static.nubia.cn/active/5d6cd15b8b80d72.png",
+        "https://oss.static.nubia.cn/active/5d6cd15b2559659.png",
+        "https://oss.static.nubia.cn/active/5d6cd15aa50c728.png"
+      ],
+      "title":"红魔3S",
+      "title_config":"红蓝竞技 12GB+256GB",
+      "details":"骁龙855Plus、风冷+液冷双散热",  
+      "img_url":"https://oss.static.nubia.cn/active/5d6cd15b64db772.png",
+      "pir":3799,
+      "sp_id":13,
+      "promotion":[
+         {
+          "pro_key":"分期",
+          "pro_val":"享受花呗3期,6期,12期分期"
+        },
+          {
+          "pro_key":"积分",
+          "pro_val":"购买即赠积分，积分可抵现"
+        },
+        {
+          "pro_key":"包邮",
+          "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+        }
+       ]
+      },
+      {
+       
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cc509862275d5.png",
+          "https://oss.static.nubia.cn/active/5cc5098660dcb73.png",
+          "https://oss.static.nubia.cn/active/5cc50986bef2325.png",
+          "https://oss.static.nubia.cn/active/5cc509862888764.png"
+        ],
+        "title":"红魔3",
+        "title_config":" 赤焰红 8GB+128GB ",
+        "details":"",
+        "img_url":"https://oss.static.nubia.cn/active/5cc509862275d5.png",
+        "pir":2699,
+        "sp_id":4,
+        "promotion":[
+          {
+            "pro_key":"赠送",
+            "pro_val":"送万魔联名 （时尚真无线耳机）"
+          },
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+        ]
+      },
+      {  
+        "xq_swiper_img_url":[
+          "https://oss.static.nubia.cn/active/5cd3d55db448213.png",
+          "https://oss.static.nubia.cn/active/5cd3d55de0f2218.png",
+          "https://oss.static.nubia.cn/active/5cd3d55d8380049.png",
+          "https://oss.static.nubia.cn/active/5cd3d55d26d4375.png"
+        ],
+        "title":"红魔3",
+        "title_config":" 战地迷彩版 12GB+256GB ",
+        "details":"",  
+        "img_url":"https://oss.static.nubia.cn/active/5cd3d55db448213.png",
+        "pir":3499,
+        "sp_id":15,
+        "promotion":[
+           {
+            "pro_key":"分期",
+            "pro_val":"享受花呗3期,6期,12期分期"
+          },
+            {
+            "pro_key":"积分",
+            "pro_val":"购买即赠积分，积分可抵现"
+          },
+          {
+            "pro_key":"包邮",
+            "pro_val":"铜牌及以下满59、银牌满39、金牌包邮"
+          }
+         ]
+        }
+      
+        
+      ]
+    }
+  ]
+  }
 }
