@@ -3,14 +3,14 @@
   <div class="container" ref="phonesWrapper">
     <!-- <ul v-for="(phoneList,index) in phoneLists" :key="index"> -->
     <ul class="phoneItem">
-      <li class="phonelist" v-for="(phoneList,index) in phoneLists" :key="index">
+      <li class="phonelist" v-for="(phoneList,index) in phoneLists" :key="index" ref="phoneli">
         <a href="javascript:;" v-lazy="(phoneList,index)">
           <div class="left">
-            <img :src="phoneList.phoneImage" alt="" />
+            <img :src="phoneList.img_url" alt="" />
           </div>
           <div class="right">
-            <div class="top">{{phoneList.phoneCharactor}}</div>
-            <span>￥{{phoneList.phonePrice}}</span>
+            <div class="top">{{phoneList.title_config}}</div>
+            <span>￥{{phoneList.pir}}</span>
           </div>
         </a>
       </li>
@@ -22,28 +22,39 @@
  * 功能：
  * 懒加载
  */
-import phoneLists from "../datas/data.json"
+// import phoneLists from "../datas/data.json"
+import {reqHotPhone} from '../../../api/index.js'
 import {Lazyload} from 'mint-ui'
 import BScroll from 'better-scroll'
 
 export default {
+  props:[" phonePrice "],
   name:'PhoneList',
   data() {
     return {
       phoneLists: [], // 手机列表
-      phonePrice:[],
       startY:0,
+      phonePrice:[],
       scrollbar:false
     }
   },
-  mounted() {
-    console.log(this)
+  async mounted() {
+    console.log(this.phonePrice)
+    const result = await reqHotPhone()
+    // console.log(result.message.hotPhone)
     // console.log(phoneLists.phoneItems)
-    this.phoneLists = phoneLists.phoneItems;
+    this.phoneLists = result.message.hotPhone
     // console.log(this.phoneLists);
-
+    
     // 滑动
     this._initScroll()
+  },
+  watch:{
+    phonePrice(){
+      if(this.phonePrice){
+        console.log(this.phonePrice)
+      }
+    }
   },
   methods:{
     _initScroll () {

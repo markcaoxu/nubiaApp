@@ -18,4 +18,6 @@ export const ADD_DETAIL_OBJ = 'add_detail_obj'
 export const REMOVE_DETAIL_OBJ='remove_detail_obj'
 // 更新token
 export const RECEIVE_TOKEN = 'receive_token'
+// 重置token
+export const RESET_TOKEN = 'reset_token'
 // export const RECEIVE_TOKEN = 'receive_token'

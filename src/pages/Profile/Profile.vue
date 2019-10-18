@@ -157,7 +157,9 @@ export default {
         action => {}
       );
     }
-  }
+  },
+  // 配置路由守卫
+  
 };
 </script>
 

@@ -12,9 +12,13 @@ let datas = require('./datas/login.json')
 // 引入shopcar数据 热销数据跟 推荐数据
 let shopHotData =require('./datas/shopcar-data.json')
 
+//引入发现信息
+let findData = require('./datas/Find.json')
+
+// 
 // 登录接口
 koaRouter.post('/login_pwd',(ctx)=>{
-  // console.log(ctx.query.username,ctx.query.password)
+  console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
   datas.users.forEach((item)=>{
     if(item.username===ctx.query.username&&item.password===ctx.query.password){
@@ -27,13 +31,17 @@ koaRouter.post('/login_pwd',(ctx)=>{
     }
   })
 })
-// 获取手机信息的接口
-koaRouter.post('/phone',(ctx)=>{
-  const hot = shopHotData.hotSale
+
+
+// 获取热卖手机信息 phone的接口
+koaRouter.get('/phone',(ctx)=>{
+  const hotPhone = shopHotData.hotSale
   ctx.body={
-    hot:hot
+    message: { hotPhone },
+    code:"0"
   }
 })
+
 // 购物车 热品推荐信息
 koaRouter.get('/shopcar',((ctx)=>{
   let { hotSale,have_rec } = shopHotData
@@ -42,6 +50,20 @@ koaRouter.get('/shopcar',((ctx)=>{
     ctx.body={
       message:{hotSale,have_rec},
       code:"0"
+    }
+  }
+   
+})
+)
+// 发现 信息
+koaRouter.get('/find',((ctx)=>{
+  let { comment,experience,video,news } = findData
+  
+  if(ctx.query.q=='wy'&&ctx.query.b=='msg'){
+    ctx.body={
+      message:{comment,experience,video,news},
+			code:"0",
+			datas
     }
   }
    
@@ -65,7 +87,7 @@ koaRouter.get('/msite',((ctx)=>{
 koaRouter.get('/classify',((ctx)=>{
   let {classify} = shopHotData
   let {kinds} =classify
-  console.log(ctx.query)
+  // console.log(ctx.query)
   if(ctx.query.q=='classify'){
     ctx.body={
       // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
@@ -78,7 +100,10 @@ koaRouter.get('/classify',((ctx)=>{
 
 // 自动登录的接口
 koaRouter.get('/autologin',((ctx)=>{
-  
+  // 返回用户数据
+  ctx.body={
+    datas
+  }
 }))
 
 
