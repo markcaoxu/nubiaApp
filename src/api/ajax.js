@@ -9,7 +9,7 @@ import axios from 'axios'
  import qs from 'qs'
 
 // 引入store
-// import store from '../store'
+import store from '../store'
 
 // 引入router
 // import router from '../router'
@@ -28,6 +28,26 @@ axios.interceptors.request.use(
       // 例如： qs.stringify({ a: ['b', 'c', 'd'] });  // 'a[0]=b&a[1]=c&a[2]=d'
       config.data = qs.stringify(data)
     }
+
+    // // 判断当前接口是否需要携带token
+    // if (config.headers.needToken) {
+    //   // 取出token---取vuex   store中login模块
+    //   const token = store.state.login.token
+    //   // 判断
+    //   if (!token) {
+    //     // 没有token，报错，报提示
+    //     const error = new Error('没有token，请重新登录')
+    //     // try catch final
+    //     // throw是抛出异常
+    //     // 给错误码，用于识别出现什么样的错误
+    //     error.status = 401
+    //     throw error
+    //   } else {
+    //     // 有token,加入到请求头中
+    //     config.headers['Authorization'] = token
+    //   }
+    // }
+
     // 返回这个配置对象
     return config
   }

@@ -20,7 +20,8 @@ export const reqPwdLogin = ({username,password})=>ajax({
   url: BASE + `/login_pwd?username=${username}&password=${password}`
 })
 
-export const req=(()=>ajax({
+// 请求手机信息数据
+export const reqPhoneInfo=(()=>ajax({
   method:'POST',
   url: BASE + '/phone'
 }))
@@ -45,3 +46,8 @@ export const reqClassify = ()=>ajax({
   url:BASE + '/classify?q=classify'
 })
 
+// 自动登录的接口   调用之后返回一个user对象
+export const reqAutoLogin = () => ajax({
+  method: 'GET',
+  url: BASE + '/autologin'
+})

@@ -14,4 +14,5 @@ export const REMOVE_USER = 'remove_user'
 
 // 更新token
 export const RECEIVE_TOKEN = 'receive_token'
-// export const RECEIVE_TOKEN = 'receive_token'
+// 重置token
+export const RESET_TOKEN = 'reset_token'

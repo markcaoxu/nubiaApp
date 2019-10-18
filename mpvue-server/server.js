@@ -65,7 +65,7 @@ koaRouter.get('/msite',((ctx)=>{
 koaRouter.get('/classify',((ctx)=>{
   let {classify} = shopHotData
   let {kinds} =classify
-  console.log(ctx.query)
+  // console.log(ctx.query)
   if(ctx.query.q=='classify'){
     ctx.body={
       // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
@@ -78,7 +78,10 @@ koaRouter.get('/classify',((ctx)=>{
 
 // 自动登录的接口
 koaRouter.get('/autologin',((ctx)=>{
-  
+  // 返回用户数据
+  ctx.body={
+    datas
+  }
 }))
 
 
