@@ -71,72 +71,8 @@
         </li>
       </ul>
     </div>
-    <!-- phoneItems 热销机型-->
-    <div class="phoneItems">
-      <span>热销机型</span>
-      <div class="hotImg">
-        <a href="javascript">
-          <img src="./images/content/hot.jpg" alt />
-        </a>
-      </div>
-      <div class="hotItems">
-        <ul class="hotItem">
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/detail1.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="phone-character">骁龙855</p>
-              <p class="phone-price">￥2699 ￥3499</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/detail2.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="phone-character">骁龙855</p>
-              <p class="phone-price">￥2699 ￥3499</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/detail3.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="phone-character">骁龙855</p>
-              <p class="phone-price">￥2699 ￥3499</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/detail4.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="phone-character">骁龙855</p>
-              <p class="phone-price">￥2699 ￥3499</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/detail5.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="phone-character">骁龙855</p>
-              <p class="phone-price">￥2699 ￥3499</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/detail6.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="phone-character">骁龙855</p>
-              <p class="phone-price">￥2699 ￥3499</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="more">
-        <a href="javascript:;" @click="$router.push('/phone')">
-          <span>查看更多手机 ></span>
-        </a>
-      </div>
-    </div>
+    <!-- phone 热销机型-->
+    <PhoneHot> </PhoneHot>
     <!-- ceilList 精选配件-->
     <div class="ceilItems">
       <span>精选配件</span>
@@ -233,8 +169,12 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import BScroll from 'better-scroll'
+import PhoneHot from './PhoneHot/PhoneHot.vue'
 export default {
   name: "carrousel",
+  components:{
+    PhoneHot
+  },
   data () {
     return {
       isShow:true,
@@ -396,7 +336,7 @@ export default {
           img
             width 100%
             height 100%
-  .phoneItems
+  .phoneHot
     margin-bottom 10px
     overflow hidden
     background-color #fff

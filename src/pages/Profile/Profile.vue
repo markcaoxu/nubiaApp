@@ -5,18 +5,19 @@
     <div class="user_header">
       <div class="loginBtn" @click="$router.replace('/login')">
         <!-- 头像 -->
-        <img class="user_img" src="./images/userheader/false.jpg" alt />
+        <img class="user_img" :src="user._id?user.userImage:''" alt />
         <!-- 用户名-会员等级 -->
         <div class="user_name">
-          <p>登录/注册</p>
+          <p>{{user._id?user.username:'登录|注册'}}</p>
           <div class="user_vip">
             <img src="./images/userheader/star.png" alt />
-            <span>普通会员</span>
+            <span>{{user._id?user.class:'普通会员'}}</span>
           </div>
         </div>
       </div>
 
-      <img class="user_message" src="./images/userheader/message.png" alt />
+      <!-- <img class="user_message" src="./images/userheader/message.png" alt /> -->
+      <span class="loginout_btn" v-show="user._id" @click="loginout">退出</span>
     </div>
     <!-- 券 -->
     <div class="user_ticket">
@@ -133,9 +134,29 @@
 </template>
 
 <script>
+// 引入vuex
+import { mapState } from "vuex";
+// 引入MessageBxo插件
+import { MessageBox } from "mint-ui";
 export default {
-  mounted(){
-    
+  computed: {
+    // 从state中取user
+    ...mapState({
+      user: state => state.login.user
+    })
+  },
+  methods:{
+    // 退出操作
+    loginout(){
+      // 提示框是否确认退出
+      MessageBox.confirm("确定退出吗?").then(
+        action => {
+          // 重置user
+          this.$store.dispatch("removeUser");
+        },
+        action => {}
+      );
+    }
   }
 };
 </script>
@@ -153,8 +174,8 @@ export default {
     height 120px
     // background-image url('./images/bg.png')
     background-color #0F0F0F
-    
     overflow hidden
+    position relative
     .loginBtn
       // 头像
       width 60%
@@ -165,6 +186,8 @@ export default {
         height 60px
         border-radius 50%
         margin 35px 6px 25px 22px
+        background url('./images/userheader/false.jpg') no-repeat
+        background-size contain
       // 用户名
       .user_name
         height 60px
@@ -190,12 +213,21 @@ export default {
             position absolute
             left 6px
     // 消息
-    .user_message
-      width 25px
-      height 25px
+    // .user_message
+    //   width 25px
+    //   height 25px
+    //   position absolute
+    //   right 50px
+    //   top 15px
+    // 退出按钮
+    .loginout_btn
+      display block
       position absolute
-      right 15px
-      top 15px
+      top 18px
+      right 10px
+      color #8F8F8F
+      font-weight 700
+      font-size 16px
   // 券
   .user_ticket
     width 100%
