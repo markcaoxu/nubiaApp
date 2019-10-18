@@ -39,7 +39,7 @@
     </div>
     <!-- 注册及忘记 -->
     <div class="login_footer">
-      <a href="javascript:;">立即注册</a>
+      <a href="javascript:;" @click="$router.replace('/register')">立即注册</a>
       <span>|</span>
       <a href="javascript:;">忘记密码</a>
     </div>

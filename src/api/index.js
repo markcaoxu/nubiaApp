@@ -58,3 +58,9 @@ export const reqAutoLogin = () => ajax({
   method: 'GET',
   url: BASE + '/autologin'
 })
+
+// 获取图形验证码的请求
+export const reqRegisterCaptcha = ()=>ajax({
+  method:'GET',
+  url:BASE + '/get_captcha'
+})

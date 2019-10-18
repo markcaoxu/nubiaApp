@@ -28,7 +28,7 @@
                   <p>{{item.kind_name}}</p>
                 </li>
               </ul>
-              <a href="javascript:;" class="seemore">查看更多{{kind.name}}></a>
+              <a href="javascript:;" class="seemore" @click="$router.push('/phone')">查看更多{{kind.name}}></a>
             </li>
           </ul>
         </div>
@@ -209,6 +209,7 @@ export default {
               float left
               margin 5px 8px
               text-align center
+              clear both
               img
                 width 100%
                 height 100%

@@ -3,7 +3,7 @@
     <div class="search_header">
       <p class="more" @click="$router.back('/classify')">&lt;</p>
       <input type="text" class="header_input" placeholder="搜索" />
-      <p class="header_btn">搜索</p>
+      <p class="header_btn" @click="$router.push('/phone')">搜索</p>
     </div>
 
     <div class="content">
