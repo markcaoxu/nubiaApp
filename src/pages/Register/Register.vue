@@ -23,6 +23,7 @@
 
 <script>
 import { reqRegisterCaptcha } from "../../api/index.js";
+// change file
 export default {
   data() {
     return {
