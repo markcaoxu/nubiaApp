@@ -80,7 +80,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this);
+    // console.log(this);
     // 轮播图
     this.$nextTick(() => {
       /* eslint-disable */

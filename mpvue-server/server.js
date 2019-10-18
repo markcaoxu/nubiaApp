@@ -14,7 +14,7 @@ let shopHotData =require('./datas/shopcar-data.json')
 
 // 登录接口
 koaRouter.post('/login_pwd',(ctx)=>{
-  // console.log(ctx.query.username,ctx.query.password)
+  console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
   datas.users.forEach((item)=>{
     if(item.username===ctx.query.username&&item.password===ctx.query.password){
@@ -27,13 +27,17 @@ koaRouter.post('/login_pwd',(ctx)=>{
     }
   })
 })
-// 获取手机信息的接口
-koaRouter.post('/phone',(ctx)=>{
-  const hot = shopHotData.hotSale
+
+
+// 获取热卖手机信息 phone的接口
+koaRouter.get('/phone',(ctx)=>{
+  const hotPhone = shopHotData.hotSale
   ctx.body={
-    hot:hot
+    message: { hotPhone },
+    code:"0"
   }
 })
+
 // 购物车 热品推荐信息
 koaRouter.get('/shopcar',((ctx)=>{
   let { hotSale,have_rec } = shopHotData

@@ -20,10 +20,11 @@ export const reqPwdLogin = ({username,password})=>ajax({
   url: BASE + `/login_pwd?username=${username}&password=${password}`
 })
 
-export const req=(()=>ajax({
-  method:'POST',
+// 请求 msite hot 商品
+export const reqHotPhone=()=>ajax({
+  method:'GET',
   url: BASE + '/phone'
-}))
+})
 
 // 请求 shopcar hot 商品
 export const reqShopcarHot = ()=>{
