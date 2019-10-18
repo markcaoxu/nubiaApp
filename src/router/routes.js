@@ -24,6 +24,7 @@ import Login from '../pages/Login/Login.vue'
 import Search from '../pages/Search/Search.vue'
 // 注册
 import Register from '../pages/Register/Register.vue'
+// 更多手机产品页
 
 // 商品详情页
 import ShopDetail from '../pages/Detail/Detail.vue'
@@ -105,7 +106,7 @@ export default [
   {
     // search
     path: '/search',
-    component: Search,
+    component: Search
   // phone 手机列表
   },
   {
