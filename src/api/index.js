@@ -34,5 +34,9 @@ export const reqHotPone = ()=>ajax({
   method:'GET',
   url:BASE + '/msite?q=lbt&b=hot'
 })
-
+// 请求 分类页机型
+export const reqClassify = ()=>ajax({
+  method:'GET',
+  url:BASE + '/classify?q=classify'
+})
 

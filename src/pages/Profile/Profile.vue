@@ -25,7 +25,7 @@
           <span>0</span>
           <p>优惠券</p>
         </li>
-        <li class="ticket_item">
+        <li class="ticket_item" @click="$router.replace('/shopDetail')">
           <span>￥0</span>
           <p>回收代金券</p>
         </li>

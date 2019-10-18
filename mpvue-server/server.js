@@ -27,7 +27,7 @@ koaRouter.post('/login_pwd',(ctx)=>{
 // 购物车 热品推荐信息
 koaRouter.get('/shopcar',((ctx)=>{
   let { hotSale,have_rec } = shopHotData
-  console.log(ctx.query)
+  
   if(ctx.query.q=='hot'&&ctx.query.b=='have'){
     ctx.body={
       message:{hotSale,have_rec},
@@ -41,11 +41,25 @@ koaRouter.get('/shopcar',((ctx)=>{
 koaRouter.get('/msite',((ctx)=>{
   let {msite} = shopHotData
   let {msite_swiper,hotPone,sift} =msite
-  console.log(ctx.query)
+  
   if(ctx.query.q=='lbt'&&ctx.query.b=='hot'){
     ctx.body={
       // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
       message:{msite_swiper,hotPone,sift},
+      code:"0"
+    }
+  }
+})
+)
+// 分类页信息
+koaRouter.get('/classify',((ctx)=>{
+  let {classify} = shopHotData
+  let {kinds} =classify
+  console.log(ctx.query)
+  if(ctx.query.q=='classify'){
+    ctx.body={
+      // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
+      message:{kinds},
       code:"0"
     }
   }
