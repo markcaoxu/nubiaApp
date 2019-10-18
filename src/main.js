@@ -27,9 +27,11 @@ Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 
 import { TabContainer, TabContainerItem } from 'mint-ui';
-
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
+
+import { Search } from 'mint-ui';
+Vue.component(Search.name, Search);
 
 // vee-validate的引入
 import './vee-validate.js'

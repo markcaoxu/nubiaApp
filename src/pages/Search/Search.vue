@@ -1,49 +1,80 @@
 <template>
   <div class="search_all">
     <div class="search_header">
-      <p class="more" @click="$router.back('/classify')">&lt;</p>
+      <p class="more">&lt;</p>
       <input type="text" class="header_input" placeholder="搜索" />
-      <p class="header_btn">搜索</p>
+      <p class="header_btn" @click="$router.back('/search/product')">搜索</p>
     </div>
     <div class="content">
       <p class="hotSearch">热门搜索</p>
-      <ul class="hots">
-        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem">
+      <ul class="hots" @click="showSwitch=true">
+        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index)">
           <a href="javascript:;" class="btn1" ref="alink">{{hot.title}}</a>
         </li>
       </ul>
     </div>
     <div class="search_bottom">
       <p class="search_history">搜索历史</p>
-      <ul class="history_list">
-        <li class="historyitem">红魔3</li>
+      <ul class="history_list" v-show="showSwitch">
+        <li class="historyitem" v-for="(searchArr,index) in searchArrs" :key="index">{{searchArr.title}}</li>
       </ul>
-      <span class="delete_btn">
+      <span class="delete_btn" @click="deleteList">
         <p>清除历史记录</p>
       </span>
     </div>
+    <!-- <div class="search_list">
+      <ul>
+        <li>
+            <a href="javascript:;">红魔手机支架</a>
+        </li>
+        <li>
+            <a href="javascript:;">红魔加长电竞数据线</a>
+        </li>
+        <li>
+            <a href="javascript:;">红魔战神手柄</a>
+        </li>
+        <li>
+            <a href="javascript:;">红魔3S</a>
+        </li>
+        <li>
+            <a href="javascript:;">红魔Mars手柄专用保护套</a>
+        </li>
+        <li>
+            <a href="javascript:;">红魔3电竞魔盒</a>
+        </li>
+      </ul>
+    </div> -->
   </div>
 </template>
 <script>
 // 引入数据
-import hots from './datas/data.json'
+import hots from '../../../mpvue-server/datas/searchlist.json'
 export default {
   data(){
     return{
       hots:[], //遍历的数据
       searchText:'',// 用来获取文本框输入的内容
-      searchArr:[] // 接收搜索内容
+      searchArrs:[], // 接收搜索内容 
+      showSwitch:true  
+
     }
   },
   mounted(){
-    this.hots = hots.titles
+    this.hots = hots.hotSale
   },
   methods:{
-    searchitem(){
-      // const alink = this.$refs.alink
-      // target
-      // this.searchArr.push(alink)
-      // console.log(this.searchArr)
+    searchitem(index){
+      const alink = this.hots[index]
+      this.searchArrs.unshift(alink)
+    },
+    // isShow(){
+    //   if(!this.searchArrs.length>0||showSwitch){
+    //     return false
+    //   }
+    // }
+    deleteList(index){
+      console.log(index)
+      this.searchArrs.splice(index,1)
     }
   }
   
@@ -73,7 +104,7 @@ export default {
       background-size 20px
       background-color #F8F8F8
       background-position 9px 6px
-      padding 11px 34px
+      padding 12px 34px
     .header_btn
       display inline-block
       text-align center

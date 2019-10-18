@@ -19,3 +19,8 @@ export const reqPwdLogin = ({username,password})=>ajax({
   method:'POST',
   url: BASE + `/login_pwd?username=${username}&password=${password}`
 })
+
+export const reqSearchList = ()=>ajax({
+  method:'GET',
+  url: BASE + `/search?q=lil`
+})
