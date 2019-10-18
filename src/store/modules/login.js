@@ -80,18 +80,10 @@ const actions = {
     state
   }) {
     // 首先判断是否有token
-<<<<<<< HEAD
-=======
-    // console.log(123)
->>>>>>> 592fb753be89bdacfd5e22345cc895940b1d4664
     if (state.token) {
       // 有    自动登录
       // 请求自动登录
       const result = await reqAutoLogin()
-<<<<<<< HEAD
-=======
-      // console.log(result)
->>>>>>> 592fb753be89bdacfd5e22345cc895940b1d4664
       const user = result.datas.users[0]
       // 更新user
       commit(SAVE_USER, user)
