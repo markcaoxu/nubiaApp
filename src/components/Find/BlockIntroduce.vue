@@ -15,7 +15,6 @@
   </div>
 </template>
 <script>
-
 export default {
   methods: {
     goTo (path) {
@@ -31,7 +30,6 @@ export default {
 .img
   width 100%
 .text
-  height 30px
   margin 10px
   h3
     line-height 30px
@@ -43,7 +41,6 @@ export default {
     margin-top 10px
 .footer
   width 100%
-  height 50px
   color #777
   font-size 12px
   margin-bottom 5px

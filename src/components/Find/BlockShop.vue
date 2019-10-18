@@ -1,10 +1,10 @@
 <template>
 <div id='app'>
-	<section class="section">
-		<ul class="factory-item">
+	<section class="section" >
+		<ul class="factory-item" >
 			<!-- 工厂名称 -->
 			<li class="factory-first">
-				<h3 class="factory-name">广东深圳深业上城旗舰店</h3>
+				<h3 class="factory-name">广东省深圳市福田区</h3>
 				<span class="map">查看地图</span>
 			</li>
 			<!-- 工厂地址 -->
@@ -30,7 +30,7 @@
 				<img class="view-way" src="" alt="">
 				<p class="goWay">前往方法：<br>1、乘坐公交11路,12路,46路,58路,79路,104路,209路,213路,323路,365路,398路,M369路,M391路,M392路,M454路,M500路或旅游2线路至莲花一村站下车</p>
 			</li>
-			<BlockCard :Provinces="Provinces" />
+			<BlockCard />
 		</ul>
 	</section>
 </div>
@@ -39,9 +39,19 @@
 //引入BlockCard组件
 import BlockCard from './BlockCard'
 export default {
+	props:['Provinces'],
+	// data(){
+	// 	return {
+	// 		citys:[]
+	// 	}
+	// },
 	components:{
 		BlockCard
-	}
+	},
+	// mounted(){
+	// 	this.citys = this.Provinces[this.index].citys,
+	// 	console.log(this.Provinces)
+	// }
 }
 </script>
 <style lang='stylus'>
