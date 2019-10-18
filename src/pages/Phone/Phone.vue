@@ -125,7 +125,7 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
 .productsContainer
   width 100%
-  height 733px
+  height 83%
   position relative
   .header
     width 100%

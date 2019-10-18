@@ -20,53 +20,53 @@
       </div>
       <!-- swiper -->
       <div class="swiper-container">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" >
           <div class="swiper-slide">
             <a href="javascript:;">
-              <img src="./images/headImg/1.jpg" alt />
+              <img src="./images/headImg/1.jpg" alt @click="$router.push('/phone')"/>
             </a>
           </div>
           <div class="swiper-slide">
             <a href="javascript:;">
-              <img src="./images/headImg/2.jpg" alt />
+              <img src="./images/headImg/2.jpg" alt @click="$router.push('/phone')"/>
             </a>
           </div>
           <div class="swiper-slide">
             <a href="javascript:;">
-              <img src="./images/headImg/3.jpg" alt />
+              <img src="./images/headImg/3.jpg" alt @click="$router.push('/phone')"/>
             </a>
           </div>
           <div class="swiper-slide">
             <a href="javascript:;">
-              <img src="./images/headImg/4.jpg" alt />
+              <img src="./images/headImg/4.jpg" alt @click="$router.push('/phone')"/>
             </a>
           </div>
           <div class="swiper-slide">
             <a href="javascript:;">
-              <img src="./images/headImg/5.jpg" alt />
+              <img src="./images/headImg/5.jpg" alt @click="$router.push('/phone')"/>
             </a>
           </div>
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
     </div>
     <!-- content -->
     <div class="content">
-      <div class="contentLeft">
+      <div class="contentLeft"  >
         <a href="javascript:;">
-          <img src="./images/content/1.jpg" alt />
+          <img src="./images/content/1.jpg" alt  @click="$router.push('/phone')"/>
         </a>
       </div>
       <ul class="contentRight">
-        <li class="top">
+        <li class="top" >
           <a href="javascript:;">
-            <img src="./images/content/2.jpg" alt />
+            <img src="./images/content/2.jpg" alt @click="$router.push('/phone')"/>
           </a>
         </li>
         <li class="bottom">
           <a href="javascript:;">
-            <img src="./images/content/3.jpg" alt />
+            <img src="./images/content/3.jpg" alt @click="$router.push('/phone')"/>
           </a>
         </li>
       </ul>
@@ -168,8 +168,12 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+// 引入better scroll
 import BScroll from 'better-scroll'
+
 import PhoneHot from './PhoneHot/PhoneHot.vue'
+import {reqHotPone} from '../../api/index.js'
+
 export default {
   name: "carrousel",
   components:{
@@ -178,9 +182,10 @@ export default {
   data () {
     return {
       isShow:true,
+      hotSwipers:[]
     }
   },
-  mounted() {
+  async mounted() {
     // console.log(this)
     // 轮播图
     this.$nextTick(() => {
@@ -192,6 +197,11 @@ export default {
         }
       })
     })
+    const result = await reqHotPone()
+    console.log(result)
+    this.hotSwipers = result.message.msite_swiper
+    console.log(this.hotSwipers)
+    
   }
 }
 </script>

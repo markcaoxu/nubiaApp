@@ -5,7 +5,6 @@ import {
   ADD_CHECKED_PONE,
   DEL_CHECKED_PONE,
   REMOVE_CHECKED_PONE,
-
   ADD_DETAIL_OBJ,
   REMOVE_DETAIL_OBJ
 } from './mutationsType'
@@ -21,7 +20,6 @@ export default {
     } else {
       pone.num++
     }
-    console.log('vuxx')
   },
   // 减删除购物车中的商品数量
   [DEL_CHECKED_PONE](state, {
@@ -40,10 +38,12 @@ export default {
   }) {
     state.checked_pone.splice(state.checked_pone.indexOf(pone), 1)
   },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9412cdab06e193ffc45bb38160bd4e43a925ade8
   // 添加详情页对象信息
   [ADD_DETAIL_OBJ](state,{obj}){
-    
     state.detailObj=obj
   },
   // 移除详情页对象信息

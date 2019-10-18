@@ -3,7 +3,7 @@
   <div class="container" ref="phonesWrapper">
     <!-- <ul v-for="(phoneList,index) in phoneLists" :key="index"> -->
     <ul class="phoneItem">
-      <li class="phonelist" v-for="(phoneList,index) in phoneLists" :key="index" ref="phoneli">
+      <li class="phonelist" v-for="(phoneList,index) in phoneLists" :key="index" ref="phoneli" @click="goDetail(phoneList)">
         <a href="javascript:;" v-lazy="(phoneList,index)">
           <div class="left">
             <img :src="phoneList.img_url" alt="" />
@@ -88,6 +88,10 @@ export default {
       this.$nextTick(()=>{
         this.pullingDownUp()
       })
+    },
+    goDetail(pone){
+      this.$store.dispatch('upDataDetail',pone)
+      this.$router.push('/shopDetail')
     }
   }
 }
