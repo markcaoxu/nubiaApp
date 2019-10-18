@@ -21,9 +21,17 @@
 <script>
 import BlockSuggest from '../../../components/Find/BlockSuggest'
 export default {
-  computed: {
+  components: {
     BlockSuggest
-  }
+	},
+	methods:{
+		goTo (path) {
+      //判断要跳转的页面与当前页面路由是否相同
+      if (this.$router.path !== path) {
+        this.$router.push(path)
+      }
+    }
+	}
 }
 </script>
 <style lang='stylus'>
