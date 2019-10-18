@@ -32,7 +32,10 @@
       </ul>
     </div>
     <!-- 商品 -->
-    <PhoneList> </PhoneList>
+    <PhoneList>
+      
+    </PhoneList>
+
     <!-- <div class="list">
       <ul v-for="(phoneList,index) in phoneLists" :key="index">
         <li>
@@ -120,9 +123,9 @@ export default {
           span
             display inline-block
             width 100%
-            height 100%
+            height 20px
             text-align center
-            line-height 48px
+            line-height 20px
             color #000
             font-size 20px
       .image

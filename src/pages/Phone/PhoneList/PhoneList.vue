@@ -109,6 +109,7 @@ export default {
           height 112px
           vertical-align middle
           margin-left 10px
+          color red
           .top
             padding-top 20px
             margin-bottom 20px
