@@ -54,5 +54,5 @@ new Vue({
   },
   template: '<App/>',
   router, // 配置路由器
-  store
+  store // 注册store
 })

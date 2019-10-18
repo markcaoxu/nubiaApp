@@ -12,6 +12,7 @@ let datas = require('./datas/login.json')
 // 引入shopcar数据 热销数据跟 推荐数据
 let shopHotData =require('./datas/shopcar-data.json')
 
+// 
 koaRouter.post('/login_pwd',(ctx)=>{
   // console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
@@ -19,7 +20,9 @@ koaRouter.post('/login_pwd',(ctx)=>{
     if(item.username===ctx.query.username&&item.password===ctx.query.password){
       ctx.body={
         message:'登录成功',
-        code:"0"
+        code:"0",
+        // 数据
+        datas
       }
     }
   })

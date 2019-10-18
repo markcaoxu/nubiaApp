@@ -11,6 +11,7 @@ import mutations from './mutations.js'
 // 引入getters
 import getters from './getters.js'
 // 引入模块
+import login from './modules/login.js'
 
 // 声明使用
 Vue.use(Vuex)
@@ -19,5 +20,8 @@ export default new Vuex.Store({
   state,
   mutations,
   actions,
-  getters
+  getters,
+  modules: {
+    login
+  }
 })
