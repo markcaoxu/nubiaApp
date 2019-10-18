@@ -8,15 +8,7 @@
       <img class="view" src="https://static.nubia.cn/images/store/v2/str-high-bg.jpg" alt="">
     </section>
 		<!-- 引入工厂介绍组件 -->
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
-    <BlockShop />
+    <BlockShop v-for="(Province,index) in Provinces" :key="index"/>
   </div>
 </template>
 <script>
@@ -24,13 +16,26 @@
 import BlockShop from '../../../components/Find/BlockShop'
 //引入下拉菜单组件
 import FormSlect from '../../../components/Find/FormSlect'
-
+//引入reqFind方法
+import { reqFind } from "../../../api/index";
 export default {
   components: {
 		BlockShop,
 		FormSlect
-  }
+  },
+	data() {
+    return {
+      Provinces: [], // 空购物车中的 热销推荐   需要vuex
+    };
+  },
+  async mounted() {
+    // 获取工厂服务信息 // 获取推荐商品
+    let result = await reqFind();
+    this.Provinces = result.message.experience.introduce.Province
+    // console.log(this.Provinces)
+  },
 }
+
 </script>
 <style lang='stylus'>
 .title

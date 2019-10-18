@@ -17,9 +17,9 @@ import HaveShopcar from "../../components/HaveShopcar/HaveShopcar.vue";
 // 引入底部
 import FooterGuide from "../../components/FooterGuide/FooterGuide.vue";
 // 引入axios
-import { reqShopcarHot, reqShopcarRec } from "../../api/index";
+import { reqShopcarHot } from "../../api/index";
 import { mapState } from "vuex";
-import { log } from "util";
+// import { log } from "util";
 export default {
   components: {
     EmtyShopcar,
@@ -39,8 +39,8 @@ export default {
     let result = await reqShopcarHot();
     this.hotList = result.message.hotSale;
     this.have_rec = result.message.have_rec;
-    // // 
-    // this.shopcarIsEmty();
+    // 
+    this.shopcarIsEmty();
   },
   computed: {
     ...mapState(["checked_pone"])
@@ -53,7 +53,7 @@ export default {
     },
     // 判断购物车是否为空
     shopcarIsEmty() {
-      if (this.checked_pone[0] !== undefined && this.checked_pone.length > 0) {
+      if (this.checked_pone[0] !== {} && this.checked_pone.length > 0) {
         // 有货物
         this.isEmty = false;
       } else {
@@ -62,7 +62,6 @@ export default {
       }
     }
   },
-
   watch: {
     // 判断购物车是否为空
     checked_pone: function() {

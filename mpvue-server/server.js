@@ -12,6 +12,10 @@ let datas = require('./datas/login.json')
 // 引入shopcar数据 热销数据跟 推荐数据
 let shopHotData =require('./datas/shopcar-data.json')
 
+//引入发现信息
+let findData = require('./datas/Find.json')
+
+// 
 // 登录接口
 koaRouter.post('/login_pwd',(ctx)=>{
   console.log(ctx.query.username,ctx.query.password)
@@ -51,6 +55,20 @@ koaRouter.get('/shopcar',((ctx)=>{
    
 })
 )
+// 发现 信息
+koaRouter.get('/find',((ctx)=>{
+  let { comment,experience,video,news } = findData
+  
+  if(ctx.query.q=='wy'&&ctx.query.b=='msg'){
+    ctx.body={
+      message:{comment,experience,video,news},
+			code:"0",
+			datas
+    }
+  }
+   
+})
+)
 // 首页 信息
 koaRouter.get('/msite',((ctx)=>{
   let {msite} = shopHotData
@@ -69,7 +87,7 @@ koaRouter.get('/msite',((ctx)=>{
 koaRouter.get('/classify',((ctx)=>{
   let {classify} = shopHotData
   let {kinds} =classify
-  console.log(ctx.query)
+  // console.log(ctx.query)
   if(ctx.query.q=='classify'){
     ctx.body={
       // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
@@ -82,7 +100,10 @@ koaRouter.get('/classify',((ctx)=>{
 
 // 自动登录的接口
 koaRouter.get('/autologin',((ctx)=>{
-  
+  // 返回用户数据
+  ctx.body={
+    datas
+  }
 }))
 
 

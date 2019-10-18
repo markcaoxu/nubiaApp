@@ -92,7 +92,7 @@ export default {
        
         // user中有name或者phone,_id,token,   用户信息保存到vuex中
         this.$store.dispatch("saveUser", user);
-        console.log('121323')
+        
         Toast({
           message: result.message,
           position: "bottom"
