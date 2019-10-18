@@ -28,7 +28,7 @@
                   <p>{{item.kind_name}}</p>
                 </li>
               </ul>
-              <a href="javascript:;" class="seemore">查看更多{{kind.name}}></a>
+              <a href="javascript:;" class="seemore" @click="$router.push('/phone')">查看更多{{kind.name}}></a>
             </li>
           </ul>
         </div>
@@ -50,6 +50,7 @@ export default {
       tops: [] // 滑动的数组
     };
   },
+  
   // 计算属性
   computed: {
     // 计算的是索引
@@ -69,10 +70,12 @@ export default {
       return index;
     }
   },
+  
   async mounted() {
-    let result = await reqClassify
-    // console.log(result.classify)
-    this.kinds = result.classify.kinds
+    // console.log(this)
+    let result = await reqClassify()
+    // console.log(result)
+    this.kinds = result.message.kinds
 
     // 初始化Bscroll
     this._initBscroll()
@@ -84,6 +87,7 @@ export default {
     })
   },
   methods: {
+    
     // 初始化滑动对象
     _initBscroll() {
       this.rightScroll = new BScroll(".right_list", {
@@ -205,6 +209,7 @@ export default {
               float left
               margin 5px 8px
               text-align center
+              clear both
               img
                 width 100%
                 height 100%

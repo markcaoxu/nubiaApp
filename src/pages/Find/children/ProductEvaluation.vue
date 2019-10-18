@@ -1,14 +1,7 @@
 <template>
   <div>
+		<!-- 引入介绍块组件 -->
 		<BlockIntroduce />
-		<BlockIntroduce />
-		<BlockIntroduce />
-		<BlockIntroduce />
-		<BlockIntroduce />
-		<BlockIntroduce />
-		<BlockIntroduce />
-		<BlockIntroduce />
-		
   </div>
 </template>
 <script>

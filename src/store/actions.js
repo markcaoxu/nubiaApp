@@ -15,6 +15,7 @@ export default{
     commit(REMOVE_CHECKED_PONE,{pone})
   },
 
+  
   // 添加详情页对象
   upDataDetail({commit},obj){
     commit(ADD_DETAIL_OBJ,{obj})

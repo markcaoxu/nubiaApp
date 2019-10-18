@@ -5,7 +5,7 @@
 			<!-- 工厂名称 -->
 			<li class="factory-first">
 				<h3 class="factory-name">广东省深圳市福田区</h3>
-				<span class="map">查看地图</span>
+				<span class="map" @click="goTo('')">查看地图</span>
 			</li>
 			<!-- 工厂地址 -->
 			<li class="factory-second">
@@ -36,22 +36,15 @@
 </div>
 </template>
 <script>
-//引入BlockCard组件
-import BlockCard from './BlockCard'
 export default {
-	props:['Provinces'],
-	// data(){
-	// 	return {
-	// 		citys:[]
-	// 	}
-	// },
-	components:{
-		BlockCard
-	},
-	// mounted(){
-	// 	this.citys = this.Provinces[this.index].citys,
-	// 	console.log(this.Provinces)
-	// }
+	methods:{
+		goTo (path) {
+      //判断要跳转的页面与当前页面路由是否相同
+      if (this.$router.path !== path) {
+        this.$router.push(path)
+      }
+    }
+	}
 }
 </script>
 <style lang='stylus'>

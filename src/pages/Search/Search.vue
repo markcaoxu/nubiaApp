@@ -3,16 +3,19 @@
     <div class="search_header">
       <p class="more" @click="$router.back('/classify')">&lt;</p>
       <input type="text" class="header_input" placeholder="搜索" />
-      <p class="header_btn">搜索</p>
+      <p class="header_btn" @click="$router.push('/phone')">搜索</p>
     </div>
+
     <div class="content">
       <p class="hotSearch">热门搜索</p>
       <ul class="hots" @click="showSwitch=true">
+        <!--  @click="searchitem(index,hot)" -->
         <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index,hot)">
-          <a href="javascript:;" class="btn1" ref="alink" >{{hot.title}}</a>
+          <a href="javascript:;" class="btn1" ref="alink">{{hot.title}}</a>
         </li>
       </ul>
     </div>
+
     <div class="search_bottom">
       <p class="search_history">搜索历史</p>
       <ul class="history_list" v-show="showSwitch">
@@ -27,39 +30,34 @@
 </template>
 <script>
 // 引入数据
-import {reqSearchList} from '../../api/index.js'
-// import hots from '../../../mpvue-server/datas/searchlist.json'
-import hots from '../../api/index.js'
+import {reqShopcarHot} from '../../api/index.js'
+// import HotSearch from './hotSearch/hotSearch.vue'
 export default {
+  components:{
+    
+  },
   data(){
     return{
       hots:[], //遍历的数据
       searchText:'',// 用来获取文本框输入的内容
       searchArrs:[], // 接收搜索内容 
-      showSwitch:true  
-
+      showSwitch:true
     }
   },
-   async mounted(){
-    let resolt = await reqSearchList()
-    this.hots = resolt.message.titles
-    //console.log(resolt.message.titles)
+  async mounted(){
+    let resolt = await reqShopcarHot()
+    this.hots = resolt.message.have_rec
   },
+   
   methods:{
     searchitem(index,pone){
       const alink = this.hots[index]
       this.searchArrs.unshift(alink)
       //console.log(pone)
-      //this.$store.dispatch('upDataDetail',pone)
-      //this.$router.push('/shopDetail')
+      this.$store.dispatch('upDataDetail',pone)
+      this.$router.push('/shopDetail')
     },
-    // goDetails(pone){
-    //   const alink = this.hots[index]
-    //   this.searchArrs.unshift(alink)
-    //   this.$store.dispatch('upDataDetail',pone)
-    //   this.$router.push('/shopDetail')
-    // },
-  
+    
     deleteList(index){
       //console.log(index)
       this.searchArrs.splice(index)
@@ -115,7 +113,7 @@ export default {
       margin-right 7px
       background-color #F4F4F4
       border-radius 15px
-      padding 12px
+      padding 9px
       .btn1
         display inline-block
         color rgb(30,30,30) 
