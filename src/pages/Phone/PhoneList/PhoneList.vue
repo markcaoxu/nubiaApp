@@ -49,7 +49,6 @@ export default {
     return {
       phoneLists: [], // 手机列表
       startY:0,
-      phonePrice:[],
       scrollbar:false,
       isLoad:true,
 
