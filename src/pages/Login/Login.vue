@@ -8,13 +8,7 @@
       <!-- 用户框 -->
       <ValidationProvider name="用户名" rules="required|phone2" v-slot="{ errors }">
         <div class="field login_user">
-          <input
-            
-            class="login_input"
-            v-model="username"
-            type="text"
-            placeholder="用户名"
-          />
+          <input class="login_input" v-model="username" type="text" placeholder="用户名" />
           <span class="login_alert">{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
@@ -69,8 +63,8 @@ export default {
   // 定义表达式
   data() {
     return {
-      username: "", //用来存储账号
-      password: "", // 用于存储密码
+      username: "18553876187", //用来存储账号
+      password: "123456", // 用于存储密码
       isPwdShow: false // 用来切换密码是否明文
     };
   },
@@ -87,14 +81,23 @@ export default {
       // console.log(this)
       // 发送请求，携带账号和密码
       const result = await reqPwdLogin({ username, password });
+     
       if (result.code === "0") {
-        console.log(result)
+       // console.log(result);
+        // result中保存着code、datas数据、message
+        // 将datas数据放到vuex中
+        // 保存用户信息------
+        const user = result.datas.users[0];
+       
+        // user中有name或者phone,_id,token,   用户信息保存到vuex中
+        this.$store.dispatch("saveUser", user);
+        console.log('121323')
         Toast({
           message: result.message,
           position: "bottom"
         });
-        this.$router.replace('/profile')
-      }else{
+        this.$router.replace("/profile");
+      } else {
         Toast({
           message: "用户名或密码不正确",
           position: "bottom"

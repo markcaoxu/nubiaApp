@@ -22,11 +22,20 @@ Vue.use(MintUI)
 import { Field } from 'mint-ui';
 Vue.component(Field.name, Field);
 
+// mint-ui选项卡相关
 import { Navbar, TabItem } from 'mint-ui';
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 
+// mint-ui表单校验相关
 import { TabContainer, TabContainerItem } from 'mint-ui';
+
+//引入懒加载
+// import { Lazyload } from 'mint-ui';
+//声明使用
+Vue.use(Lazyload);
+
+
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 
@@ -49,5 +58,5 @@ new Vue({
   },
   template: '<App/>',
   router, // 配置路由器
-  store
+  store // 注册store
 })

@@ -8,6 +8,10 @@ export const DEL_CHECKED_PONE="del_checked_pone"
 export const REMOVE_CHECKED_PONE='remove_checked_pone'
 
 // 更新用户信息的type
-export const UPDATE_USER = 'update_user'
+export const SAVE_USER = 'save_user'
 // 清除用户信息的type
 export const REMOVE_USER = 'remove_user'
+
+// 更新token
+export const RECEIVE_TOKEN = 'receive_token'
+// export const RECEIVE_TOKEN = 'receive_token'

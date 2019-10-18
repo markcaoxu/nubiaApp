@@ -14,6 +14,7 @@ let shopHotData =require('./datas/shopcar-data.json')
 // 引入searchlist数据 分类搜索 热门搜索
 let searchList = require('./datas/searchlist.json')
 
+// 
 koaRouter.post('/login_pwd',(ctx)=>{
   // console.log(ctx.query.username,ctx.query.password)
   // 匹配账号密码
@@ -21,7 +22,9 @@ koaRouter.post('/login_pwd',(ctx)=>{
     if(item.username===ctx.query.username&&item.password===ctx.query.password){
       ctx.body={
         message:'登录成功',
-        code:"0"
+        code:"0",
+        // 数据
+        datas
       }
     }
   })
@@ -29,7 +32,7 @@ koaRouter.post('/login_pwd',(ctx)=>{
 // 购物车 热品推荐信息
 koaRouter.get('/shopcar',((ctx)=>{
   let { hotSale,have_rec } = shopHotData
-  console.log(ctx.query)
+  
   if(ctx.query.q=='hot'&&ctx.query.b=='have'){
     ctx.body={
       message:{hotSale,have_rec},
@@ -42,12 +45,26 @@ koaRouter.get('/shopcar',((ctx)=>{
 // 首页 信息
 koaRouter.get('/msite',((ctx)=>{
   let {msite} = shopHotData
-  let {msite_swiper,hotPone} =msite
-  console.log(ctx.query)
+  let {msite_swiper,hotPone,sift} =msite
+  
   if(ctx.query.q=='lbt'&&ctx.query.b=='hot'){
     ctx.body={
-      // 轮播图和 热销机型 /msite?q=lbt&b=hot'
-      message:{msite_swiper,hotPone},
+      // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
+      message:{msite_swiper,hotPone,sift},
+      code:"0"
+    }
+  }
+})
+)
+// 分类页信息
+koaRouter.get('/classify',((ctx)=>{
+  let {classify} = shopHotData
+  let {kinds} =classify
+  console.log(ctx.query)
+  if(ctx.query.q=='classify'){
+    ctx.body={
+      // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
+      message:{kinds},
       code:"0"
     }
   }

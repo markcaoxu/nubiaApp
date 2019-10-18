@@ -24,8 +24,8 @@
               <h1>———— {{kind.name}} ————</h1>
               <ul class="itemul">
                 <li class="itemli" v-for="(item,index) in kind.kind" :key="index">
-                  <img src="./images/hongmo/1.png" alt />
-                  <p>{{item.name}}</p>
+                  <img :src="item.img_url" alt />
+                  <p>{{item.kind_name}}</p>
                 </li>
               </ul>
               <a href="javascript:;" class="seemore">查看更多{{kind.name}}></a>
@@ -39,7 +39,7 @@
 
 <script>
 // 引入数据
-import kinds from "./datas/data.json";
+import reqClassify from "../../../mpvue-server/datas/shopcar-data.json";
 // 引入better-scroll
 import BScroll from "better-scroll";
 export default {
@@ -69,8 +69,11 @@ export default {
       return index;
     }
   },
-  mounted() {
-    this.kinds = kinds.keys
+  async mounted() {
+    let result = await reqClassify
+    // console.log(result.classify)
+    this.kinds = result.classify.kinds
+
     // 初始化Bscroll
     this._initBscroll()
 

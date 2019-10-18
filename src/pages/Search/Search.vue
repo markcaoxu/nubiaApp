@@ -1,9 +1,9 @@
 <template>
   <div class="search_all">
     <div class="search_header">
-      <p class="more">&lt;</p>
+      <p class="more" @click="$router.back('/classify')">&lt;</p>
       <input type="text" class="header_input" placeholder="搜索" />
-      <p class="header_btn" @click="$router.back('/search/product')">搜索</p>
+      <p class="header_btn" @click="$router.push('/search/product')">搜索</p>
     </div>
     <div class="content">
       <p class="hotSearch">热门搜索</p>
@@ -48,6 +48,7 @@
 </template>
 <script>
 // 引入数据
+import {reqSearchList} from '../../api/index'
 import hots from '../../../mpvue-server/datas/searchlist.json'
 export default {
   data(){
@@ -59,8 +60,10 @@ export default {
 
     }
   },
-  mounted(){
-    this.hots = hots.hotSale
+   async mounted(){
+    let resolt = await reqSearchList()
+    this.hots = resolt.message.titles
+    //console.log(resolt.message.titles)
   },
   methods:{
     searchitem(index){
@@ -73,7 +76,7 @@ export default {
     //   }
     // }
     deleteList(index){
-      console.log(index)
+      //console.log(index)
       this.searchArrs.splice(index,1)
     }
   }

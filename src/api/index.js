@@ -19,8 +19,28 @@ export const reqPwdLogin = ({username,password})=>ajax({
   method:'POST',
   url: BASE + `/login_pwd?username=${username}&password=${password}`
 })
-
+// 分类搜索 热门搜索
 export const reqSearchList = ()=>ajax({
   method:'GET',
   url: BASE + `/search?q=lil`
 })
+// 请求 shopcar hot 商品
+export const reqShopcarHot = ()=>{
+  
+  return ajax({
+  method:'GET',
+  url:BASE + '/shopcar?q=hot&b=have'
+})
+}
+
+// 请求 首页轮播图 和热销机型
+export const reqHotPone = ()=>ajax({
+  method:'GET',
+  url:BASE + '/msite?q=lbt&b=hot'
+})
+// 请求 分类页机型
+export const reqClassify = ()=>ajax({
+  method:'GET',
+  url:BASE + '/classify?q=classify'
+})
+

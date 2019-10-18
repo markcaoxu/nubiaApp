@@ -21,6 +21,10 @@ import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 // 登录页
 import Login from '../pages/Login/Login.vue'
 // 搜索
+
+// 商品详情页
+import ShopDetail from '../pages/Detail/Detail.vue'
+
 import Search from '../pages/Search/Search.vue'
 import Product from '../pages/Search/children/Product.vue'
 
@@ -118,6 +122,11 @@ export default [
     // 手机验证码登录组件
     path:'/loginWithCode',
     component: LoginWithCode
+  },
+  {
+    // 商品详情
+    path:'/shopDetail',
+    component:ShopDetail
   },
   // 重定向
   {

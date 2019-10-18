@@ -1,5 +1,5 @@
 <template>
-  <div class="haveShopcar">
+  <div class="haveShopcar"  @click="isMenuShuo=false">
     <div class="haveShopcar-header">
       <!-- 需要图标字体 < -->
       <span class="back icon iconfont icon-huitui" @click="$router.back()"></span>
@@ -8,7 +8,7 @@
       <span
         class="menu icon iconfont"
         :class="isMenuShuo?'icon-iccloes':'icon-caidan'"
-        @click="isMenuShuo=!isMenuShuo"
+        @click.stop="isMenuShuo=!isMenuShuo"
       ></span>
     </div>
     <ul class="menu-List" :class="{menunoshow:!isMenuShuo}">
@@ -70,7 +70,7 @@
       </li>
     </ul>
     <div class="settlement">
-      <button class="settlement-btn">去结算</button>
+      <button class="settlement-btn" >去结算</button>
     </div>
   </div>
 </template>
@@ -86,18 +86,19 @@ export default {
     have_rec: Array, // 推荐商品
     checked_pone: Array //选中的商品
   },
-  mounted(){
-    this.$route.meta.isShowFooter=false
-  },
   computed: {
-    // 计算总加
+    // 计算总价格
     checked_All_pir() {
       let all_pir = 0;
       this.$store.state.checked_pone.forEach(item => {
         all_pir = all_pir + item.num * item.pir;
       });
       return all_pir;
-    }
+    },
+    // 判断 去结算还是登录
+    // goSettlement(){
+
+    // }
   },
   methods: {
     // 加
