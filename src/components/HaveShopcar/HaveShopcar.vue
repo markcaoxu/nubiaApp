@@ -70,12 +70,12 @@
       </li>
     </ul>
     <div class="settlement">
-      <button class="settlement-btn" >去结算</button>
+      <button class="settlement-btn">去结算</button>
     </div>
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -94,10 +94,12 @@ export default {
         all_pir = all_pir + item.num * item.pir;
       });
       return all_pir;
-    },
-    // 判断 去结算还是登录
+    }
+    // 判断 结算前 如果没有登录 先去登录
     // goSettlement(){
-
+    //     if (condition) {
+          
+    //     }
     // }
   },
   methods: {

@@ -14,7 +14,7 @@
             <span>综合</span>
           </a>
         </li>
-        <li class="text" @click="priceSort()">
+        <li class="text" @click="priceSort()" ref="">
           <a href="javascript:;">
             <span>价格</span>
           </a>
@@ -32,7 +32,7 @@
       </ul>
     </div>
     <!-- 商品 -->
-    <PhoneList>
+    <PhoneList :phonePrice="phonePrice">
       
     </PhoneList>
 
@@ -60,6 +60,7 @@
  * 懒加载
  */
 import phoneLists from './datas/data.json'
+import {reqHotPhone} from '../../api/index.js'
 import PhoneList from './PhoneList/PhoneList.vue'
 import BScroll from 'better-scroll'
 export default {
@@ -72,25 +73,30 @@ export default {
       phonePrice:[]
     }
   },
-  mounted(){
+  async mounted(){
+    console.log(this)
+    const result = await reqHotPhone()
     // console.log(phoneLists)
     // console.log(phoneLists.phoneItems)
-    this.phoneLists = phoneLists.phoneItems
-    // console.log(this.phoneLists)
+    console.log(result.message)
+    this.phoneLists = result.message.hotPhone
+    console.log(this.phoneLists)
+
+    // 获取手机的价格
     this.phonePrice=[]
     this.phoneLists.forEach((item,index)=>{
       // console.log(item)
-      Object.values(item)
-      this.phoneList = Object.values(item)
-      // console.log(this.phoneList)
+      this.phoneList = item
+      console.log(this.phoneList) // 获取的是数组
       // console.log(this.phoneList[2])
-      
-      this.phonePrice.push(this.phoneList[2])
+
+      this.phonePrice.push(this.phoneList.pir)
+
       // 获取手机的价格
       // console.log(item.phonePrice)
       // console.log('=====================')
       // this.phonePrice = item.phonePrice
-      console.log(this.phonePrice)
+      // console.log(this.phonePrice)
     });
     
     // console.log(Object.values(this.phoneLists))
@@ -102,7 +108,6 @@ export default {
       console.log('*************************')
       // 获取手机的价格
       // this.phonePrice.sort()
-      console.log(this.phonePrice)
       for(var i=0; i<this.phonePrice.length-1;i++){
 				for(var j=0;j<this.phonePrice.length-1-i;j++){
 					if(this.phonePrice[j]>this.phonePrice[j+1]){
@@ -167,6 +172,8 @@ export default {
             line-height 20px
             color #000
             font-size 20px
+            .active
+              color red
       .image
         width 30px
         height 30px

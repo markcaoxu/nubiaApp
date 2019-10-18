@@ -3,28 +3,39 @@
  */
 
 // 引入mutation-types
-import { SAVE_USER,REMOVE_USER,RECEIVE_TOKEN,RESET_TOKEN } from '../mutationsType.js'
+import {
+  SAVE_USER,
+  REMOVE_USER,
+  RECEIVE_TOKEN,
+  RESET_TOKEN
+} from '../mutationsType.js'
+// 引入api
+import {
+  reqAutoLogin
+} from '../../api/index.js'
 
 // 状态数据
 const state = {
   // 用户信息
-  user:{},
+  user: {},
   // token标识   默认去读取一次
-  token: localStorage.getItem('token_key')
+  token: localStorage.getItem('token') || ""
 }
 
 // 直接修改状态数据的方法
-const mutations ={
+const mutations = {
   // 保存
-  [SAVE_USER](state,user){
+  [SAVE_USER](state, user) {
     state.user = user
   },
   // 清除
-  [REMOVE_USER](state){
+  [REMOVE_USER](state) {
     state.user = {}
   },
   // 更新token
   [RECEIVE_TOKEN](state, token) {
+    console.log('RECEIVE_TOKEN', token)
+    window.localStorage.setItem('token', token)
     state.token = token
   },
   // 重置token
@@ -36,33 +47,49 @@ const mutations ={
 // 间接修改状态数据的方法
 const actions = {
   // 保存用户信息
-  saveUser({commit},user){
-   
+  saveUser({
+    commit
+  }, user) {
+
     // 从user中取出token
     const token = user.token
     // console.log(user)
     // 保存在vuex中
     commit(RECEIVE_TOKEN, token)
-   
+
     // 保存在localStorage中
-    localStorage.setItem('token_key', token)
-    
+    localStorage.setItem('token', token)
+
     // 调用
-    commit(SAVE_USER,user)
+    commit(SAVE_USER, user)
   },
   // 清除用户数据
-  removeUser({commit}){
+  removeUser({
+    commit
+  }) {
     // 清除用户信息
     commit(REMOVE_USER)
     // 重置token
     commit(RESET_TOKEN)
     // 删除localStorage中的token
-    localStorage.removeItem('token_key')
+    localStorage.removeItem('token')
   },
   // 自动登录
-  async autoLogin({commit,state}){
-    // 首先判断本地是否有storage    localStorage
-    // if
+  async autoLogin({
+    commit,
+    state
+  }) {
+    // 首先判断是否有token
+    console.log(123)
+    if (state.token) {
+      // 有    自动登录
+      // 请求自动登录
+      const result = await reqAutoLogin()
+      console.log(result)
+      const user = result.datas.users[0]
+      // 更新user
+      commit(SAVE_USER, user)
+    }
   }
 }
 

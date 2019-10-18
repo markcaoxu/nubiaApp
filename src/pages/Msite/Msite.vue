@@ -1,5 +1,5 @@
 <template>
-  <div class="msiteContainer"  @click="scrollHeader">
+  <div class="msiteContainer" >
     <!-- upload -->
     <!-- <div class="upload" v-if="isShow">
       <img src="../../../static/msite/images/upload.jpg" alt="图片加载失败" class="delleft"/>
@@ -181,7 +181,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this)
+    // console.log(this)
     // 轮播图
     this.$nextTick(() => {
       /* eslint-disable */

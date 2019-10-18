@@ -15,6 +15,11 @@ export default {
   name: 'app',
   components: {
     FooterGuide
+  },
+  mounted () {
+    // const a =  window.localStorage.getItem('token')
+    // console.log('sss', a)
+    this.$store.dispatch('autoLogin')
   }
 }
 </script>
