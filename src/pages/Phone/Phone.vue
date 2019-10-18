@@ -32,7 +32,7 @@
       </ul>
     </div>
     <!-- 商品 -->
-    <PhoneList :phonePrice="phonePrice">
+    <PhoneList :phonePrice="phonePrice" :sortClickCount="sortClickCount">
       
     </PhoneList>
 
@@ -70,42 +70,36 @@ export default {
   data(){
     return{
       phoneLists:[],  // 手机列表
-      phonePrice:[]
+      phonePrice:[],
+      sortClickCount: 0,
     }
   },
   async mounted(){
-    console.log(this)
+ 
     const result = await reqHotPhone()
-    // console.log(phoneLists)
-    // console.log(phoneLists.phoneItems)
-    console.log(result.message)
     this.phoneLists = result.message.hotPhone
-    console.log(this.phoneLists)
 
     // 获取手机的价格
     this.phonePrice=[]
     this.phoneLists.forEach((item,index)=>{
-      // console.log(item)
+
       this.phoneList = item
-      console.log(this.phoneList) // 获取的是数组
-      // console.log(this.phoneList[2])
+ // 获取的是数组
+    
 
       this.phonePrice.push(this.phoneList.pir)
 
-      // 获取手机的价格
-      // console.log(item.phonePrice)
-      // console.log('=====================')
-      // this.phonePrice = item.phonePrice
-      // console.log(this.phonePrice)
+    
     });
     
-    // console.log(Object.values(this.phoneLists))
+   
 
     
   },
   methods:{
     priceSort(){
-      console.log('*************************')
+      this.sortClickCount +=1
+   
       // 获取手机的价格
       // this.phonePrice.sort()
       for(var i=0; i<this.phonePrice.length-1;i++){
@@ -117,7 +111,7 @@ export default {
 					}
 				}
 			}
-			console.log('45555',this.phonePrice)
+
     }
   }
 }

@@ -3,10 +3,16 @@
   <div class="container" ref="phonesWrapper">
     <!-- <ul v-for="(phoneList,index) in phoneLists" :key="index"> -->
     <ul class="phoneItem">
-      <li class="phonelist" v-for="(phoneList,index) in phoneLists" :key="index" ref="phoneli" @click="goDetail(phoneList)">
+      <li
+        class="phonelist"
+        v-for="(phoneList,index) in phoneLists"
+        :key="index"
+        ref="phoneli"
+        @click="goDetail(phoneList)"
+      >
         <a href="javascript:;" v-lazy="(phoneList,index)">
           <div class="left">
-            <img :src="phoneList.img_url" alt="" />
+            <img :src="phoneList.img_url" alt />
           </div>
           <div class="right">
             <div class="top">{{phoneList.title_config}}</div>
@@ -23,78 +29,82 @@
  * 懒加载
  */
 // import phoneLists from "../datas/data.json"
-import {reqHotPhone} from '../../../api/index.js'
-import {Lazyload} from 'mint-ui'
-import BScroll from 'better-scroll'
+import { reqHotPhone } from "../../../api/index.js";
+import { Lazyload } from "mint-ui";
+import BScroll from "better-scroll";
 
 export default {
-  props:[" phonePrice "],
-  name:'PhoneList',
+  props: {
+    phonePrice: { type: Array },
+    sortClickCount: { type: Number, required: true }
+  },
+  name: "PhoneList",
   data() {
     return {
       phoneLists: [], // 手机列表
-      startY:0,
-      phonePrice:[],
-      scrollbar:false
-    }
+      startY: 0,
+      // phonePrice: [],
+      scrollbar: false
+    };
   },
   async mounted() {
-    console.log(this.phonePrice)
-    const result = await reqHotPhone()
-    // console.log(result.message.hotPhone)
-    // console.log(phoneLists.phoneItems)
-    this.phoneLists = result.message.hotPhone
-    // console.log(this.phoneLists);
+    const result = await reqHotPhone();
+    this.phoneLists = result.message.hotPhone;
     
+
     // 滑动
-    this._initScroll()
+    this._initScroll();
   },
-  watch:{
-    phonePrice(){
-      if(this.phonePrice){
-        console.log(this.phonePrice)
-      }
+  watch: {
+    sortClickCount(newValue) {
+      
+      const nextPhoneList = Array.from(this.phoneLists).sort(
+        (currentItem, nextItem) => {
+          return currentItem.pir - nextItem.pir;
+        }
+      );
+      this.phoneLists.splice(0, this.phoneLists.length, ...nextPhoneList);
     }
   },
-  methods:{
-    _initScroll () {
-      this.phonesScroll = new BScroll(this.$refs.phonesWrapper,{
-        click:true,
-        probeType:3
-      })
+  methods: {
+    _initScroll() {
+      this.phonesScroll = new BScroll(this.$refs.phonesWrapper, {
+        click: true,
+        probeType: 3
+      });
       // 滑动
       // 下拉
-      this.phonesScroll.on('pullingDown',()=>{
-        this.phones=[]
+      this.phonesScroll.on("pullingDown", () => {
+        this.phones = [];
         // 获取数据
-        this.setData()
+        this.setData();
       }),
-      // 上拉
-      this.phonesScroll.on('pullinUp',()=>{
-        // 判断是否继续上拉刷新
-        console.log(this.curPage)
-        if(this.curPage<this.totalPage){
-          this.setData()
-        }
-      })
+        // 上拉
+        this.phonesScroll.on("pullinUp", () => {
+          // 判断是否继续上拉刷新
+         
+          if (this.curPage < this.totalPage) {
+            this.setData();
+          }
+        });
     },
-    pullingDownUp () {
-      this.phonesScroll.finishPullDown()
-      this.phonesScroll.finishPullUp()
+    pullingDownUp() {
+      this.phonesScroll.finishPullDown();
+      this.phonesScroll.finishPullUp();
       // 重新计算元素高度
-      this.phonesScroll.refresh()
+      this.phonesScroll.refresh();
     },
-    setData(){
-      this.$nextTick(()=>{
-        this.pullingDownUp()
-      })
+    setData() {
+      this.$nextTick(() => {
+        this.pullingDownUp();
+      });
     },
-    goDetail(pone){
-      this.$store.dispatch('upDataDetail',pone)
-      this.$router.push('/shopDetail')
+    goDetail(pone) {
+      this.$store.dispatch("upDataDetail", pone);
+      this.$router.push("/shopDetail");
     }
   }
-}
+};
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 .container
