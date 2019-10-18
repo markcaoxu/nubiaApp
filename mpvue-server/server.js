@@ -12,7 +12,7 @@ let datas = require('./datas/login.json')
 // 引入shopcar数据 热销数据跟 推荐数据
 let shopHotData =require('./datas/shopcar-data.json')
 // 引入searchlist数据 分类搜索 热门搜索
-let searchList = require('./datas/searchlist.json')
+// let searchList = require('./datas/searchlist.json')
 
 //引入发现信息
 let findData = require('./datas/Find.json')
@@ -100,16 +100,16 @@ koaRouter.get('/classify',((ctx)=>{
 })
 )
 // 分类 热门搜索
-koaRouter.get('/search',((ctx)=>{
-  let { titles } = searchList
-  if(ctx.query.q=='lil'){
-    ctx.body={
-      message:{titles},
-      code:"0"
-    }
-  }
-})
-)
+// koaRouter.get('/search',((ctx)=>{
+//   let { titles } = searchList
+//   if(ctx.query.q=='lil'){
+//     ctx.body={
+//       message:{titles},
+//       code:"0"
+//     }
+//   }
+// })
+// )
 
 // 自动登录的接口
 koaRouter.get('/autologin',((ctx)=>{

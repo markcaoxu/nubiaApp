@@ -54,7 +54,7 @@
     <!-- content -->
     <div class="content">
       <div class="contentLeft"  >
-        <a href="javascript:;">s
+        <a href="javascript:;">
           <img src="./images/content/1.jpg" alt  @click="$router.push('/phone')"/>
         </a>
       </div>

@@ -28,7 +28,8 @@
 <script>
 // 引入数据
 import {reqSearchList} from '../../api/index.js'
-import hots from '../../../mpvue-server/datas/searchlist.json'
+// import hots from '../../../mpvue-server/datas/searchlist.json'
+import hots from '../../api/index.js'
 export default {
   data(){
     return{

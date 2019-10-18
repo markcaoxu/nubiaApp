@@ -36,10 +36,10 @@
     </div>
   </div>
 </template>
-
+ 
 <script>
 // 引入数据
-import reqClassify from "../../../mpvue-server/datas/shopcar-data.json";
+import {reqClassify} from "../../api/index.js";
 // 引入better-scroll
 import BScroll from "better-scroll";
 export default {
