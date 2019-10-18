@@ -21,12 +21,12 @@ import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 // 登录页
 import Login from '../pages/Login/Login.vue'
 // 搜索
+import Search from '../pages/Search/Search.vue'
+import Product from '../pages/Search/children/Product.vue'
+// 更多手机产品页
 
 // 商品详情页
 import ShopDetail from '../pages/Detail/Detail.vue'
-
-import Search from '../pages/Search/Search.vue'
-import Product from '../pages/Search/children/Product.vue'
 
 import Phone from '../pages/Phone/Phone.vue'
 

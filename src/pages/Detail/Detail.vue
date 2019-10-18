@@ -3,39 +3,28 @@
     <!-- 头部swiper-container -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div
+          class="swiper-slide"
+          v-for="(imgitem,index) in detailObj.xq_swiper_img_url"
+          :key="index"
+        >
           <a href="javascript:;">
-            <img src="./images/item01.png" alt />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <img src="./images/item01.png" alt />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <img src="./images/item01.png" alt />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <img src="./images/item01.png" alt />
+            <img :src="imgitem" alt />
           </a>
         </div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
       <!-- back -->
-      <img class="timg tleft" src="./images/back.png" alt="">
+      <img class="timg tleft" src="./images/back.png" alt @click="$router.back()" />
       <!-- pulldown -->
-      <img class="timg tright" src="./images/pulldown.png" alt="">
+      <img class="timg tright" src="./images/pulldown.png" alt />
     </div>
     <!-- 中部detial_content -->
     <div class="detial_content">
-      <div class="detail_title message">红魔3S 银色风暴 8GB+128GB</div>
-      <div class="detail_desc message">骁龙855Plus、风冷+液冷双散热</div>
-      <div class="detail_price message">￥2999.00元</div>
+      <div class="detail_title message">{{detailObj.title + detailObj.title_config}}</div>
+      <div class="detail_desc message">{{detailObj.details}}</div>
+      <div class="detail_price message">￥{{detailObj.pir}}元</div>
     </div>
     <!-- 底部detail_bottom -->
     <div class="detail_bottom">
@@ -43,17 +32,9 @@
       <div class="detail_sellInfo">
         <div class="sell_title">促销</div>
         <div class="sell_info">
-          <p class="info01">
-            <i>分期</i>
-            <span>享受花呗3期、6期、12期分期</span>
-          </p>
-          <p class="info01">
-            <i>积分</i>
-            <span>购买即赠积分，积分可抵现</span>
-          </p>
-          <p class="info01">
-            <i>包邮</i>
-            <span>全球包邮</span>
+          <p class="info01" v-for="(cxItem,index) in detailObj.promotion" :key="index">
+            <i>{{cxItem.pro_key}}</i>
+            <span>{{cxItem.pro_val}}</span>
           </p>
         </div>
       </div>
@@ -61,26 +42,28 @@
     <!-- 脚部detail_footer -->
     <div class="detail_footer">
       <div class="footer_left">
-        <a href="javascript:;">
-          <img src="./images/servire.png" alt="">
+        <a href="http://cs.nubia.com/live800/chatClient/chatbox.jsp?companyID=9018&enterurl=https%3A%2F%2Fm.nubia.com%2Fproduct%2F841%2F1170&configID=5&skillId=&info=&vid=97327478">
+          <img src="./images/servire.png" alt />
           <span>客服</span>
         </a>
         <a href="javascript:;">
-          <img src="./images/collect.png" alt="">
-          <span>收藏</span>
+          <img src="./images/collect.png"  :class="{redL:isred}"  @click="isred=!isred"/>
+          <span :class="{redL:isred}" >{{isred?'已收藏':'收藏'}}</span>
         </a>
         <a href="javascript:;">
-          <img src="./images/shopcar.png" alt="">
+          <img src="./images/shopcar.png" alt @click="$router.push('/shopcar')" />
           <span>购物车</span>
+          <!-- v-show="shopLength&&shopLength>0" -->
+          <div class="num-length" v-show="shopLength&&shopLength>0">{{shopLength}}</div>
         </a>
       </div>
       <div class="footer_right">
-        <a href="javascript:;">
+        <span class="right_add" @click.stop="addShopcar">
           <span>加入购物车</span>
-        </a>
-        <a href="javascript:;">
+        </span>
+        <span class="right_add" @click="buy(detailObj)">
           <span>立即购买</span>
-        </a>
+        </span>
       </div>
     </div>
   </div>
@@ -91,8 +74,15 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+// 引入vuex方法
+import { mapState } from "vuex";
 export default {
   name: "Detail",
+  data() {
+    return {
+      isred:false
+    };
+  },
   mounted() {
     this.$nextTick(() => {
       /* eslint-disable */
@@ -103,6 +93,41 @@ export default {
         }
       });
     });
+
+    // 加载时 如果没有详情数据 那么跳转到首页
+     if(!(this.detailObj instanceof Object) || !this.detailObj.title){
+          this.$router.replace("/msite");
+       }
+  },
+  computed: {
+    // ...mapState(['detailObj,checked_pone'])
+     // 获取vuex 中的 对象数据 跟购物车数据
+    ...mapState({
+      detailObj: state =>{
+        return state.detailObj
+        },
+      checked_pone: state => {
+        return state.checked_pone;
+      }
+    }),
+    // 获取车 数量
+    shopLength() {
+      return this.checked_pone.length;
+    }
+  },
+  methods: {
+    // 添加到购物车
+    addShopcar() {
+      let pone = this.detailObj;
+      this.$store.dispatch("addCheckedShop", pone);
+    },
+    // 去购买
+    buy(pone){
+      // 加入购物车
+    this.$store.dispatch("addCheckedShop", pone)
+      // 并跳转 到结算
+      this.$router.push('/shopcar')
+    }
   }
 };
 </script>
@@ -121,14 +146,15 @@ export default {
     position relative
     img
       width 100%
-    .timg 
+    .timg
       width 36px
       height 36px
       position absolute
       top 20px
+      z-index 999
     .tleft
       left 20px
-    .tright  
+    .tright
       right 20px
   // 中部detial_content
   .detial_content
@@ -201,17 +227,35 @@ export default {
         display flex
         flex-direction column
         align-items center
-        img   
+        position relative
+        img
           width 20px
           height 20px
-        span 
+          &.redL
+            color red
+        span
           font-size 12px
           padding-top 2px
+          &.redL
+            color red
+            font-weight 700
+        .num-length
+          position absolute
+          right 8px
+          top 0
+          background-color red
+          border-radius 50%
+          width 15px
+          height 15px
+          color #ffffff
+          text-align center
+          line-height 15px
+          font-weight 500
     .footer_right
       width 50%
       display flex
       float right
-      a
+      .right_add
         width 50%
         height 50px
         line-height 50px
@@ -222,7 +266,4 @@ export default {
           background-color #FF995F
         &:nth-child(2)
           background-color #FF5D5D
-          
-
-  
 </style>

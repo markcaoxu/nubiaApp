@@ -7,7 +7,7 @@
     <div class="classify_content">
       <div class="left_list">
         <ul ref="leftUl">
-          <li class="list-content" v-for="(kind,index) in kinds" :key="index">
+          <li class="list-content" v-for="(kind,index) in kinds" :key="index" >
             <a
               href="javascript:;"
               :class="{current:currentIndex===index}"
@@ -23,7 +23,7 @@
             <li class="itemheader" v-for="(kind,index) in kinds" :key="index">
               <h1>———— {{kind.name}} ————</h1>
               <ul class="itemul">
-                <li class="itemli" v-for="(item,index) in kind.kind" :key="index">
+                <li class="itemli" v-for="(item,index) in kind.kind" :key="index" @click="goDetail(item)">
                   <img :src="item.img_url" alt />
                   <p>{{item.kind_name}}</p>
                 </li>
@@ -119,6 +119,11 @@ export default {
       const scrollY = this.tops[index];
       this.scrollY = scrollY;
       this.rightScroll.scrollTo(0, -scrollY, 300);
+    },
+    // 跳转到详情页
+    goDetail(pone){
+      this.$store.dispatch('upDataDetail',pone)
+      this.$router.push('/shopDetail')
     }
   }
 }
@@ -180,7 +185,7 @@ export default {
     .right_list
       float right
       width 72%
-      height 605px
+      height 600px
       overflow hidden
       .rightitem
         width 100%

@@ -24,14 +24,26 @@ export const reqSearchList = ()=>ajax({
   method:'GET',
   url: BASE + `/search?q=lil`
 })
+
+export const req=(()=>ajax({
+  method:'POST',
+  url: BASE + '/phone'
+}))
+
 // 请求 shopcar hot 商品
 export const reqShopcarHot = ()=>{
-  
+
   return ajax({
   method:'GET',
   url:BASE + '/shopcar?q=hot&b=have'
 })
 }
+// 请求 发现 信息
+export const reqFind = ()=>ajax({
+  method:'GET',
+  url:BASE + '/find?q=wy&b=msg'
+})
+
 
 // 请求 首页轮播图 和热销机型
 export const reqHotPone = ()=>ajax({

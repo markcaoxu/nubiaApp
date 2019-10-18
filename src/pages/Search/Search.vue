@@ -3,13 +3,13 @@
     <div class="search_header">
       <p class="more" @click="$router.back('/classify')">&lt;</p>
       <input type="text" class="header_input" placeholder="搜索" />
-      <p class="header_btn" @click="$router.push('/search/product')">搜索</p>
+      <p class="header_btn">搜索</p>
     </div>
     <div class="content">
       <p class="hotSearch">热门搜索</p>
       <ul class="hots" @click="showSwitch=true">
-        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index)">
-          <a href="javascript:;" class="btn1" ref="alink">{{hot.title}}</a>
+        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index,hot)">
+          <a href="javascript:;" class="btn1" ref="alink" >{{hot.title}}</a>
         </li>
       </ul>
     </div>
@@ -22,33 +22,12 @@
         <p>清除历史记录</p>
       </span>
     </div>
-    <!-- <div class="search_list">
-      <ul>
-        <li>
-            <a href="javascript:;">红魔手机支架</a>
-        </li>
-        <li>
-            <a href="javascript:;">红魔加长电竞数据线</a>
-        </li>
-        <li>
-            <a href="javascript:;">红魔战神手柄</a>
-        </li>
-        <li>
-            <a href="javascript:;">红魔3S</a>
-        </li>
-        <li>
-            <a href="javascript:;">红魔Mars手柄专用保护套</a>
-        </li>
-        <li>
-            <a href="javascript:;">红魔3电竞魔盒</a>
-        </li>
-      </ul>
-    </div> -->
+    
   </div>
 </template>
 <script>
 // 引入数据
-import {reqSearchList} from '../../api/index'
+import {reqSearchList} from '../../api/index.js'
 import hots from '../../../mpvue-server/datas/searchlist.json'
 export default {
   data(){
@@ -66,18 +45,23 @@ export default {
     //console.log(resolt.message.titles)
   },
   methods:{
-    searchitem(index){
+    searchitem(index,pone){
       const alink = this.hots[index]
       this.searchArrs.unshift(alink)
+      console.log(pone)
+      //this.$store.dispatch('upDataDetail',pone)
+      //this.$router.push('/shopDetail')
     },
-    // isShow(){
-    //   if(!this.searchArrs.length>0||showSwitch){
-    //     return false
-    //   }
-    // }
+    // goDetails(pone){
+    //   const alink = this.hots[index]
+    //   this.searchArrs.unshift(alink)
+    //   this.$store.dispatch('upDataDetail',pone)
+    //   this.$router.push('/shopDetail')
+    // },
+  
     deleteList(index){
       //console.log(index)
-      this.searchArrs.splice(index,1)
+      this.searchArrs.splice(index)
     }
   }
   
@@ -151,11 +135,11 @@ export default {
       color #979797
   .delete_btn
     display block
-    height 35px
-    margin 30px 90px
+    height 36px
+    margin 20px 90px
     border 1px solid #737373
     text-align center
-    line-height 37px
+    line-height 36px
     background-image url('./images/search_delect.png')
     background-repeat no-repeat
     background-size 25px
