@@ -20,7 +20,9 @@ import Ticket01 from '../pages/Profile/children/Profile-ticket01/index.vue'
 import LoginWithCode from '../pages/Login/children/LoginWithCode/index.vue'
 // 登录页
 import Login from '../pages/Login/Login.vue'
+// 搜索
 import Search from '../pages/Search/Search.vue'
+import Product from '../pages/Search/children/Product.vue'
 // 更多手机产品页
 
 // 商品详情页
@@ -100,12 +102,18 @@ export default [
     path: '/login',
     component: Login
   },
-  // search
   {
+    // search
     path: '/search',
-		component: Search
-	},
+    component: Search,
+		children:[
+			{
+				path:'/search/product',
+				component: Product
+      }
+    ]
   // phone 手机列表
+  },
   {
     path: '/phone',
     component: Phone

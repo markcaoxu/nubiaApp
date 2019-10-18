@@ -11,6 +11,8 @@ let koaRouter = new KoaRouter()
 let datas = require('./datas/login.json')
 // 引入shopcar数据 热销数据跟 推荐数据
 let shopHotData =require('./datas/shopcar-data.json')
+// 引入searchlist数据 分类搜索 热门搜索
+let searchList = require('./datas/searchlist.json')
 
 //引入发现信息
 let findData = require('./datas/Find.json')
@@ -92,6 +94,17 @@ koaRouter.get('/classify',((ctx)=>{
     ctx.body={
       // 轮播图和 热销机型 /msite?q=lbt&b=hot' 推荐配件
       message:{kinds},
+      code:"0"
+    }
+  }
+})
+)
+// 分类 热门搜索
+koaRouter.get('/search',((ctx)=>{
+  let { titles } = searchList
+  if(ctx.query.q=='lil'){
+    ctx.body={
+      message:{titles},
       code:"0"
     }
   }

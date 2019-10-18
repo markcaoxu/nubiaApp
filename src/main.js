@@ -39,6 +39,9 @@ Vue.use(Lazyload);
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 
+import { Search } from 'mint-ui';
+Vue.component(Search.name, Search);
+
 // vee-validate的引入
 import './vee-validate.js'
 

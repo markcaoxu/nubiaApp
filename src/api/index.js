@@ -19,6 +19,11 @@ export const reqPwdLogin = ({username,password})=>ajax({
   method:'POST',
   url: BASE + `/login_pwd?username=${username}&password=${password}`
 })
+// 分类搜索 热门搜索
+export const reqSearchList = ()=>ajax({
+  method:'GET',
+  url: BASE + `/search?q=lil`
+})
 
 // 请求 msite hot 商品
 export const reqHotPhone=()=>ajax({
@@ -28,7 +33,7 @@ export const reqHotPhone=()=>ajax({
 
 // 请求 shopcar hot 商品
 export const reqShopcarHot = ()=>{
-  
+
   return ajax({
   method:'GET',
   url:BASE + '/shopcar?q=hot&b=have'

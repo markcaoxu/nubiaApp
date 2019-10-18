@@ -7,43 +7,61 @@
     </div>
     <div class="content">
       <p class="hotSearch">热门搜索</p>
-      <ul class="hots">
-        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem">
-          <a href="javascript:;" class="btn1" ref="alink">{{hot.title}}</a>
+      <ul class="hots" @click="showSwitch=true">
+        <li class="hotitem" v-for="(hot,index) in hots" :key="index" @click="searchitem(index,hot)">
+          <a href="javascript:;" class="btn1" ref="alink" >{{hot.title}}</a>
         </li>
       </ul>
     </div>
     <div class="search_bottom">
       <p class="search_history">搜索历史</p>
-      <ul class="history_list">
-        <li class="historyitem">红魔3</li>
+      <ul class="history_list" v-show="showSwitch">
+        <li class="historyitem" v-for="(searchArr,index) in searchArrs" :key="index">{{searchArr.title}}</li>
       </ul>
-      <span class="delete_btn">
+      <span class="delete_btn" @click="deleteList">
         <p>清除历史记录</p>
       </span>
     </div>
+    
   </div>
 </template>
 <script>
 // 引入数据
-import hots from './datas/data.json'
+import {reqSearchList} from '../../api/index.js'
+import hots from '../../../mpvue-server/datas/searchlist.json'
 export default {
   data(){
     return{
       hots:[], //遍历的数据
       searchText:'',// 用来获取文本框输入的内容
-      searchArr:[] // 接收搜索内容
+      searchArrs:[], // 接收搜索内容 
+      showSwitch:true  
+
     }
   },
-  mounted(){
-    this.hots = hots.titles
+   async mounted(){
+    let resolt = await reqSearchList()
+    this.hots = resolt.message.titles
+    //console.log(resolt.message.titles)
   },
   methods:{
-    searchitem(){
-      // const alink = this.$refs.alink
-      // target
-      // this.searchArr.push(alink)
-      // console.log(this.searchArr)
+    searchitem(index,pone){
+      const alink = this.hots[index]
+      this.searchArrs.unshift(alink)
+      //console.log(pone)
+      //this.$store.dispatch('upDataDetail',pone)
+      //this.$router.push('/shopDetail')
+    },
+    // goDetails(pone){
+    //   const alink = this.hots[index]
+    //   this.searchArrs.unshift(alink)
+    //   this.$store.dispatch('upDataDetail',pone)
+    //   this.$router.push('/shopDetail')
+    // },
+  
+    deleteList(index){
+      //console.log(index)
+      this.searchArrs.splice(index)
     }
   }
   
@@ -73,7 +91,7 @@ export default {
       background-size 20px
       background-color #F8F8F8
       background-position 9px 6px
-      padding 11px 34px
+      padding 12px 34px
     .header_btn
       display inline-block
       text-align center
@@ -117,11 +135,11 @@ export default {
       color #979797
   .delete_btn
     display block
-    height 35px
-    margin 30px 90px
+    height 36px
+    margin 20px 90px
     border 1px solid #737373
     text-align center
-    line-height 37px
+    line-height 36px
     background-image url('./images/search_delect.png')
     background-repeat no-repeat
     background-size 25px
