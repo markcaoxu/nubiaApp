@@ -17,7 +17,7 @@ import BlockShop from '../../../components/Find/BlockShop'
 //引入下拉菜单组件
 import FormSlect from '../../../components/Find/FormSlect'
 //引入reqFind方法
-import { reqFind } from "../../api/index";
+import { reqFind } from "../../../api/index";
 export default {
   components: {
 		BlockShop,

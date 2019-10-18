@@ -9,7 +9,7 @@ import axios from 'axios'
  import qs from 'qs'
 
 // 引入store
-import store from '../store'
+// import store from '../store'
 
 // 引入router
 // import router from '../router'
