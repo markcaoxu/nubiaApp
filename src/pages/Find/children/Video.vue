@@ -1,5 +1,6 @@
 <template>
 <div>
+	<!-- 引入视频块组件 -->
 	<BlockVideo />
 <router-view></router-view>
 </div>

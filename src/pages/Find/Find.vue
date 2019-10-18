@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+		<!-- 引入头部组件 -->
     <Header v-if="$route.path!=='/find/experienceShop'&&$route.path!=='/find/detail'" />
 		<router-view></router-view>
   </div>
@@ -19,7 +20,6 @@ export default {
       }
     }
   }
-	
 }
 </script>
 
