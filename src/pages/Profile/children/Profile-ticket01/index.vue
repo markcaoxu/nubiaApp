@@ -9,6 +9,14 @@
       <div class="item" :class="{change:activeIndex===2}" @click="chooseThis(2)">已使用(0)</div>
       <div class="item" :class="{change:activeIndex===3}" @click="chooseThis(3)">已失效(0)</div>
     </div>
+    <div class="icon_img">
+      <img src="https://oss.static.nubia.cn/active/5c515b88a6d8236.png" alt=""/>
+      <p>你还没有任何优惠券</p>
+    </div>
+    <div class="ticket01_footer">
+      <input class="footer_input" type="number" placeholder="请输入优惠券号码"/>
+      <div class="footer_btn">绑定</div>
+    </div>
   </div>
 </template>
 
@@ -16,7 +24,7 @@
 export default {
   data () {
     return {
-      activeIndex:0
+      activeIndex:1
     }
   },
   methods: {
@@ -63,5 +71,40 @@ export default {
       &.change
         color #FF4D4D
         border-bottom 4px solid #FF4D4D
-
+  .icon_img
+    width 100%
+    height 70%
+    display flex
+    flex-direction column
+    align-items center
+    img 
+      width 70px
+      height 70px
+      padding-top 110px
+      padding-bottom 15px
+    p
+      font-size 18px
+  .ticket01_footer
+    width 100%
+    height 40px
+    background-color #ffffff
+    position fixed
+    left 0
+    bottom 0
+    display flex
+    padding 10px
+    color #fff
+    .footer_input
+      width 70%
+      background-color #D8D8D8
+      padding-left 5px 
+    ::-webkit-input-placeholder
+      color #ffffff
+      font-size 16px
+    .footer_btn
+      width 30%
+      height 40px
+      text-align center
+      line-height 40px
+      background-color #FF5E5E
 </style>
