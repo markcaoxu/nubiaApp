@@ -203,8 +203,9 @@ export default {
             display inline-block
             overflow hidden
             height 100%
+            width 100%
             .itemli
-              width 42%
+              width 39%
               height 20%
               float left
               margin 5px 8px
@@ -221,5 +222,6 @@ export default {
             font-size 10px
             margin-top 25px
             display inline-block
+            padding-bottom 40px
 </style>
 
