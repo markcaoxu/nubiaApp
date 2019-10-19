@@ -5,7 +5,9 @@ import App from './App.vue'
 // 引入路由
 import router from './router/index.js'
 // 引入Lazyload
-import { Lazyload } from 'mint-ui'
+import {
+  Lazyload
+} from 'mint-ui'
 //引入reset.css文件，重置样式
 import '../public/css/reset.css'
 
@@ -19,16 +21,24 @@ import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
 // mint-ui的主要组件
-import { Field } from 'mint-ui';
+import {
+  Field
+} from 'mint-ui';
 Vue.component(Field.name, Field);
 
 // mint-ui选项卡相关
-import { Navbar, TabItem } from 'mint-ui';
+import {
+  Navbar,
+  TabItem
+} from 'mint-ui';
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 
 // mint-ui表单校验相关
-import { TabContainer, TabContainerItem } from 'mint-ui';
+import {
+  TabContainer,
+  TabContainerItem
+} from 'mint-ui';
 
 //引入懒加载
 // import { Lazyload } from 'mint-ui';
@@ -40,7 +50,9 @@ Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 
 // 
-import { Search } from 'mint-ui';
+import {
+  Search
+} from 'mint-ui';
 Vue.component(Search.name, Search);
 
 // vee-validate的引入
@@ -53,7 +65,7 @@ Vue.config.productionTip = false
 // new不报错
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+ el: '#app',
   components: {
     App
   },

@@ -59,9 +59,9 @@ export default {
       const index = tops.findIndex(
         (top, index) => scrollY >= top && scrollY < tops[index + 1]
       );
-
       if (this.index !== index && this.leftScroll) {
         // 把当前的索引保存起来
+        /* eslint-disable */
         this.index = index;
         // 立刻让左侧的列表滑动到我指定索引的位置
         const li = this.$refs.leftUl.children[index];
@@ -72,9 +72,7 @@ export default {
   },
   
   async mounted() {
-    // console.log(this)
     let result = await reqClassify()
-    // console.log(result)
     this.kinds = result.message.kinds
 
     // 初始化Bscroll
@@ -82,12 +80,10 @@ export default {
 
     this.$nextTick(() => {
       // 初始化tops数据
-      // console.log("nextTick")
       this._initTops();
     })
   },
   methods: {
-    
     // 初始化滑动对象
     _initBscroll() {
       this.rightScroll = new BScroll(".right_list", {
@@ -95,9 +91,11 @@ export default {
         probeType: 3
       });
       // 右侧列表的滑动事件
+      /* eslint-disable */
       this.rightScroll.on("scroll", ({ x, y }) => {
         this.scrollY = Math.abs(y);
       });
+      /* eslint-disable */
       this.rightScroll.on("scrollEnd", ({ x, y }) => {
         this.scrollY = Math.abs(y);
       });
@@ -127,6 +125,7 @@ export default {
     // 跳转到详情页
     goDetail(pone){
       this.$store.dispatch('upDataDetail',pone)
+      /* eslint-disable */
       this.$router.push('/shopDetail')
     }
   }
@@ -205,12 +204,12 @@ export default {
             overflow hidden
             height 100%
             .itemli
-              width 43%
-              height 130px
+              width 42%
+              height 20%
               float left
               margin 5px 8px
               text-align center
-              // clear left
+              // clear both
               img
                 width 100%
                 height 80%

@@ -3,18 +3,18 @@
     <!-- 手机商品页面 Phone-->
     <!-- 头部 -->
     <div class="header" @click="$router.back('/msite')">
-      <span class="icon" >&lt;</span>
-      <span class="title" >热销手机</span>
+      <span class="icon">&lt;</span>
+      <span class="title">热销手机</span>
     </div>
     <!-- 商品菜单 -->
     <div class="productsTitle">
       <ul class="titleList">
         <li class="text">
-          <a href="javascript:;"  @click="toggle(1)">
+          <a href="javascript:;" @click="toggle(1)">
             <span :class="{current:activeIndex===1}">综合</span>
           </a>
         </li>
-        <li class="text" @click="priceSort()" ref="">
+        <li class="text" @click="priceSort()" ref>
           <a href="javascript:;" @click="toggle(2)">
             <span :class="{current:activeIndex===2} ">价格</span>
           </a>
@@ -32,32 +32,8 @@
       </ul>
     </div>
     <!-- 商品 -->
-    <PhoneList :phonePrice="phonePrice" :sortClickCount="sortClickCount">
-      
-    </PhoneList>
-
-    <!-- <div class="list">
-      <ul v-for="(phoneList,index) in phoneLists" :key="index">
-        <li>
-          <a href="javascript:;">
-            <div class="left">
-              <img :src="phoneList.phoneImage" alt />
-            </div>
-            <div class="right">
-              <div class="top">{{phoneList.phoneCharactor}}</div>
-              <span>￥{{phoneList.phonePrice}}</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>  -->
-    <!-- <div class="tips" >
-			<p v-if="isLoad">正在加载...</p>
-			<p v-if="!isLoad">没有更多啦~</p>
-			<i v-if="isLoad"> <img src="./images/loadingImg.gif" alt="" style="max-width:100%"></i>
-		</div> -->
+    <PhoneList :phonePrice="phonePrice" :sortClickCount="sortClickCount"></PhoneList>
   </div>
-
 </template>
 <script>
 /**
@@ -65,70 +41,59 @@
  * 懒加载
  */
 // import phoneLists from './datas/data.json'
-import {reqHotPhone} from '../../api/index.js'
-import PhoneList from './PhoneList/PhoneList.vue'
-import BScroll from 'better-scroll'
+import { reqHotPhone } from "../../api/index.js";
+import PhoneList from "./PhoneList/PhoneList.vue";
+import BScroll from "better-scroll";
 export default {
-  components:{
+  components: {
     PhoneList
   },
-  data(){
-    return{
-      activeIndex:-1,
-      phoneLists:[],  // 手机列表
-      phonePrice:[],
-      isLoad:true,
+  data() {
+    return {
+      activeIndex: -1,
+      phoneLists: [], // 手机列表
+      phonePrice: [],
+      isLoad: true,
       sortClickCount: 0
-    }
+    };
   },
-  async mounted(){
- 
-    const result = await reqHotPhone()
-    this.phoneLists = result.message.hotPhone
+  async mounted() {
+    const result = await reqHotPhone();
+    this.phoneLists = result.message.hotPhone;
 
     // 获取手机的价格
-    this.phonePrice=[]
-    this.phoneLists.forEach((item,index)=>{
+    this.phonePrice = [];
+    this.phoneLists.forEach((item, index) => {
+      this.phoneList = item;
+      // 获取的是数组
 
-      this.phoneList = item
- // 获取的是数组
-    
-
-      this.phonePrice.push(this.phoneList.pir)
-
-    
+      this.phonePrice.push(this.phoneList.pir);
     });
-    
-   
-
-    
   },
-  methods:{
-    priceSort(){
-      this.sortClickCount +=1
-   
+  methods: {
+    priceSort() {
+      this.sortClickCount += 1;
+
       // 获取手机的价格
       // this.phonePrice.sort()
-      for(var i=0; i<this.phonePrice.length-1;i++){
-				for(var j=0;j<this.phonePrice.length-1-i;j++){
-					if(this.phonePrice[j]>this.phonePrice[j+1]){
-						var temp=this.phonePrice[j];
-						this.phonePrice[j] = this.phonePrice[j+1];
-						this.phonePrice[j+1]=temp;
-					}
-				}
-			}
-			console.log(this.phonePrice)
-    },
-    toggle(index){
-      if(typeof index !== 'number'){
-        throw new TypeError('index err')
+      for (var i = 0; i < this.phonePrice.length - 1; i++) {
+        for (var j = 0; j < this.phonePrice.length - 1 - i; j++) {
+          if (this.phonePrice[j] > this.phonePrice[j + 1]) {
+            var temp = this.phonePrice[j];
+            this.phonePrice[j] = this.phonePrice[j + 1];
+            this.phonePrice[j + 1] = temp;
+          }
+        }
       }
-      this.activeIndex=index
-
+    },
+    toggle(index) {
+      if (typeof index !== "number") {
+        throw new TypeError("index err");
+      }
+      this.activeIndex = index;
     }
   }
-}
+};
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 .productsContainer

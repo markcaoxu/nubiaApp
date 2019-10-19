@@ -53,13 +53,11 @@ export default {
     searchitem(index,pone){
       const alink = this.hots[index]
       this.searchArrs.unshift(alink)
-      //console.log(pone)
       this.$store.dispatch('upDataDetail',pone)
       this.$router.push('/shopDetail')
     },
     
     deleteList(index){
-      //console.log(index)
       this.searchArrs.splice(index)
     }
   }

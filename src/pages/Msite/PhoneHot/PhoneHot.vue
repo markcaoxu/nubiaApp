@@ -3,7 +3,7 @@
   <div class="phoneHot">
     <span :class="{on:$route.path==='/phone'}" @click="$router.push('/phone')">热销机型</span>
     <div class="hotImg">
-      <a href="javascript">
+      <a href="javascript:;">
         <img src="./images/content/hot.jpg" alt="error" />
       </a>
     </div>
@@ -30,7 +30,9 @@
 // 引入Swiper插件
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
+/* eslint-disable */
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+/* eslint-disable */
 import BScroll from "better-scroll";
 
 import {reqHotPone} from '../../../api/index.js'
@@ -43,7 +45,6 @@ export default {
     };
   },
   async mounted() {
-    // console.log(this);
     // 轮播图
     this.$nextTick(() => {
       /* eslint-disable */
@@ -55,9 +56,7 @@ export default {
       });
     })
     const result = await reqHotPone()
-    console.log(result)
     this.hotPones = result.message.hotPone
-    console.log(this.hotPones)
   },
   methods:{
     goDetail(pone){

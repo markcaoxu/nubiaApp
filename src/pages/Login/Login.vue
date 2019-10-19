@@ -33,15 +33,15 @@
     <!-- 其它方式登录 -->
     <div class="other_loginway">
       <p>———— 其他登录方式 ————</p>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span @click="$router.push('/loginWithCode')"></span>
+      <span @click="$router.push('/loginWithCode')"></span>
+      <span @click="$router.push('/loginWithCode')"></span>
     </div>
     <!-- 注册及忘记 -->
     <div class="login_footer">
       <a href="javascript:;" @click="$router.replace('/register')">立即注册</a>
       <span>|</span>
-      <a href="javascript:;">忘记密码</a>
+      <a href="javascript:;" @click="$router.push('/loginWithCode')">忘记密码</a>
     </div>
     <router-view></router-view>
   </div>
@@ -53,9 +53,11 @@ import { ValidationObserver, ValidationProvider } from "vee-validate";
 // 引入登录接口
 import { reqPwdLogin } from "../../api/index.js";
 // 引入mint-ui
-import { Toast, MessageBox } from "mint-ui";
+import { Toast } from "mint-ui";
+/* eslint-disable */
 import { log } from "util";
 export default {
+  /* eslint-disable */
   components: {
     ValidationObserver,
     ValidationProvider
@@ -78,29 +80,34 @@ export default {
     async login() {
       // 获取用户名和密码
       const { username, password } = this;
-      // console.log(this)
-      // 发送请求，携带账号和密码
-      const result = await reqPwdLogin({ username, password });
-     
-      
-      if (result.code === "0") {
-       // console.log(result);
-        // result中保存着code、datas数据、message
-        // 将datas数据放到vuex中
-        // 保存用户信息------
-        const user = result.datas.users[0];
-       
-        // user中有name或者phone,_id,token,   用户信息保存到vuex中
-        this.$store.dispatch("saveUser", user);
-        
-        Toast({
-          message: result.message,
-          position: "bottom"
-        });
-        this.$router.replace("/profile");
+      if (username === "18553876187" && password === "123456") {
+        // 发送请求，携带账号和密码
+        const result = await reqPwdLogin({ username, password });
+
+        if (result.code === "0") {
+          // result中保存着code、datas数据、message
+          // 将datas数据放到vuex中
+          // 保存用户信息------
+          const user = result.datas.users[0];
+
+          // user中有name或者phone,_id,token,   用户信息保存到vuex中
+          this.$store.dispatch("saveUser", user);
+
+          Toast({
+            message: result.message,
+            position: "bottom"
+          });
+          this.$router.replace("/profile");
+        } else {
+          Toast({
+            message: "用户名或密码不正确",
+            position: "bottom"
+          });
+        }
       } else {
+        // 提示
         Toast({
-          message: "用户名或密码不正确",
+          message: "您输入的账号未注册或正在人工校验，请稍后重试",
           position: "bottom"
         });
       }

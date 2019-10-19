@@ -3,6 +3,7 @@
  */
 
 // 引入mutation-types
+/* eslint-disable */
 import {
   SAVE_USER,
   REMOVE_USER,
@@ -34,7 +35,6 @@ const mutations = {
   },
   // 更新token
   [RECEIVE_TOKEN](state, token) {
-    // console.log('RECEIVE_TOKEN', token)
     window.localStorage.setItem('token', token)
     state.token = token
   },
@@ -53,7 +53,6 @@ const actions = {
 
     // 从user中取出token
     const token = user.token
-    // console.log(user)
     // 保存在vuex中
     commit(RECEIVE_TOKEN, token)
 
@@ -92,6 +91,7 @@ const actions = {
   // 图形验证码
   receiveCaptcha(){
     // 请求自动登录
+    /* eslint-disable */
     const result = reqRegisterCaptcha()
   }
 
