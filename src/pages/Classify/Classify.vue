@@ -206,13 +206,14 @@ export default {
             height 100%
             .itemli
               width 43%
+              height 130px
               float left
               margin 5px 8px
               text-align center
-              clear both
+              // clear left
               img
                 width 100%
-                height 100%
+                height 80%
               p
                 font-size 10px
           .seemore

@@ -83,51 +83,11 @@
       </div>
       <div class="hotItems">
         <ul class="hotItem">
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/ceil1.png" alt />
-              <p class="ceil-name">电源适配器</p>
-              <p class="ceil-price">￥2699</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/ceil1.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="ceil-name">电源适配器</p>
-              <p class="ceil-price">￥2699</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/ceil1.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="ceil-name">电源适配器</p>
-              <p class="ceil-price">￥2699</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/ceil1.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="ceil-name">电源适配器</p>
-              <p class="ceil-price">￥2699</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/ceil1.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="ceil-name">电源适配器</p>
-              <p class="ceil-price">￥2699</p>
-            </a>
-          </li>
-          <li class="hotlist">
-            <a href="javascript:;">
-              <img src="./images/content/ceil1.png" alt />
-              <p class="phone-name">红魔3 赤焰红</p>
-              <p class="ceil-name">电源适配器</p>
-              <p class="ceil-price">￥2699</p>
+          <li class="hotlist"  v-for="(siftItem,index) in sift" :key="index">
+            <a href="javascript:;" @click="toDetil(siftItem)">
+              <img :src="siftItem.img_url" alt />
+              <p class="ceil-name">{{siftItem.title}}</p>
+              <p class="ceil-price">￥{{siftItem.pir}}</p>
             </a>
           </li>
         </ul>
@@ -182,7 +142,8 @@ export default {
   data () {
     return {
       isShow:true,
-      hotSwipers:[]
+      hotSwipers:[],
+      sift:[]
     }
   },
   async mounted() {
@@ -200,8 +161,15 @@ export default {
     const result = await reqHotPone()
     console.log(result)
     this.hotSwipers = result.message.msite_swiper
+    this.sift=result.message.sift
     console.log(this.hotSwipers)
     
+  },
+  methods:{
+    toDetil(pone){
+      this.$store.dispatch('upDataDetail',pone)
+      this.$router.push('/shopDetail')
+    }
   }
 }
 </script>
