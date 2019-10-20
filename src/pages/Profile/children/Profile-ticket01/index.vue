@@ -95,7 +95,7 @@ export default {
     padding 10px
     color #fff
     .footer_input
-      width 70%
+      width 62%
       background-color #D8D8D8
       padding-left 5px 
     ::-webkit-input-placeholder
